@@ -1,0 +1,428 @@
+// Name:            Card
+// Description:     Component to create boxed content containers
+//
+// Component:       `uis-card`
+//
+// Sub-objects:     `uis-card-body`
+//                  `uis-card-header`
+//                  `uis-card-footer`
+//                  `uis-media-*`
+//                  `uis-card-title`
+//                  `uis-card-badge`
+//
+// Modifiers:       `uis-card-hover`
+//                  `uis-card-default`
+//                  `uis-card-primary`
+//                  `uis-card-secondary`
+//                  `uis-card-small`
+//                  `uis-card-large`
+//
+// Uses:            `uis-grid-stack`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$card-border-color:                         border(border-color) !default;
+$card-border-width:                         border(border-width) !default;
+$card-border-radius:                        4px !default;
+
+$card-body-padding-horizontal:              gutter(small) !default;
+$card-body-padding-vertical:                gutter(small) !default;
+
+$card-body-padding-horizontal-l:            gutter(medium) !default;
+$card-body-padding-vertical-l:              gutter(medium) !default;
+
+$card-header-padding-horizontal:            gutter(small) !default;
+$card-header-padding-vertical:              round(gutter(small) / 2) !default;
+
+$card-header-padding-horizontal-l:          gutter(medium) !default;
+$card-header-padding-vertical-l:            round(gutter(medium) / 2) !default;
+
+$card-footer-padding-horizontal:            gutter(small) !default;
+$card-footer-padding-vertical:              round(gutter(small) / 2) !default;
+
+$card-footer-padding-horizontal-l:          gutter(medium) !default;
+$card-footer-padding-vertical-l:            round(gutter(medium) / 2) !default;
+
+$card-footer-background:                    lighten(#F9F9F9, 1%) !default;
+
+$card-title-font-size:                      font-size(large) !default;
+$card-title-line-height:                    1.4 !default;
+
+$card-badge-top:                            gutter(small) !default;
+$card-badge-right:                          gutter(small) !default;
+
+$card-hover-background:                     theme-color(default) !default;
+
+$card-default-background:                   $global-background !default;
+$card-default-color:                        color(default) !default;
+$card-default-title-color:                  color(emphasis) !default;
+$card-default-hover-background:             darken($card-default-background , 5%) !default;
+
+$card-primary-background:                   theme-color(primary) !default;
+$card-primary-color:                        color(inverse) !default;
+$card-primary-title-color:                  theme-color(primary) !default;
+$card-primary-hover-background:             darken($card-primary-background, 5%) !default;
+
+$card-secondary-background:                 theme-color(secondary) !default;
+$card-secondary-color:                      color(inverse) !default;
+$card-secondary-title-color:                color(inverse) !default;
+$card-secondary-hover-background:           darken($card-secondary-background, 5%) !default;
+
+$card-small-body-padding-horizontal:        gutter(small) !default;
+$card-small-body-padding-vertical:          gutter(small) !default;
+$card-small-header-padding-horizontal:      gutter(small) !default;
+$card-small-header-padding-vertical:        round(margin(small) / 1.5) !default;
+$card-small-footer-padding-horizontal:      gutter(small) !default;
+$card-small-footer-padding-vertical:        round(margin(small) / 1.5) !default;
+
+$card-large-body-padding-horizontal-l:      gutter(large) !default;
+$card-large-body-padding-vertical-l:        gutter(large) !default;
+$card-large-header-padding-horizontal-l:    gutter(large) !default;
+$card-large-header-padding-vertical-l:      round(gutter(large) / 2) !default;
+$card-large-footer-padding-horizontal-l:    gutter(large) !default;
+$card-large-footer-padding-vertical-l:      round(gutter(large) / 2) !default;
+
+
+/* ==================================================
+    Component: Card
+   ================================================== */
+
+.uis-card {
+    position: relative;
+    box-sizing: border-box;
+
+    border-radius: $card-border-radius;
+    transition: all 0.3s ease;
+}
+
+// News Card
+@include respond-to-max(small) {
+    .uis-card.uis-news-card {
+        width: 100% !important;
+    }
+}
+
+
+@include respond-to(large) {
+    .uis-card.uis-news-card {
+        width: 500px;
+    }
+
+    // The component will align to its direction you need to set a height
+    div:nth-child(odd) > .uis-card.uis-news-card {
+        margin-right: 40px;
+    }
+}
+
+@include respond-to-max(medium) {
+    .uis-card.uis-news-card {
+        width: 400px;
+    }
+}
+
+@include respond-to(medium) {
+    // The component will align to its direction you need to set a height
+    div:nth-child(odd) > .uis-card.uis-news-card {
+        margin-left: auto;
+    }
+
+    // Make the even cards have margin-top
+    div:nth-child(even) > .uis-card.uis-news-card {
+        margin-top: margin(xlarge);
+    }
+}
+
+/* Sections
+   ================================================== */
+
+.uis-card-body {
+    padding: $card-body-padding-vertical $card-body-padding-horizontal;
+}
+
+.uis-card-header {
+    padding: $card-header-padding-vertical $card-header-padding-horizontal;
+    border-bottom: 1px solid $card-border-color;
+}
+
+.uis-card-footer {
+    padding: $card-footer-padding-vertical $card-footer-padding-horizontal;
+    background-color: $card-footer-background;
+}
+
+/* Desktop and bigget */
+@include respond-to(large) {
+    .uis-card-body {
+        padding: $card-body-padding-vertical-l $card-body-padding-horizontal-l;
+    }
+
+    .uis-card-header {
+        padding: $card-header-padding-vertical-l $card-header-padding-horizontal-l;
+    }
+
+    .uis-card-footer {
+        padding: $card-footer-padding-vertical-l $card-footer-padding-horizontal-l;
+    }
+}
+
+
+
+/*
+ * Micro clearfix
+ */
+
+.uis-card-body,
+.uis-card-header,
+.uis-card-footer {
+    @include clearfix;
+}
+
+
+/*
+ * Remove margin from the last child
+ */
+
+.uis-card-body > :last-child,
+.uis-card-header > :last-child,
+.uis-card-footer > :last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* Section Modifier
+   ================================================== */
+
+/*
+ * 1. Set the position
+ * 2. set min-height
+ * 3. Get the full width of the parent and subtract by 15%
+ * 4. Tells the browser to account any broder or padding in the
+ *    values you specific in the lement inside.
+ */
+@include respond-to(medium) {
+    .uis-card-body.uis-card-body-pullup {
+        /* 1 */
+        position: absolute;
+        bottom: -100px;
+        right: 0;
+
+        /* 2 */
+        min-height: 200px;
+
+        /* 3 */
+        width: calc(100% - 15%);
+
+        /* 4 */
+        box-sizing: border-box;
+
+        /* 5 */
+        background-color: color(inverse);
+        border: 1px solid #E5E5E5;
+        box-shadow: box-shadow(medium);
+    }
+}
+
+
+
+/* Media
+   ================================================== */
+
+/*
+ * 1. Set a specific dimension
+ * 2. Set overflow hidden
+ */
+[class*='uis-card-media-'] {
+    /* 1 */
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*
+ * 1. Set the dimensions
+ * 2. Make the object fit the parent
+ *    We set the object to cover and overflow hidden on its parent to avoid
+ *    inconsistent sizes of images, it will mask the image of its parent
+ *    container which are 'uis-card-media-*'
+ */
+[class*='uis-card-media-'] img,
+[class*='uis-card-media-'] video {
+    /* 1 */
+    height: 100%;
+    width: 100%;
+
+    /* 2 */
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+/*
+ * Zoom the image by default
+ */
+[class*='uis-card-media-'] img {
+    transform: scale(1.2);
+}
+
+/*
+ * When hover or touch/click
+ * Zoom out the image
+ */
+.uis-card:hover [class*='uis-card-media-'] img {
+    transform: scale(1);
+}
+
+
+
+/* Title
+   ================================================== */
+
+.uis-card-title {
+    font-size: $card-title-font-size;
+    line-height: $card-title-line-height;
+    margin-top: 0;
+}
+
+
+
+/* Dropdown
+   ================================================== */
+
+.uis-card-dropdown {
+    position: absolute !important;
+    top: 15px !important;
+    right: 25px !important;
+}
+
+
+
+/* Badge
+   ================================================== */
+
+.uis-card-badge {
+    position: absolute;
+    top: $card-badge-top;
+    right: $card-badge-right;
+    z-index: 1;
+}
+
+.uis-card-badge-left {
+    right: auto;
+    left: $card-badge-right;
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+
+.uis-card-badge:first-child + * {
+    margin-top: 0;
+}
+
+
+
+/* Hover modifier
+   ================================================== */
+
+.uis-card-hover:not(.uis-card-default):not(.uis-card-primary):not(.uis-card-secondary):hover {
+    box-shadow: box-shadow(large);
+}
+
+
+
+/* Style modifiers
+   ================================================== */
+
+/*
+ * Default
+ */
+.uis-card-default {
+    background-color: $card-default-background;
+    color: $card-default-color;
+    box-shadow: box-shadow(small);
+
+    border: $card-border-width solid $card-border-color;
+}
+
+.uis-card-default .uis-card-title {
+    color: $card-default-color;
+}
+
+.uis-card-default.uis-card-hover:hover {
+    box-shadow: box-shadow(large);
+}
+
+/*
+ * Primary
+ */
+.uis-card-primary {
+    background-color: $card-primary-background;
+    color: $card-primary-color;
+    box-shadow: box-shadow(small);
+}
+
+.uis-card-primary .uis-card-title {
+    color: $card-primary-color;
+}
+
+.uis-card-primary.uis-card-hover:hover {
+    box-shadow: box-shadow(large);
+}
+
+/*
+ * Secondary
+ */
+.uis-card-secondary {
+    background-color: $card-secondary-background;
+    color: $card-secondary-color;
+    box-shadow: box-shadow(small);
+}
+
+.uis-card-secondary .uis-card-title {
+    color: $card-secondary-color;
+}
+
+.uis-card-secondary.uis-card-hover:hover {
+    box-shadow: box-shadow(large);
+}
+
+
+/* Size modifiers
+   ================================================== */
+
+.uis-card-small.uis-card-body,
+.uis-card-small .uis-card-body {
+    padding: $card-small-body-padding-vertical $card-small-body-padding-horizontal;
+}
+
+.uis-card-small .uis-card-header {
+    padding: $card-small-header-padding-vertical $card-small-header-padding-horizontal;
+}
+
+.uis-card-small .uis-card-footer {
+    padding: $card-small-footer-padding-vertical $card-small-footer-padding-horizontal;
+}
+
+/*
+ * Large
+ */
+
+/* Desktop and bigger */
+@include respond-to(large) {
+    .uis-card-large.uis-card-body,
+    .uis-card-large .uis-card-body {
+        padding: $card-large-body-padding-vertical-l $card-large-body-padding-horizontal-l;
+    }
+
+    .uis-card-large .uis-card-header {
+        padding: $card-large-header-padding-vertical-l $card-large-header-padding-horizontal-l;
+    }
+
+    .uis-card-large .uis-card-footer {
+        padding: $card-large-footer-padding-vertical-l $card-large-footer-padding-horizontal-l;
+    }
+}

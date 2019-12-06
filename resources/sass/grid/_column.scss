@@ -1,0 +1,79 @@
+// Name:            Column
+// Description:     Utilities for text columns
+//
+// Component:       `uis-column-*`
+//
+// Sub-objects:     `uis-column-span`
+//
+// Modifiers:       `uis-column-divider`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$column-gutter:                         gutter(small) !default;
+$column-gutter-l:                       gutter(medium) !default;
+
+$column-divider-rule-color:             border(border-color) !default;
+$column-divider-rule-width:             border(border-width) !default;
+
+
+/* ==================================================
+    Component: Column
+   ================================================== */
+
+
+[class*='uis-column-'] {
+    column-gap: $column-gutter;
+}
+
+/* Desktop and Bigger */
+@include respond-to(large) {
+    [class*='uis-column-'] {
+        column-gap: $column-gutter-l;
+    }
+}
+
+/*
+ * Fix image 1px line wrapping into the next column in Chrome
+ */
+
+[class*='uis-column-'] img {
+    transform: translate3d(0, 0, 0);
+}
+
+
+
+/* Divider
+   ================================================== */
+
+/*
+ * 1. Double the column gap
+ */
+
+.uis-column-divider {
+    column-rule: $column-divider-rule-width solid $column-divider-rule-color;
+
+    /* 1 */
+    column-gap: ($column-gutter * 2);
+}
+
+/* Desktop and bigger */
+@include respond-to(large) {
+    .uis-column-divider {
+        column-gap: ($column-gutter-l * 2);
+    }
+}
+
+/* Make element span across all columns
+ * Does not work in Firefox yet
+   ================================================== */
+.uis-column-span {
+    column-span: all;
+}
+
+/* Width modifiers
+   ================================================== */
+@include create-column-width-modifiers;

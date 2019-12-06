@@ -1,0 +1,271 @@
+// Name:            Nav
+// Description:     Defines styles for list navigations
+//
+// Component:       `uis-nav`
+//
+// Sub-objects:     `uis-nav-header`
+//                  `uis-nav-divider`
+//                  `uis-nav-sub`
+//
+// Modifiers:       `uis-nav-parent-icon`
+//                  `uis-nav-default`
+//                  `uis-nav-primary`
+//                  `uis-nav-center`
+//
+// States:          `uis-active`
+//                  `uis-parent`
+//                  `uis-open`
+//                  `uis-touch`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$nav-item-padding-vertical:                      5px !default;
+$nav-item-padding-horizontal:                    0 !default;
+
+$nav-item-padding-vertical-l:                    12px !default;
+$nav-item-padding-horizontal-l:                  0 !default;
+$nav-item-font-size-l:                           font-size(medium);
+
+$nav-sublist-padding-vertical:                   5px !default;
+$nav-sublist-padding-left:                       15px !default;
+$nav-sublist-deeper-padding-left:                15px !default;
+$nav-sublist-item-padding-vertical:              2px !default;
+
+$nav-parent-icon-width:                          (font(line-height) * 1em) !default;
+$nav-parent-icon-height:                         $nav-parent-icon-width !default;
+$nav-parent-icon-color:                          color(default) !default;
+
+$nav-header-padding-vertical:                    $nav-item-padding-vertical !default;
+$nav-header-padding-horizontal:                  $nav-item-padding-horizontal !default;
+$nav-header-font-size:                           12px !default;
+$nav-header-text-transform:                      uppercase !default;
+$nav-header-margin-top:                          margin(global) !default;
+
+$nav-divider-margin-vertical:                    10px !default;
+$nav-divider-margin-horizontal:                  0 !default;
+
+$nav-default-item-color:                         color(muted) !default;
+$nav-default-item-hover-color:                   color(default) !default;
+$nav-default-item-active-color:                  color(emphasis) !default;
+$nav-default-header-color:                       0.5px !default;
+$nav-default-divider-border-width:               border(border-width) !default;
+$nav-default-divider-border:                     #E5E5E5 !default;
+$nav-default-sublist-item-color:                 color(muted) !default;
+$nav-default-sublist-item-hover-color:           color(default) !default;
+
+$nav-primary-item-font-size:                     font-size(large) !default;
+$nav-primary-item-line-height:                   font(line-height) !default;
+$nav-primary-item-color:                         color(muted) !default;
+$nav-primary-item-hover-color:                   color(default) !default;
+$nav-primary-item-active-color:                  color(primary) !default;
+$nav-primary-header-color:                       color(emphasis) !default;
+$nav-primary-divider-border-width:               border(border-width) !default;
+$nav-primary-divider-border:                     border(border-color) !default;
+$nav-primary-sublist-item-color:                 color(muted) !default;
+$nav-primary-sublist-item-hover-color:           color(default) !default;
+
+$internal-nav-parent-close-image: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22#000%22%20stroke-width%3D%221.1%22%20points%3D%2210%201%204%207%2010%2013%22%20%2F%3E%0A%3C%2Fsvg%3E' !default;
+$internal-nav-parent-open-image: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22#000%22%20stroke-width%3D%221.1%22%20points%3D%221%204%207%2010%2013%204%22%20%2F%3E%0A%3C%2Fsvg%3E' !default;
+
+/* ==================================================
+    Component: Nav
+   ================================================== */
+
+/*
+ * Reset
+ * 1. Prepare lists
+ * 2. Prepare links
+ * 3. Remove default focus style
+ */
+
+/* 1 */
+.uis-nav,
+.uis-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.uis-nav li > a {
+    display: block;
+    text-decoration: none;
+}
+
+/* 3 */
+.uis-nav li > a:focus {
+    outline: none;
+}
+
+/*
+ * Items
+ * Must target `a` elements to exclude other elements (e.g. lists)
+ */
+.uis-nav > li > a {
+    padding: $nav-item-padding-vertical $nav-item-padding-horizontal;
+}
+
+.uis-nav.uis-nav-large > li > a {
+    font-size: $nav-item-font-size-l;
+    padding: $nav-item-padding-vertical-l $nav-item-padding-horizontal-l;
+}
+
+/* Sublist
+   ================================================== */
+
+/*
+ * Level 2
+ * `ul` needed for higher specificity to override padding
+ */
+
+ul.uis-nav-sub {
+    padding: $nav-sublist-padding-vertical 0 $nav-sublist-item-padding-vertical $nav-sublist-deeper-padding-left;
+}
+
+/*
+ * Level 3 and deeper
+ */
+
+.uis-nav-sub ul {
+    padding-left: $nav-sublist-padding-left;
+}
+
+/*
+ * Items
+ */
+
+.uis-nav-sub a {
+    padding: $nav-sublist-item-padding-vertical 0;
+}
+
+
+
+/* Paren icon modifier
+   ================================================== */
+
+.uis-nav-parent-icon > .uis-parent > a:after {
+    content: '';
+    width: $nav-parent-icon-width;
+    height: $nav-parent-icon-height;
+    float: right;
+    background-image: url($internal-nav-parent-close-image);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.uis-nav-parent-icon > .uis-parent.uis-open > a:after {
+    background-image: url($internal-nav-parent-open-image);
+}
+
+
+/* Header
+   ================================================== */
+
+.uis-nav-header {
+    padding: $nav-header-padding-vertical $nav-header-padding-horizontal;
+    text-transform: $nav-header-text-transform;
+    font-size: $nav-header-font-size;
+}
+
+.uis-nav-header:not(:first-child) {
+    margin-top: $nav-header-margin-top;
+}
+
+
+
+/* Divider
+   ================================================== */
+
+.uis-nav-divider {
+    margin: $nav-divider-margin-vertical $nav-divider-margin-horizontal;
+}
+
+
+
+/* Divider
+   ================================================== */
+
+.uis-nav-default {
+    font-size: 14px;
+}
+
+/*
+ * Items
+ */
+
+.uis-nav-default > li > a {
+    color: $nav-default-item-color;
+}
+
+/* Hover + Focus */
+.uis-nav-default > li > a:hover,
+.uis-nav-default > li > a:focus {
+    color: $nav-default-item-hover-color;
+}
+
+/* Active */
+.uis-nav-default > li.uis-active > a {
+    color: $nav-primary-item-active-color;
+}
+
+/*
+ * Header
+ */
+
+.uis-nav-default .uis-nav-header {
+    color: $nav-default-header-color;
+}
+
+/*
+ * Divider
+ */
+
+.uis-nav-default .uis-nav-divider,
+.uis-nav-divider {
+    border-top: $nav-default-divider-border-width solid $nav-default-divider-border;
+}
+
+/*
+ * Sublists
+ */
+
+.uis-nav-default .uis-nav-sub a {
+    color: $nav-default-sublist-item-color;
+}
+
+.uis-nav-default .uis-nav-sub a:hover,
+.uis-nav-default .uis-nav-sub a:focus {
+    color: $nav-default-sublist-item-hover-color;
+}
+
+
+
+/* Alignment Modifier
+   ================================================== */
+
+.uis-nav-center {
+    text-align: center;
+}
+
+/* Sublists */
+.uis-nav-center .uis-nav-sub,
+.uis-nav-center .uis-nav-sub ul {
+    padding-left: 0;
+}
+
+/* Parent Icon Modifier */
+.uis-nav-center.uis-nav-parent-icon > .uis-parent > a:after {
+    position: absolute;
+}
+
+
+/* Accordion
+   ================================================== */
+
+[uis-nav-accordion] ul.uis-nav-sub,
+[uis-nav-accordion] ul {
+    display: none;
+}

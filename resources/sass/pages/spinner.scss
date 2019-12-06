@@ -1,0 +1,348 @@
+// Name:            Spinner
+// Description:     Style for spinner page
+//
+// Component:       `uis-spinner`
+//
+// Sub-objects:     `uis-spinner-wrapper`
+//                  `uis-spinner-body`
+//                  `uis-spinner-reel`
+//
+// Adopted:         `uis-spinner-list`
+//
+// States:          `uis-active`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+$spinner-height:                                        400px !default;
+$spinner-width:                                         80% !default;
+$spinner-margin-vertical:                               margin(medium) !default;
+$spinner-padding:                                       margin(global) !default;
+$spinner-background:                                    darken(theme-color(primary), 10%) !default;
+$spinner-border-width:                                  20px !default;
+$spinner-border-color:                                  theme-color(primary) !default;
+$spinner-border-radius:                                 30px !default;
+$spinner-z-index:                                       100 !default;
+
+$spinner-wrapper-height:                                100vh !default;
+$spinner-wrapper-background:                            theme-color(secondary) !default;
+$spinner-wrapper-background-image:                      url('../../assets/images/svg/background-pattern.svg') !default;
+
+$spinner-body-background:                               #252525 !default;
+$spinner-body-border-radius:                            10px !default;
+$spinner-body-padding:                                  gutter(xsmall) !default;
+
+$spinner-reel-background:                               theme-color(inverse) !default;
+
+
+/* ==================================================
+    Component: Spinner
+   ================================================== */
+
+/*
+ * 1. Set Dimension
+ * 2. Set spacing between siblings
+ * 3. Add layer greater than wrapper to avoid overlapping of :before
+ *    :after of wrapper.
+ * 4. Style
+ */
+.uis-spinner {
+    position: relative;
+
+    /* 1 */
+    height: $spinner-height;
+    width: $spinner-width;
+    box-sizing: border-box;
+
+    /* 2 */
+    margin: $spinner-margin-vertical auto;
+
+    /* 3 */
+    z-index: $spinner-z-index;
+
+    /* 4 */
+    padding: $spinner-padding;
+    background-color: $spinner-background;
+    border: solid $spinner-border-width $spinner-border-color;
+    border-radius: $spinner-border-radius;
+}
+
+
+
+/* Wrapper
+ * 1. Set dimension
+ * 2. Center child
+ * 3. Style
+   ================================================== */
+
+.uis-spinner-wrapper {
+    position: relative;
+
+    /* 1 */
+    height: $spinner-wrapper-height;
+    width: 100%;
+
+    /* 2 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 3 */
+    background-color: $spinner-wrapper-background;
+    background-image: $spinner-wrapper-background-image;
+}
+
+/*
+ * 1. Make the child expand
+ * 2. Make the layer greater than background
+ */
+.uis-spinner-wrapper > * {
+    /* 1 */
+    flex: 1;
+
+    /* 2 */
+    z-index: 20;
+}
+
+.uis-spinner-wrapper:before,
+.uis-spinner-wrapper:after {
+    content: '';
+
+    position: absolute;
+    height: 100%;
+    width: 50%;
+
+    z-index: 10;
+}
+
+/*
+ * Blue radial gradient
+ */
+.uis-spinner-wrapper:before {
+    top: 0;
+    left: 0;
+
+    background-image: radial-gradient(farthest-side at 0% 60%, transparentize(#C42FF9, 0.3), transparent);
+}
+
+/*
+ * Violet radial gradient
+ */
+.uis-spinner-wrapper:after {
+    right: 0;
+    bottom: 0;
+
+    background-image: radial-gradient(farthest-side at 100% 30%, transparentize(theme-color(primary), 0.3), transparent);
+}
+
+
+
+/* Body
+ * 1. Set dimension
+ * 2. Set gutter
+ * 3. Style
+   ================================================== */
+
+.uis-spinner-body {
+    position: relative;
+
+    /* 1 */
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    /* 2 */
+    padding: $spinner-body-padding;
+
+    /* 3 */
+    background-color: $spinner-body-background;
+    border-radius: $spinner-body-border-radius;
+}
+
+.uis-spinner-body:before,
+.uis-spinner-body:after {
+    content: '';
+
+    position: absolute;
+    z-index: 300;
+    top: 0;
+    bottom: 0;
+
+    margin: auto 0;
+
+    height: 0;
+    width: 0;
+
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+}
+
+/*
+ * Left arrow
+ */
+.uis-spinner-body:before {
+    left: 0;
+    border-left: 100px solid color(default);
+}
+
+/*
+ * Right arrow
+ */
+.uis-spinner-body:after {
+    right: 0;
+    border-right: 100px solid color(default);
+}
+
+
+
+/* Reel
+ * 1. Set dimenstion
+ * 2. Hide excess elements
+ * 3. Style
+   ================================================== */
+
+.uis-spinner-reel {
+    position: relative;
+
+    /* 1 */
+    height: 100%;
+    width: 100%;
+
+    /* 2 */
+    overflow: hidden;
+
+    /* 3 */
+    text-align: center;
+    background-color: $spinner-reel-background;
+}
+
+/*
+ * Adding shadow to make look 3D
+ */
+.uis-spinner-reel:before,
+.uis-spinner-reel:after {
+    content: '';
+    position: absolute;
+    z-index: 150;
+
+    height: 45%;
+    width: 100%;
+
+    left: 0;
+    right: 0;
+}
+
+/*
+ * Top shadow
+ */
+.uis-spinner-reel:before {
+    top: 0;
+
+    background-image: linear-gradient(to bottom, #252525, transparent);
+}
+
+/*
+ * Bottom shadow
+ */
+.uis-spinner-reel:after {
+    bottom: 0;
+
+    background-image: linear-gradient(to top, #252525, transparent);
+}
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Allow scrolling for the modal dialog
+ * 4. Horizontal padding
+ * 5. Mask the background-page
+ * 6. Fade-in transition
+ */
+
+
+/* List
+   Adopts `uis-list` default style
+   ================================================== */
+
+.uis-spinner-list > li {
+    color: color(primary);
+    font-weight: 600;
+    font-size: 50px;
+    padding: 12px 0px;
+
+    opacity: 0.5;
+    transition: all 0.15s ease-in-out;
+}
+
+.uis-spinner-list > li.uis-active {
+    opacity: 1;
+}
+
+/*
+ * 1. Remove the gutter on the top
+ * 2. Make it lean and looks 3d
+ */
+.uis-spinner-list > li:first-child {
+    /* 1 */
+    padding-top: 0px;
+
+    /* 2 */
+    transform: rotateX(-40deg);
+}
+
+/*
+ * 1. Make it lean and looks 3d
+ */
+.uis-spinner-list > li:nth-child(3) {
+    /* 1 */
+    transform: rotateX(40deg);
+}
+
+/* Remove the gutter on last child */
+.uis-spinner-list > li:last-child {
+    padding-bottom: 0px;
+}
+
+.uis-spinner-list {
+    position: relative;
+    top: 0;
+}
+
+/*
+ * Adds blur on the list
+ */
+.uis-spinner-list.uis-active {
+    filter: blur(0px);
+
+    animation: spinnerBlur 4s ease-in-out;
+    animation-delay: 0.3s;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes spinnerBlur {
+    0% {
+        filter: blur(0px);
+    }
+
+    10% {
+        filter: blur(5px);
+    }
+
+    25% {
+        filter: blur(8px);
+    }
+
+    50% {
+        filter: blur(8px);
+    }
+
+    75% {
+        filter: blur(5px);
+    }
+
+    100% {
+        filter: blur(0px);
+    }
+}

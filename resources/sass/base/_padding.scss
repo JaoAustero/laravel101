@@ -1,0 +1,97 @@
+// Name:            Padding
+// Description:     Utilities for padding
+//
+// Component:       `uis-padding`
+//                  `uis-padding-large`
+//                  `uis-padding-remove`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$padding-padding:                   gutter(small) !default;
+$padding-padding-l:                 gutter(medium) !default;
+
+$padding-small-padding:             gutter(xsmall) !default;
+
+$padding-large-padding:             gutter(small) !default;
+$padding-large-padding-l:           gutter(large) !default;
+
+
+
+/* ==================================================
+    Component: Padding
+   ================================================== */
+
+.uis-padding {
+    padding: $padding-padding !important;
+}
+
+/* Desktop and bigger */
+@include respond-to(large) {
+    .uis-padding {
+        padding: $padding-padding-l !important;
+    }
+}
+
+
+
+/* Small
+   ================================================== */
+
+.uis-padding-small {
+    padding: $padding-small-padding !important;
+}
+
+
+
+/* Large
+   ================================================== */
+
+.uis-padding-large {
+    padding: $padding-large-padding !important;
+}
+
+/* Desktop and bigger */
+@include respond-to(large) {
+    .uis-padding-large {
+        padding: $padding-large-padding-l !important;
+    }
+}
+
+
+
+/* Remove
+   ================================================== */
+
+.uis-padding-remove {
+    padding: 0 !important;
+}
+
+.uis-padding-remove-top {
+    padding-top: 0 !important;
+}
+
+.uis-padding-remove-bottom {
+    padding-bottom: 0 !important;
+}
+
+.uis-padding-remove-left {
+    padding-left: 0 !important;
+}
+
+.uis-padding-remove-right {
+    padding-right: 0 !important;
+}
+
+.uis-padding-remove-vertical {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.uis-padding-remove-horizontal {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}

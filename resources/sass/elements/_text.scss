@@ -1,0 +1,421 @@
+// Name:            Container
+// Description:     Utilities for text
+//
+// Component:       `uis-text-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$text-header-font-size:                     3rem !default;
+$text-header-line-height:                   1.2 !default;
+$text-header-color:                         color(emphasis) !default;
+$text-header-font-weight:                   Bold !default;
+
+$text-subheader-font-size:                  font-size(xlarge) !default;
+$text-subheader-line-height:                1.2 !default;
+$text-subheader-color:                      color(emphasis) !default;
+$text-subheader-font-weight:                Bold !default;
+
+$text-lead-font-size:                       font-size(large) !default;
+$text-lead-line-height:                     1.2 !default;
+$text-lead-color:                           color(emphasis) !default;
+$text-lead-font-weight:                     Normal !default;
+
+$text-sublead-font-size:                    font-size(medium) !default;
+$text-sublead-line-height:                  1.5 !default;
+$text-sublead-color:                        color(default) !default;
+$text-sublead-font-weight:                  Normal !default;
+
+$text-meta-font-size:                       font-size(small) !default;
+$text-meta-line-height:                     1.4 !default;
+$text-meta-color:                           color(muted) !default;
+$text-meta-font-weight:                     Normal !default;
+
+$text-small-font-size:                      font-size(small) !default;
+$text-small-line-height:                    1.5 !default;
+
+$text-large-font-size:                      font-size(large) !default;
+$text-large-line-height:                    1.5 !default;
+
+$text-bold-font-weight:                     font-weight(bold) !default;
+
+$text-background-color:                     theme-color(primary) !default;
+
+
+
+/* ==================================================
+    Component: Text
+   ================================================== */
+
+
+.uis-text-header {
+    font-size: $text-header-font-size;
+    line-height: $text-header-line-height;
+    color: $text-header-color;
+    font-weight: $text-header-font-weight;
+}
+
+.uis-text-subheader {
+    font-size: $text-subheader-font-size;
+    line-height: $text-subheader-line-height;
+    color: $text-subheader-color;
+    font-weight: $text-subheader-font-weight;
+}
+
+
+.uis-loading:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background-color: #E5E5E5;
+
+    animation-name: slideIn;
+    animation-duration: 2s;
+}
+
+@keyframes slideIn {
+    0% {
+        width: 0;
+    }
+
+    25% {
+        width: 100%;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    75% {
+        width: 100%;
+        right: 0;
+    }
+
+    100% {
+        width: 0%;
+        right: 0;
+    }
+}
+
+
+.uis-text-header.uis-text-header-underline:after,
+.uis-text-subheader.uis-text-subheader-underline:after {
+    content: '';
+
+    position: absolute;
+    bottom: -10px;
+    left: auto;
+    right: 0;
+    width: calc(100% - 50px);
+    height: 3px;
+    background-color: theme-color(accent);
+    border-radius: 100px;
+
+    animation-name: slideRight;
+    animation-duration: 500ms;
+}
+
+@include respond-to(medium) {
+    .uis-text-header.uis-text-header-underline:after,
+    .uis-text-subheader.uis-text-subheader-underline:after {
+        width: 100%;
+        left: 40px;
+        right: auto;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+.uis-text-lead {
+    font-size: $text-lead-font-size;
+    line-height: $text-lead-line-height;
+    color: $text-lead-color;
+    font-weight: $text-lead-font-weight;
+}
+
+.uis-text-sublead {
+    font-size: $text-sublead-font-size;
+    line-height: $text-sublead-line-height;
+    color: $text-sublead-color;
+    font-weight: $text-sublead-font-weight;
+}
+
+.uis-text-meta {
+    font-size: $text-meta-font-size;
+    line-height: $text-meta-line-height;
+    color: $text-meta-color;
+    font-weight: $text-meta-font-weight;
+}
+
+
+/* Style modifiers
+   ================================================== */
+.uis-text-medium {
+    font-weight: 600;
+}
+
+.uis-text-bold {
+    font-weight: $text-bold-font-weight;
+}
+
+.uis-text-italic {
+    font-style: italic;
+}
+
+.uis-text-oblique {
+    font-style: oblique;
+}
+
+.uis-text-underline {
+    text-decoration: underline;
+}
+
+
+
+/* Transform modifiers
+   ================================================== */
+
+.uis-text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.uis-text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.uis-text-lowercase {
+    text-transform: lowercase !important;
+}
+
+
+
+/* Color modifiers
+   ================================================== */
+
+@include create-text-modifiers(text);
+
+
+
+/* Background modifiers
+   ================================================== */
+
+/*
+ * 1. Container fills the text
+ * 2. Fallback color for IE11
+ */
+
+.uis-text-background {
+    /* 1 */
+    display: inline-block;
+
+    /* 2 */
+    color: $text-background-color;
+}
+
+@supports (-webkit-background-clip: text) {
+    .uis-text-background {
+        background-color: $text-background-color;
+    }
+}
+
+
+
+/* Alignment modifiers
+   ================================================== */
+
+.uis-text-left {
+    text-align: left !important;
+}
+
+.uis-text-right {
+    text-align: right !important;
+}
+
+.uis-text-center {
+    text-align: center !important;
+}
+
+.uis-text-justify {
+    text-align: justify !important;
+}
+
+/* Phone landscape and bigger */
+@include respond-to(small) {
+    .uis-text-left\@s {
+        text-align: left !important;
+    }
+
+    .uis-text-right\@s {
+        text-align: right !important;
+    }
+
+    .uis-text-center\@s {
+        text-align: center !important;
+    }
+}
+
+/* Tablet landscape and bigger */
+@include respond-to(medium) {
+    .uis-text-left\@m {
+        text-align: left !important;
+    }
+
+    .uis-text-right\@m {
+        text-align: right !important;
+    }
+
+    .uis-text-center\@m {
+        text-align: center !important;
+    }
+}
+
+/* Desktop  and bigger */
+@include respond-to(large) {
+    .uis-text-left\@l {
+        text-align: left !important;
+    }
+
+    .uis-text-right\@l {
+        text-align: right !important;
+    }
+
+    .uis-text-center\@l {
+        text-align: center !important;
+    }
+}
+
+/* Desktop  and bigger */
+@include respond-to(large) {
+    .uis-text-left\@xl {
+        text-align: left !important;
+    }
+
+    .uis-text-right\@xl {
+        text-align: right !important;
+    }
+
+    .uis-text-center\@xl {
+        text-align: center !important;
+    }
+}
+
+
+
+/* Vertical modifiers
+   ================================================== */
+
+.uis-text-top {
+    vertical-align: top !important;
+}
+
+.uis-text-middle {
+    vertical-align: middle !important;
+}
+
+.uis-text-bottom {
+    vertical-align: bottom !important;
+}
+
+.uis-text-baseline {
+    vertical-align: baseline !important;
+}
+
+
+
+/* Wrap modifiers
+   ================================================== */
+
+/*
+ * Prevent text from wrapping into multiple lines
+ */
+
+.uis-text-nowrap {
+    white-space: nowrap;
+}
+
+
+/*
+ * 1. Make sure a max-width is set after which truncation can occur
+ * 2. Prevent text from wrapping onto multiple lines, and truncate
+ *    with an ellipsis
+ * 3. Fix for table cells
+ */
+
+.uis-text-truncate {
+    /* 1 */
+    max-width: 100%;
+
+    /* 2 */
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 959px) {
+    .uis-text-truncate\@m {
+        /* 1 */
+        max-width: 100%;
+
+        /* 2 */
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* 3 */
+th.uis-text-truncate,
+td.uis-text-truncate {
+    max-width: 0;
+}
+
+/*
+ * 1. Wrap long words onto the next line and break them if they are too
+ *    long to fit
+ * 2. Legacy `word-wrap` as fallback for `overflow-wrap`
+ * 3. Fix `overflow-wrap` which doesn't work with table cells in Chrome,
+ *    Opera, IE11, and Edge
+ *    Must use `break-all` to support IE11 and Edge
+ *
+ * Note: Not using `hypens: auto;` because it hypenates text even if not
+ *       needed.
+ */
+
+.uis-text-break {
+    /* 1 */
+    overflow-wrap: break-word;
+
+    /* 2 */
+    word-wrap: break-word;
+}
+
+/* 3 */
+th.uis-text-break,
+td.uis-text-break {
+    word-break: break-all;
+}
+
+.uis-text-indent-left {
+    margin-left: 0;
+}
+
+@include respond-to(medium) {
+    .uis-text-indent-left {
+        margin-left: gutter(medium);
+    }
+}

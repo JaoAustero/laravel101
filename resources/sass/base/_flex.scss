@@ -1,0 +1,219 @@
+//  Name:            Flex
+//  Description:     Utilities for flex
+//
+//  Component:       `uis-flex-*`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Flex
+ ========================================================================== */
+
+.uis-flex {
+    display: flex;
+}
+
+.uis-flex-inline {
+    display: inline-flex;
+}
+
+/*
+ * Remove pseudo elements created by micro clearfix as precautions
+ */
+
+.uis-flex:before,
+.uis-flex:after,
+.uis-flex-inline:before,
+.uis-flex-inline:after {
+    display: none;
+}
+
+
+
+/* Alignment
+ ========================================================================== */
+
+/*
+ * Align items along the main axis of the current line of the flex container.
+ * Row: Horizontal
+ */
+
+@include create-flex-alignment;
+
+/*
+ * Align items in the cross of the current line of the flex container
+ * Row: Vertical
+ */
+
+
+// Default
+
+.uis-flex-stretch {
+    align-items: stretch;
+}
+
+.uis-flex-top {
+    align-items: flex-start;
+}
+
+.uis-flex-middle {
+    align-items: center;
+}
+
+.uis-flex-bottom {
+    align-items: flex-end;
+}
+
+
+
+/* Direction
+ ========================================================================== */
+
+.uis-flex-row {
+    flex-direction: row;
+}
+
+.uis-flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.uis-flex-column {
+    flex-direction: column;
+}
+
+.uis-flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+
+
+/* Wrap
+ ========================================================================== */
+
+// Default
+.uis-flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.uis-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.uis-flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+// Default
+.uis-flex-wrap-stretch {
+    align-content: stretch;
+}
+
+.uis-flex-wrap-top {
+    align-content: flex-start;
+}
+
+.uis-flex-wrap-middle {
+    align-content: center;
+}
+
+.uis-flex-wrap-bottom {
+    align-content: flex-end;
+}
+
+.uis-flex-wrap-between {
+    align-content: space-between;
+}
+
+.uis-flex-wrap-around {
+    align-content: space-around;
+}
+
+
+
+/* Item Ordering
+ ========================================================================== */
+
+.uis-flex-first {
+    order: -1;
+}
+
+.uis-flex-last {
+    order: 99;
+}
+
+@include respond-to(small) {
+    .uis-flex-first\@s {
+        order: -1;
+    }
+
+    .uis-flex-last\@s {
+        order: 99;
+    }
+}
+
+@include respond-to(medium) {
+    .uis-flex-first\@m {
+        order: -1;
+    }
+
+    .uis-flex-last\@m {
+        order: 99;
+    }
+}
+
+@include respond-to(large) {
+    .uis-flex-first\@l {
+        order: -1;
+    }
+
+    .uis-flex-last\@l {
+        order: 99;
+    }
+}
+
+@include respond-to(xlarge) {
+    .uis-flex-first\@xl {
+        order: -1;
+    }
+
+    .uis-flex-last\@xl {
+        order: 99;
+    }
+}
+
+
+
+/* Item Dimensions
+ ========================================================================== */
+
+/*
+ * Initial: 0 1 auto
+ * Content dimensions, but shrinks
+ */
+
+/*
+ * No flex: 0 0 auto
+ * Content dimensions
+ */
+
+.uis-flex-none {
+    flex: none;
+}
+
+/*
+ * Relative flex 1 1 auto
+ * Space is allocated considering content
+ */
+
+.uis-flex-auto {
+    flex: auto;
+}
+
+/*
+ * Absolute Flex: 1 1 0%
+ * Space is allocated solely based on flex
+ */
+
+.uis-flex-1 {
+    flex: 1;
+}

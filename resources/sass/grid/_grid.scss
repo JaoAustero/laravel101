@@ -1,0 +1,453 @@
+// Name:            Grid
+// Description:     Component to create responsive, fluid and nestable grids
+//
+// Component:       `uis-grid`
+//
+// Modifiers:       `uis-grid-small`
+//                  `uis-grid-medium`
+//                  `uis-grid-large`
+//                  `uis-grid-collapse`
+//                  `uis-grid-divider`
+//                  `uis-grid-match`
+//                  `uis-grid-stack`
+//                  `uis-grid-margin`
+//                  `uis-grid-margin-small`
+//                  `uis-grid-margin-medium`
+//                  `uis-grid-margin-large`
+//                  `uis-grid-margin-collapse`
+//
+// Sub-Modifiers:   `uis-grid-item-match`
+//
+// States:          `uis-first-column`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$grid-gutter-horizontal:                gutter(small) !default;
+$grid-gutter-vertical:                  $grid-gutter-horizontal !default;
+$grid-gutter-horizontal-l:              gutter(medium) !default;
+$grid-gutter-vertical-l:                $grid-gutter-horizontal-l !default;
+
+$grid-small-gutter-horizontal:          gutter(xsmall) !default;
+$grid-small-gutter-vertical:            $grid-small-gutter-horizontal !default;
+
+$grid-medium-gutter-horizontal:         gutter(medium) !default;
+$grid-medium-gutter-vertical:           $grid-medium-gutter-horizontal !default;
+
+$grid-large-gutter-horizontal:          gutter(medium) !default;
+$grid-large-gutter-vertical:            $grid-large-gutter-horizontal !default;
+$grid-large-gutter-horizontal-l:        gutter(large) !default;
+$grid-large-gutter-vertical-l:           $grid-large-gutter-horizontal-l !default;
+
+$grid-divider-border-width:             border(border-width) !default;
+$grid-divider-border:                   border(border-color) !default;
+
+
+/* ==================================================
+    Component: Grid
+   ================================================== */
+
+/*
+ * 1. Allow cells to wrap in to the next line
+ * 2. Reset list
+ */
+
+.uis-grid {
+    display: flex;
+
+    /* 1 */
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * Grid cell
+ * Note: Space is allocated solely based on content dimensions,
+ *       but shrinks: 0 1 auto, reset margin for e.g. paragraphs
+ */
+
+.uis-grid > * {
+    margin: 0;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-margin > * > :last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* Gutter
+   ================================================== */
+
+/*
+ * Default
+ */
+
+/* Horizontal */
+.uis-grid {
+    margin-left: (-$grid-gutter-horizontal);
+}
+
+.uis-grid > * {
+    padding-left: $grid-gutter-horizontal;
+}
+
+/* Vertical */
+.uis-grid + .uis-grid,
+.uis-grid > .uis-grid-margin,
+* + .uis-grid-margin {
+    margin-top: $grid-gutter-vertical;
+}
+
+/* Desktop and bigger */
+@include respond-to(large) {
+    .uis-grid {
+        margin-left: (-$grid-gutter-horizontal-l);
+    }
+
+    .uis-grid > * {
+        padding-left: $grid-gutter-horizontal-l;
+    }
+
+    .uis-grid + .uis-grid,
+    .uis-grid > .uis-grid-margin,
+    * + .uis-grid-margin {
+        margin-top: $grid-gutter-vertical-l;
+    }
+}
+
+
+
+/*
+ * Small
+ */
+
+/* Horizontal */
+.uis-grid-small {
+    margin-left: (-$grid-small-gutter-horizontal);
+}
+
+.uis-grid-small > * {
+    padding-left: $grid-small-gutter-horizontal;
+}
+
+/* Vertical */
+.uis-grid + .uis-grid-small,
+.uis-grid-small > .uis-grid-margin,
+* + .uis-grid-margin-small {
+    margin-top: $grid-small-gutter-vertical;
+}
+
+
+
+/*
+ * Medium
+ */
+
+/* Horizontal */
+.uis-grid-medium {
+    margin-left: (-$grid-medium-gutter-horizontal);
+}
+
+.uis-grid-medium > * {
+    padding-left: $grid-medium-gutter-horizontal;
+}
+
+/* Vertical */
+.uis-grid + .uis-grid-medium,
+.uis-grid-medium > .uis-grid-margin,
+* + .uis-grid-margin-medium {
+    margin-top: $grid-medium-gutter-vertical;
+}
+
+
+
+/*
+ * Large
+ */
+
+/* Horizontal */
+.uis-grid-large {
+    margin-left: (-$grid-large-gutter-horizontal);
+}
+
+.uis-grid-large > * {
+    padding-left: $grid-large-gutter-horizontal;
+}
+
+/* Vertical */
+.uis-grid + .uis-grid-large,
+.uis-grid-large > .uis-grid-margin,
+* + .uis-grid-margin-large {
+    margin-top: $grid-large-gutter-vertical;
+}
+
+/* Desktop and bigger */
+@include respond-to(large) {
+    .uis-grid-large {
+        margin-left: (-$grid-large-gutter-horizontal-l);
+    }
+
+    .uis-grid-large > * {
+        padding-left: $grid-large-gutter-horizontal-l;
+    }
+
+    .uis-grid + .uis-grid-large,
+    .uis-grid-large > .uis-grid-margin,
+    * + .uis-grid-margin-large {
+        margin-top: $grid-large-gutter-vertical-l;
+    }
+}
+
+
+
+/*
+ * Collapse
+ */
+
+/* Horizontal */
+.uis-grid-collapse {
+    margin-left: 0;
+}
+
+.uis-grid-collapse > * {
+    padding-left: 0;
+}
+
+/* Vertical */
+.uis-grid + .uis-grid-collapse,
+.uis-grid-collapse > .uis-grid-margin {
+    margin-top: 0;
+}
+
+
+
+/* Divider
+   ================================================== */
+
+.uis-grid-divider {
+    position: relative;
+}
+
+.uis-grid-divider > :not(.uis-first-column):before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-left: $grid-divider-border-width solid $grid-divider-border;
+}
+
+.uis-grid-divider .uis-grid-stock > .uis-grid-margin:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: $grid-divider-border-width solid $grid-divider-border;
+}
+
+/*
+ * Default
+ */
+
+/* Horizontal */
+.uis-grid-divider {
+    margin-left: (-$grid-gutter-horizontal * 2);
+}
+
+.uis-grid-divider > * {
+    padding-left: $grid-gutter-horizontal * 2;
+}
+
+.uis-grid-divider > :not(.uis-first-column):before {
+    left: $grid-gutter-horizontal;
+}
+
+/* Vertical */
+.uis-grid-divider .uis-grid-stack > .uis-grid-margin {
+    margin-top: ($grid-gutter-horizontal * 2);
+}
+
+.uis-grid-divider .uis-grid-stack > .uis-grid-margin:before {
+    top: (-$grid-gutter-vertical);
+    left: ($grid-gutter-horizontal * 2);
+}
+
+/* Desktop and bigger */
+@include respond-to(large) {
+    /* Horizontal */
+    .uis-grid-divider {
+        margin-left: (-$grid-gutter-horizontal-l * 2);
+    }
+
+    .uis-grid-divider > * {
+        padding-left: $grid-gutter-horizontal-l * 2;
+    }
+
+    .uis-grid-divider > :not(.uis-first-column):before {
+        left: $grid-gutter-horizontal-l;
+    }
+
+    /* Vertical */
+    .uis-grid-divider .uis-grid-stack > .uis-grid-margin {
+        margin-top: ($grid-gutter-horizontal-l * 2);
+    }
+
+    .uis-grid-divider .uis-grid-stack > .uis-grid-margin:before {
+        top: (-$grid-gutter-vertical-l);
+        left: ($grid-gutter-horizontal-l * 2);
+    }
+}
+
+
+
+/*
+ * Small
+ */
+
+/* Horizontal */
+.uis-grid-divider .uis-grid-small {
+    margin-left: (-$grid-small-gutter-horizontal * 2);
+}
+
+.uis-grid-divider .uis-grid-small > * {
+    padding-left: $grid-small-gutter-horizontal * 2;
+}
+
+.uis-grid-divider .uis-grid-small > :not(.uis-first-column):before {
+    left: $grid-small-gutter-horizontal;
+}
+
+/* Vertical */
+.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin {
+    margin-top: ($grid-small-gutter-horizontal * 2);
+}
+
+.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin:before {
+    top: (-$grid-small-gutter-vertical);
+    left: ($grid-small-gutter-horizontal * 2);
+}
+
+
+
+/*
+ * Medium
+ */
+
+/* Horizontal */
+.uis-grid-divider .uis-grid-medium {
+    margin-left: (-$grid-medium-gutter-horizontal * 2);
+}
+
+.uis-grid-divider .uis-grid-medium > * {
+    padding-left: $grid-medium-gutter-horizontal * 2;
+}
+
+.uis-grid-divider .uis-grid-medium > :not(.uis-first-column):before {
+    left: $grid-medium-gutter-horizontal;
+}
+
+/* Vertical */
+.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin {
+    margin-top: ($grid-medium-gutter-horizontal * 2);
+}
+
+.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin:before {
+    top: (-$grid-medium-gutter-vertical);
+    left: ($grid-medium-gutter-horizontal * 2);
+}
+
+
+
+/*
+ * Large
+ */
+
+/* Horizontal */
+.uis-grid-divider .uis-grid-large {
+    margin-left: (-$grid-large-gutter-horizontal * 2);
+}
+
+.uis-grid-divider .uis-grid-large > * {
+    padding-left: $grid-large-gutter-horizontal * 2;
+}
+
+.uis-grid-divider .uis-grid-large > :not(.uis-first-column):before {
+    left: $grid-large-gutter-horizontal;
+}
+
+/* Vertical */
+.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin {
+    margin-top: ($grid-large-gutter-horizontal * 2);
+}
+
+.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin:before {
+    top: (-$grid-large-gutter-vertical);
+    left: ($grid-large-gutter-horizontal * 2);
+}
+
+/* Desktop and bigger */
+@include respond-to(large) {
+    /* Horizontal */
+    .uis-grid-divider .uis-grid-large {
+        margin-left: (-$grid-large-gutter-horizontal-l * 2);
+    }
+
+    .uis-grid-divider .uis-grid-large > * {
+        padding-left: $grid-large-gutter-horizontal-l * 2;
+    }
+
+    .uis-grid-divider .uis-grid-large > :not(.uis-first-column):before {
+        left: $grid-large-gutter-horizontal-l;
+    }
+
+    /* Vertical */
+    .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin {
+        margin-top: ($grid-large-gutter-horizontal-l * 2);
+    }
+
+    .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin:before {
+        top: (-$grid-gutter-vertical-l);
+        left: ($grid-gutter-horizontal-l * 2);
+    }
+}
+
+
+
+/* Match child of a grid cell
+   ================================================== */
+
+/*
+ * Behave like a block element
+ * 1. Wrap into the next line
+ * 2. Take the full width of at leaset 100%, Only if
+ *    no class from width component is set.
+ * 3. Expand width even if larger than 100%. e.g. because
+ *    of negative margin (Needed for nested grids)
+ */
+
+.uis-grid-match > *,
+.uis-grid-item-match {
+    display: flex;
+
+    /* 1 */
+    flex-wrap: wrap;
+}
+
+.uis-grid-match > * > :not([class*='uis-width']),
+.uis-grid-item-match > :not([class*='uis-width']) {
+    /* 2 */
+    box-sizing: border-box;
+    width: 100%;
+
+    /* 3 */
+    flex: auto;
+}

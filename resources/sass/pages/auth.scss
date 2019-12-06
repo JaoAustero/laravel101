@@ -1,0 +1,79 @@
+// Name:            Auth
+// Description:     Style for auth page
+//
+// Component:       `uis-auth`
+//
+// Sub-objects:     `uis-auth-container`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+$auth-background:                                           theme-color(secondary) !default;
+$auth-background-image:                                     url('../../assets/images/svg/background-pattern.svg') !default;
+
+$auth-container-max-width:                                  500px !default;
+$auth-container-padding-horizontal:                         gutter(xsmall) !default;
+
+
+
+/* ==================================================
+    Page: Auth
+   ================================================== */
+
+/*
+ * 1. Set dimension
+ * 2. Hide all excess content
+ * 3. Style
+ */
+.uis-auth {
+    position: relative;
+
+    /* 1 */
+    height: 100vh;
+    width: 100%;
+
+    /* 2 */
+    overflow: hidden;
+
+    /* 3 */
+    background-color: $auth-background;
+    background-image: $auth-background-image;
+}
+
+
+/* Container
+   ================================================== */
+
+/*
+ * 1. Vertical center the content
+ * 2. Calculate and fill the horizontal with margin
+ * 3. Get the parent height
+ * 4. Set max width
+ * 5. Add spacing on side when mobile
+ */
+.uis-auth-container {
+    /* 1 */
+    display: flex;
+    align-items: center;
+
+    /* 2 */
+    margin: 0 auto;
+
+    /* 3 */
+    height: 100%;
+
+    /* 4 */
+    max-width: $auth-container-max-width;
+
+    /* 5 */
+    padding: 0 $auth-container-padding-horizontal;
+}
+
+/* Table landscape and bigger */
+@include respond-to(medium) {
+    .uis-auth-container {
+        padding: 0;
+    }
+}

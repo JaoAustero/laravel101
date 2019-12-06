@@ -1,0 +1,89 @@
+//  ==================================================
+//  Name:               Header
+//  Description:        Styles for header
+//
+//  Component:          `uis-header-*`
+//
+//  Sub-components:     `uis-header-headline`
+//                      `uis-header-background`
+//
+//  ==================================================
+
+//  ==================================================
+//  Variables
+//  ==================================================
+
+$header-height:                 20vh !default;
+$header-width:                  100% !default;
+$header-background:             color(secondary) !default;
+$header-background-image:       url('../../assets/images/svg/background-pattern.svg') !default;
+
+$headline-z-index:              layer(dropdown) !default;
+
+$header-title-color:            color(inverse) !default;
+$header-title-font-size:        font-size(xlarge) !default;
+$header-title-font-size-l:      font-size(xxlarge) !default;
+$header-title-font-weight:      font-weight(regular) !default;
+$header-title-kerning:          1px !default;
+
+
+/* ==================================================
+    Component: Header
+   ================================================== */
+
+/*
+ * 1. Set Dimension
+ * 2. Background color as placeholder when the content is loading or broken link
+ * 3. Hide overflow
+ * 4. When the screen size is below small, the video will display; none
+ */
+
+.uis-header {
+    position: relative;
+
+    /* 1 */
+    min-height: $header-height;
+    width: $header-width;
+    box-sizing: border-box;
+
+    /* 2 */
+    background-color: $header-background;
+    background-image: $header-background-image;
+
+    /* 3 */
+    overflow: hidden;
+    padding-top: gutter(medium);
+}
+
+
+
+/* Title
+   ================================================== */
+
+.uis-header-title {
+    color: $header-title-color;
+    font-size: $header-title-font-size;
+    font-weight: $header-title-font-weight;
+    letter-spacing: $header-title-kerning;
+}
+
+@include respond-to(medium) {
+    .uis-header-title {
+        font-size: $header-title-font-size-l;
+    }
+}
+
+@include respond-to-max(small) {
+    .uis-header-title {
+        margin: 0 margin(global);
+    }
+}
+
+/* Container
+   ================================================== */
+@include respond-to-max(small) {
+    .uis-header-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

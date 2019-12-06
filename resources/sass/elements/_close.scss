@@ -1,0 +1,60 @@
+// Name:            Close
+// Description:     Component to create a close button
+//
+// Component:       `uis-close`
+//
+// Modifier:        `uis-close-inverse`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$close-color:                   color(muted) !default;
+$close-hover-color:             color(emphasis) !default;
+
+$close-color-inverse:           darken(color(inverse), 10%) !default;
+$close-color-hover-inverse:     color(inverse) !default;
+
+/* ==================================================
+    Component: Off-canvas
+   ================================================== */
+
+/*
+ * Adopts `li-icon`
+ */
+
+.uis-close {
+    color: $close-color;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover + Focus */
+.uis-close:hover,
+.uis-close:active {
+    color: $close-hover-color;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Style modifiers
+   ================================================== */
+.uis-close-inverse {
+    color: $close-color-inverse;
+}
+
+/* Hover + Focus */
+.uis-close-inverse:hover,
+.uis-close-inverse:active {
+    color: $close-color-hover-inverse;
+    outline: none;
+    cursor: pointer;
+}

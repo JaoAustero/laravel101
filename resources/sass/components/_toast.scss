@@ -1,0 +1,175 @@
+// Name:            Modal
+// Description:     Component to create modal dialogs
+//
+// Component:       `uis-modal`
+//
+// Sub-objects:     `uis-modal-page`
+//                  `uis-modal-dialog`
+//                  `uis-modal-header`
+//                  `uis-modal-body`
+//                  `uis-modal-footer`
+//                  `uis-modal-title`
+//                  `uis-modal-close`
+//
+// Adopted:         `uis-modal-close-default`
+//                  `uis-modal-close-outside`
+//                  `uis-modal-close-full`
+//
+// Modifiers:       `uis-modal-container`
+//                  `uis-modal-full`
+//
+// States:          `uis-open`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$notification-position:                     10px !default;
+$notification-z-index:                      layer(notification) !default;
+$notification-width:                        300px !default;
+
+$notification-message-margin-bottom:        10px !default;
+$notification-message-padding:              margin(global) !default;
+$notification-message-background:           color(muted) !default;
+$notification-message-color:                color(default) !default;
+$notification-message-font-size:            font-size(small) !default;
+$notification-message-line-height:          1.4 !default;
+
+$notification-message-icon-margin-right:    16px !default;
+$notification-message-icon-width:           auto !default;
+
+$notification-close-top:                    $notification-message-padding + 5px !default;
+$notification-close-right:                  $notification-message-padding !default;
+
+
+
+/* ========================================================================
+   Component: Notification
+ ========================================================================== */
+
+/*
+ * 1. Set position
+ * 2. Dimensions
+ */
+
+.uis-notification {
+    /* 1 */
+    position: fixed;
+    top: $notification-position;
+    left: $notification-position;
+    z-index: $notification-z-index;
+
+    /* 2 */
+    box-sizing: border-box;
+    width: $notification-width;
+}
+
+
+
+/* Position modifiers
+ ========================================================================== */
+
+.uis-notification-top-right,
+.uis-notification-bottom-right {
+    left: auto;
+    right: $notification-position;
+}
+
+.uis-notification-top-center,
+.uis-notification-bottom-center {
+    left: 50%;
+    margin-left: ($notification-width / -2);
+}
+
+.uis-notification-bottom-left,
+.uis-notification-bottom-right,
+.uis-notification-bottom-center {
+    top: auto;
+    bottom: $notification-position;
+}
+
+
+
+/* Responsiveness
+ ========================================================================== */
+
+/* Phones portrait and smaller */
+
+@include respond-to-max(xsmall) {
+
+    .uis-notification {
+        left: $notification-position;
+        right: $notification-position;
+        width: auto;
+        margin: 0;
+    }
+}
+
+
+
+/* Message
+ ========================================================================== */
+
+.uis-notification-message {
+    position: relative;
+    margin-bottom: $notification-message-margin-bottom;
+    padding: $notification-message-padding;
+    background: $notification-message-background;
+    color: $notification-message-color;
+    font-size: $notification-message-font-size;
+    line-height: $notification-message-line-height;
+    cursor: pointer;
+    box-shadow: box-shadow(medium);
+}
+
+.uis-notification-icon,
+.uis-notification-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.uis-notification-icon {
+    margin-top: 2px;
+    margin-right: 12px;
+}
+
+.uis-notification-icon {
+    width: $notification-message-icon-width;
+    margin-right: $notification-message-icon-margin-right;
+}
+
+.uis-notification-icon + .uis-notification-content {
+    width: unquote('calc(100% - 50px)');
+}
+
+
+
+/* Close
+ * Adopts `uis-close`
+ ========================================================================== */
+
+.uis-notification-close {
+    display: none;
+    position: absolute;
+    font-size: 12px;
+    top: $notification-close-top;
+    right: $notification-close-right;
+}
+
+.uis-notification-message:hover .uis-notification-close {
+    display: block;
+}
+
+
+
+/* Style modifiers
+ ========================================================================== */
+
+.uis-notification-message-dark {
+    background-color: rgba(23, 23, 23, 0.8);
+    color: #FFFFFF;
+}
+
+@include create-modifiers(notification-message);

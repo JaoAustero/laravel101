@@ -1,0 +1,55 @@
+/*
+ * It create modifiers using `theme-colors` with selectors
+ * (hover, active, focus)
+ */
+
+@mixin button-d-modifiers-with-selectors() {
+    @each $modifier, $style in $theme-color {
+        @each $color in $style {
+            @if ($modifier != 'default') {
+                .uis-button-3d-#{$modifier} {
+                    position: relative;
+                    background-color: $color;
+                    color: color-yiq($color);
+                    box-shadow: inset -8px -8px 0px darken($color, 10%);
+                }
+
+                .uis-button-3d-#{$modifier}:before {
+                    box-shadow: 8px 8px 12px transparentize($color, 0.7);
+                }
+            }
+
+            @else {
+                .uis-button-3d-#{$modifier} {
+                    background-color: $color;
+                    color: color-yiq($color);
+                    box-shadow: inset -8px -8px 0px darken($color, 10%);
+                }
+
+                .uis-button-3d-#{$modifier}:before {
+                    box-shadow: 8px 8px 12px transparentize($color, 0.7);
+                }
+            }
+
+            /* Hover + Focus */
+            .uis-button-3d-#{$modifier}:hover,
+            .uis-button-3d-#{$modifier}:focus {
+                background-color: darken($color, 5%);
+                color: color-yiq($color);
+                box-shadow: inset -8px -8px 0px darken($color, 15%);
+            }
+
+            /* Onclick + Active */
+            .uis-button-3d-#{$modifier}:active,
+            .uis-button-3d-#{$modifier}.uis-active {
+                background-color: darken($color, 10%);
+                color: color-yiq($color);
+                box-shadow: inset -8px -8px 0px darken($color, 15%);
+            }
+
+            .uis-button-3d-#{$modifier}:hover:before {
+                box-shadow: 0px 0px 0px transparentize($color, 0.7);
+            }
+        }
+    }
+}

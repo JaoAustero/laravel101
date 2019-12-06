@@ -1,0 +1,37 @@
+.uis-wrapper {
+    position: relative;
+}
+
+.uis-wrapper:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 80vh;
+    width: 60vw;
+
+    background-color: #F2F6F9;
+    z-index: 1;
+}
+
+.uis-wrapper:after {
+    content: '';
+
+    position: absolute;
+    top: 100vh;
+    right: 0;
+
+    height: 30vh;
+    width: 10vw;
+
+    background-color: #ECF9F9;
+    z-index: 1;
+}
+
+main {
+    position: relative;
+
+    z-index: 3;
+}

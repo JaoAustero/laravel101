@@ -1,0 +1,83 @@
+// Name:            Badge
+//
+// Description:     Component to create notification badges
+//
+// Component:       `uis-badge`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$theme-gloomy-primary:                                      #758AFD !default;
+$theme-gloomy-secondary:                                    #AEB8FF !default;
+$theme-gloomy-base:                                         #F1F2F6 !default;
+
+$theme-soft-primary:                                        #5F7195 !default;
+$theme-soft-secondary:                                      #BABFD2 !default;
+$theme-soft-base:                                           #E8E9ED !default;
+
+$theme-night-primary:                                       #22343C !default;
+$theme-night-secondary:                                     #2DA4E9 !default;
+$theme-night-base:                                          #1B2A32 !default;
+
+/* ==================================================
+    Theme: Gloomy
+   ================================================== */
+
+.uis-theme-gloomy {
+    transition: all 0.15s ease-in-out;
+    background-color: $theme-gloomy-base !important;
+}
+
+.uis-theme-gloomy .uis-header {
+    transition: all 0.15s ease-in-out;
+    background-color: $theme-gloomy-primary !important;
+}
+
+
+/* ==================================================
+    Theme: Soft
+   ================================================== */
+
+.uis-theme-soft {
+    transition: all 0.15s ease-in-out;
+    background-color: $theme-soft-base !important;
+}
+
+.uis-theme-soft .uis-header {
+    transition: all 0.15s ease-in-out;
+    background-color: $theme-soft-primary !important;
+}
+
+
+/* ==================================================
+    Theme: Nght
+   ================================================== */
+
+.uis-theme-night {
+    transition: all 0.15s ease-in-out;
+    background-color: $theme-night-base !important;
+}
+
+.uis-theme-night .uis-header {
+    transition: all 0.15s ease-in-out;
+    background-color: $theme-night-primary !important;
+}
+
+.uis-theme-night p,
+.uis-theme-night h1,
+.uis-theme-night h2,
+.uis-theme-night h3,
+.uis-theme-night h4,
+.uis-theme-night h5,
+.uis-theme-night .uis-text-lead,
+.uis-theme-night .uis-form-label,
+.uis-theme-night label {
+    color: color(inverse) !important;
+}
+
+.uis-theme-night .uis-text-meta {
+    color: transparentize(color(inverse), 0.4) !important;
+}

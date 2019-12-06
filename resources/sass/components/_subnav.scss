@@ -1,0 +1,250 @@
+// Name:            Subnav
+// Description:     Components to create a sub-navigation
+//
+// Component:       `uis-subnav`
+//
+// Modifiers:       `uis-subnav-divider`
+//                  `uis-subnav-divider`
+//
+// States:          `uis-active`
+//                  `uis-first-column`
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+
+$subnav-margin-vertical:                         gutter(small) !default;
+$subnav-margin-horizontal:                       gutter(xsmall) !default;
+
+$subnav-item-color:                              transparentize(color(inverse), 0.4) !default;
+$subnav-item-hover-color:                        color(inverse) !default;
+$subnav-item-hover-text-decoration:              none !default;
+$subnav-item-active-color:                       color(inverse) !default;
+
+$subnav-divider-margin-horizontal:               $subnav-margin-horizontal !default;
+$subnav-divider-border-height:                   1.5em !default;
+$subnav-divider-border-width:                    border(border-width) !default;
+$subnav-divider-border:                          border(border-color) !default;
+
+$subnav-pill-item-padding-vertical:              margin(small) !default;
+$subnav-pill-item-padding-horizontal:            gutter(small) !default;
+$subnav-pill-item-background:                    transparent !default;
+$subnav-pill-item-color:                         $subnav-item-color !default;
+$subnav-pill-item-hover-background:              color(muted) !default;
+$subnav-pill-item-hover-color:                   color(default) !default;
+$subnav-pill-item-onclick-background:            $subnav-pill-item-hover-background !default;
+$subnav-pill-item-onclick-color:                 $subnav-pill-item-hover-color !default;
+$subnav-pill-item-active-background:             color(primary) !default;
+$subnav-pill-item-active-color:                  color(inverse) !default;
+
+$subnav-item-disabled-color:                     color(muted) !default;
+
+
+
+/* ==================================================
+    Component: Subnav
+   ================================================== */
+
+
+/*
+ * 1. Don't allow items to wrap into the next line
+ * 2. Reset list
+ */
+
+.uis-subnav {
+    display: flex;
+
+    /* 1 */
+    flex-wrap: flex;
+
+    /* 2 */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.uis-subnav-horizontal-scroll {
+    overflow-x: auto;
+}
+
+.uis-subnav-horizontal-scroll:-webkit-scrollbar {
+    display: none;
+}
+
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Create position context for dropdowns
+ */
+.uis-subnav > * {
+    /* 1 */
+    flex: none;
+
+    /* 2 */
+    position: relative;
+}
+
+
+/* Items
+ ========================================================================== */
+
+/*
+ * Items must target `a` elements to exclude other elements (e.g. dropdowns)
+ * Using `:first-child` instead of `a` to support `span` elements for text
+ * 1. Prevent gap if child element is `inline-block`, e.g. an icon
+ * 2. Style
+ */
+
+.uis-subnav > li {
+    height: control-height(large) + 10px;
+    min-width: 60px;
+    box-sizing: border-box;
+
+    padding: margin(small) gutter(small);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.uis-subnav > * > :first-child {
+    /* 1 */
+    display: block;
+
+    /* 2 */
+    color: $subnav-item-color;
+    font-weight: 500;
+}
+
+.uis-subnav > li > a {
+    transition: color 0.15s linear;
+}
+
+/* Hover + Focus */
+.uis-subnav > li > a:hover,
+.uis-subnav > li > a:focus {
+    color: $subnav-item-hover-color;
+    text-decoration: $subnav-item-hover-text-decoration;
+    outline: none;
+}
+
+.uis-subnav > li.uis-active {
+    background: linear-gradient(to bottom, transparent, transparentize(theme-color(primary), 0.6));
+}
+
+/* Active */
+.uis-subnav > .uis-active > a {
+    color: $subnav-item-active-color;
+}
+
+
+/* Divider modifier
+ ========================================================================== */
+
+/*
+ * 1. Align items and divider vertically
+ */
+
+.uis-subnav-divider > * {
+    /* 1 */
+    display: flex;
+    align-items: center;
+}
+
+/*
+ * Divider
+ * `nth-child` makes it also work without JS if it's only one row
+ */
+
+.uis-subnav-divider > :nth-child(n+2):not(.uis-first-column):before {
+    content: '';
+    height: $subnav-divider-border-height;
+    // margin-left: ($subnav-divider-margin-horizontal -
+    // $subnav-margin-horizontal);
+    margin-left: $subnav-divider-margin-horizontal;
+    margin-right: $subnav-divider-margin-horizontal;
+    border-left: $subnav-divider-border-width solid $subnav-divider-border;
+}
+
+
+/* Plain
+ ========================================================================== */
+
+.uis-subnav-default {
+    border-bottom: 1px solid #E5E5E5;
+}
+
+/*
+ * Items
+ */
+
+.uis-subnav-default > * > a {
+    padding: 0px 16px 12px;
+}
+
+.uis-subnav-default > .uis-active {
+    color: color(primary);
+    border-bottom: 1px solid color(primary);
+}
+
+
+.uis-subnav-default > *:hover > a {
+    color: color(primary);
+}
+
+/* Direction Modifier
+ ========================================================================== */
+.uis-subnav-column {
+    flex-direction: column;
+}
+
+
+/* Disabled
+ * The same for all style modifiers
+ ========================================================================== */
+
+.uis-subnav > .uis-disabled > a {
+    color: $subnav-item-disabled-color;
+}
+
+
+
+/* Default Full
+ ========================================================================== */
+
+.uis-subnav-default.uis-subnav-default-full {
+    border-bottom: 0px;
+}
+
+/*
+ * Items
+ */
+
+.uis-subnav-default.uis-subnav-default-full > * {
+    flex: 1;
+    position: relative;
+    margin-right: 24px;
+}
+
+.uis-subnav-default.uis-subnav-default-full > *:last-child {
+    margin-right: 0px;
+}
+
+.uis-subnav-default.uis-subnav-default-full > .uis-active {
+    color: color(primary);
+    border-bottom: 1px solid color(primary);
+}
+
+.uis-subnav-default.uis-subnav-default-full > :not(.uis-active) {
+    color: color(default);
+    border-bottom: 1px solid color(muted);
+}
+
+
+.uis-subnav-default.uis-subnav-default-full > *:hover > a {
+    color: color(primary);
+}
+
+.uis-subnav-default.uis-subnav-default-full > *:hover {
+    border-color: color(primary);
+}

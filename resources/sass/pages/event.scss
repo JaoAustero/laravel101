@@ -1,0 +1,201 @@
+// Name:            event
+// Description:     Style for event page
+//
+// Component:       `uis-event`
+//
+// Sub-objects:     `uis-event-container`
+//                  `uis-event-header`
+//                  `uis-event-qr-container`
+//                  `uis-event-qr-tooltip`
+//
+// Adopted:         `uis-event-button`
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+$event-header-height:                                   25vh !default;
+$event-padding-top:                                     margin(global) + 4px !default;
+
+
+$event-background:                                      color(secondary) !default;
+$event-background-image:                                url('../../assets/images/svg/background-pattern.svg') !default;
+
+$event-container-max-width:                             800px !default;
+$event-container-padding-horizontal:                    gutter(xsmall) !default;
+
+$event-qr-tooltip-min-height:                           80px !default;
+$event-qr-tooltip-padding-vertical:                     margin(small) - 2px !default;
+$event-qr-tooltip-padding-horizontal:                   margin(small) + 2px !default;
+$event-qr-tooltip-color:                                color(inverse) !default;
+$event-qr-tooltip-border-radius:                        border(border-radius) !default;
+$event-qr-tooltip-border-width:                         20px !default;
+
+$event-button-background:                               #F2F8FB !default;
+$event-button-background-hover:                         #D7EBF6 !default;
+$event-button-height:                                   control-height(large) + 45px !default;
+$event-button-width:                                    control-height(large) + 45px !default;
+$event-button-icon-font-size:                           1.2rem !default;
+
+/* ==================================================
+    Page: Event
+   ================================================== */
+
+/*
+ * 1. Set position
+ * 2. Set dimension
+ * 3. Make the content align on horizontal center
+ * 4. Add Gutter on top
+ * 5. Style
+ */
+.uis-event-header {
+    /* 1 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    /* 2 */
+    height: $event-header-height;
+    width: 100%;
+    box-sizing: border-box;
+
+    /* 3 */
+    text-align: center;
+
+    /* 4 */
+    padding-top: $event-padding-top;
+
+    /* 5 */
+    overflow: hidden;
+    background-color: $event-background;
+    background-image: $event-background-image;
+}
+
+
+
+/* Container
+   ================================================== */
+
+/*
+ * 1. Vertical center the content
+ * 2. Calculate and fill the horizontal with margin
+ * 3. Get the parent height
+ * 4. Set max width
+ * 5. Add spacing on side when mobile
+ */
+.uis-event-container {
+    /* 1 */
+    display: flex;
+    align-items: center;
+
+    /* 2 */
+    margin: 0 auto;
+
+    /* 3 */
+    height: 100%;
+
+    /* 4 */
+    max-width: $event-container-max-width;
+
+    /* 5 */
+    padding: 0 $event-container-padding-horizontal;
+}
+
+/* Table landscape and bigger */
+@include respond-to(medium) {
+    .uis-event-container {
+        padding: 0;
+    }
+}
+
+
+
+/* QR
+   ================================================== */
+
+.uis-event-qr-container {
+    position: relative;
+    text-align: center;
+}
+
+/*
+ * 1. Set position
+ * 2. Set dimension
+ * 3. Style
+ */
+.uis-event-qr-tooltip {
+    /* 1 */
+    position: relative;
+    margin: 0 auto;
+    top: 20px;
+
+    /* 2 */
+    height: auto;
+    min-width: $event-qr-tooltip-min-height;
+    width: fit-content;
+    box-sizing: border-box;
+
+    /* 3 */
+    padding: $event-qr-tooltip-padding-vertical $event-qr-tooltip-padding-horizontal;
+    background-color: $event-background;
+    color: $event-qr-tooltip-color;
+    border-radius: $event-qr-tooltip-border-radius;
+}
+
+/*
+ * Create triangle bottom as arrow head.
+ * 1. Set position (vertical center - width)
+ * 2. Make the dimension to 0
+ * 3. Make triangle
+ */
+.uis-event-qr-tooltip:before {
+    content: '';
+
+    /* 1 */
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% - 20px);
+    margin: 0 auto;
+
+    /* 2 */
+    height: 0;
+    width: 0;
+
+    /* 3 */
+    border-top: $event-qr-tooltip-border-width solid $event-background;
+    border-left: $event-qr-tooltip-border-width solid transparent;
+    border-right: $event-qr-tooltip-border-width solid transparent;
+}
+
+
+
+/* Button
+   Adopt: `uis-button`
+   ================================================== */
+
+.uis-event-button {
+    background-color: $event-button-background;
+    height: $event-button-height;
+    width: $event-button-width;
+    text-align: center;
+    line-height: normal;
+}
+
+.uis-event-button:hover {
+    background-color: $event-button-background-hover;
+}
+
+/*
+ * Center the content
+ */
+.uis-event-button > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.uis-event-button > .uis-event-button-icon {
+    font-size: $event-button-icon-font-size;
+}

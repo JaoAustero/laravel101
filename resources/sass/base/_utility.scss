@@ -1,0 +1,411 @@
+//  Name:            Utility
+//  Description:     Utilities collection
+//
+//  Component:      `uis-panel-`
+//                  `uis-clearfix`
+//                  `uis-float-*`
+//                  `uis-overflow-*`
+//                  `uis-resize-*`
+//                  `uis-display-*`
+//                  `uis-responsive-*`
+//                  `uis-preserve-width`
+//                  `uis-border-*`
+//                  `uis-box-shadow-*`
+//
+// States:          `uis-disabled`
+//                  `uis-drage`
+//                  `uis-dragover`
+//                  `uis-preserve`
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+
+$panel-scrollable-height:                        170px !default;
+$panel-scrollable-padding:                       10px !default;
+$panel-scrollable-border-width:                  border(border-width) !default;
+$panel-scrollable-border:                        border(border-color) !default;
+
+$border-rounded-border-radius:                   5px !default;
+
+$box-shadow-duration:                            0.1s !default;
+
+$box-shadow-bottom-height:                       30px !default;
+$box-shadow-bottom-border-radius:                100% !default;
+$box-shadow-bottom-background:                   #444444 !default;
+$box-shadow-bottom-blur:                         20px !default;
+
+$dropcap-margin-right:                           10px !default;
+$dropcap-font-size:                              ((font(line-height) * 3) * 1em) !default;
+
+$logo-font-size:                                 font-size(large) !default;
+$logo-font-family:                               font(font-family) !default;
+$logo-color:                                     color(default) !default;
+$logo-hover-color:                               color(default) !default;
+
+$dragover-box-shadow:                            0 0 20px rgba(100, 100, 100, 0.3) !default;
+
+
+
+/* ========================================================================
+   Component: Utility
+ ========================================================================== */
+
+/* Panel
+ ========================================================================== */
+
+.uis-panel {
+    position: relative;
+    box-sizing: border-box;
+    background-color: #F9F9F9;
+}
+
+/*
+ * Micro clearfix
+ */
+
+.uis-panel {
+    @include clearfix;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-panel > :last-child {
+    margin-bottom: 0;
+}
+
+/*
+ *
+ */
+
+.uis-panel-scrollable {
+    height: $panel-scrollable-height;
+    padding: $panel-scrollable-padding;
+    border: $panel-scrollable-border-width solid $panel-scrollable-border;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    resize: both;
+}
+
+
+
+/* Cleafix
+ ========================================================================== */
+
+/*
+ * 1. `table-cell` is used with `::before` because `table` creates a
+ *    1px gap when it becomse a flex item, only in Webkit
+ *    `table` is used again with `::after` because `clear` only works with
+ *     block elements.
+ * Note: `display: block` with `overflow: hidden` is currently not working in
+ *       the latest Safari
+ */
+
+.uis-clearfix {
+    @include clearfix;
+}
+
+
+
+/* Float
+ ========================================================================== */
+
+/*
+ * 1. Prevent content overflow
+ */
+
+.uis-float-left {
+    float: left;
+}
+
+.uis-float-right {
+    float: right;
+}
+
+/* 1 */
+[class*='uis-float-'] {
+    max-width: 100%;
+}
+
+
+
+/* Overflow
+ ========================================================================== */
+
+.uis-overflow-hidden {
+    overflow: hidden;
+}
+
+/*
+ * Enable scrollbars  if content is clipped
+ * Note: firefox ignores `padding-bottom` for the scrollable
+ *       overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
+ */
+
+.uis-overflow-auto {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.uis-overflow-auto > :last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* Resize
+ ========================================================================== */
+
+.uis-resize {
+    resize: both;
+}
+
+.uis-resize-vertical {
+    resize: vertical;
+}
+
+
+
+/* Display
+ ========================================================================== */
+
+.uis-display-block {
+    display: block !important;
+}
+
+.uis-display-inline {
+    display: inline !important;
+}
+
+.uis-display-inline-block {
+    display: inline-block !important;
+}
+
+.uis-display-none {
+    display: none;
+}
+
+
+
+/* Inline
+ ========================================================================== */
+
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Behave like most inline-block elements
+ * 5. Clip child elements
+ */
+
+[class*='uis-inline'] {
+    /* 1 */
+    display: inline-block;
+
+    /* 2 */
+    position: relative;
+
+    /* 3 */
+    max-width: 100%;
+
+    /* 4 */
+    vertical-align: middle;
+}
+
+.uis-inline-clip {
+    /* 5 */
+    overflow: hidden;
+}
+
+
+
+/* Responsive objects
+ ========================================================================== */
+
+/*
+ * Preserve original dimensions
+ * Because `img`, `video`, `canvas` and `audio` are already responsive
+ * by default, see the Reboot component
+ */
+
+.uis-preserve-width,
+.uis-preserve-width audio,
+.uis-preserve-width canvas,
+.uis-preserve-width img,
+.uis-preserve-width svg,
+.uis-preserve-width video {
+    max-width: none;
+}
+
+/*
+ * Responsiveness
+ * Corrects `max-width` and `max-height` behavior if padding and border are used
+ */
+
+.uis-responsive-width,
+.uis-responsive-height {
+    box-sizing: border-box;
+}
+
+/*
+ * 1. Set a maximum width `important` needed to override
+      `uis-preserve-width img`
+ * 2. Auto scale the height. Only needed if `height` attribute is present
+ */
+
+.uis-responsive-width {
+    /* 1 */
+    max-width: 100% !important;
+
+    /* 2 */
+    height: auto;
+}
+
+
+
+/* Border
+ ========================================================================== */
+
+.uis-border-circle {
+    border-radius: 50%;
+}
+
+.uis-border-pill {
+    border-radius: 500px;
+}
+
+.uis-border-rounded {
+    border-radius: $border-rounded-border-radius;
+}
+
+
+
+/* Box-shadow
+ ========================================================================== */
+
+.uis-box-shadow-small {
+    box-shadow: box-shadow(small);
+}
+
+.uis-box-shadow-medium {
+    box-shadow: box-shadow(medium);
+}
+
+.uis-box-shadow-large {
+    box-shadow: box-shadow(large);
+}
+
+.uis-box-shadow-xlarge {
+    box-shadow: box-shadow(xlarge);
+}
+
+/*
+ * Hover
+ */
+
+[class*='uis-box-shadow-hover'] {
+    transition: box-shadow $box-shadow-duration ease-in-out;
+}
+
+.uis-box-shadow-hover-small:hover {
+    box-shadow: box-shadow(small);
+}
+
+.uis-box-shadow-hover-medium:hover {
+    box-shadow: box-shadow(medium);
+}
+
+.uis-box-shadow-hover-large:hover {
+    box-shadow: box-shadow(large);
+}
+
+.uis-box-shadow-hover-xlarge:hover {
+    box-shadow: box-shadow(xlarge);
+}
+
+
+
+/* Disabled State
+ ========================================================================== */
+
+.uis-disabled {
+    pointer-events: none;
+}
+
+
+
+/* Drag State
+ ========================================================================== */
+
+.uis-drag,
+/* 1 */
+.uis-drag * {
+    cursor: move;
+}
+
+/* 2 */
+.uis-drag iframe {
+    pointer-events: none;
+}
+
+
+
+/* Dragover State
+ ========================================================================== */
+
+/*
+ * Create a box-shadow when dragging a file over the upload area
+ */
+
+.uis-dragover {
+    box-shadow: $dragover-box-shadow;
+}
+
+
+
+/* Point State
+ ========================================================================== */
+
+.uis-point,
+.uis-point * {
+    cursor: pointer;
+}
+
+
+/* Pointover State
+ ========================================================================== */
+
+/*
+ * Create a box-shadow when pointing a file over the upload area
+ */
+
+.uis-pointover {
+    box-shadow: $dragover-box-shadow;
+}
+
+
+
+/* Text Overflow
+ ========================================================================== */
+
+//  for 3 only
+.uis-text-ellipsis {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.5em;
+    max-height: 4em;
+    text-align: left;
+}
+
+
+
+/* Offset
+ ========================================================================== */
+
+.uis-offset-top {
+    position: relative;
+    top: -3vh;
+}

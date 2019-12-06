@@ -1,0 +1,9293 @@
+/**
+ * Table of contents
+ *
+ * BASE
+ * _animation...............Holds all animation similar to `animate.css`
+ * _cover...................Works with iframes and embedded content to make
+ *                          it cover
+ * _flex....................Utilities for Flexbox
+ * _margin..................Collections of margin classes and sizes
+ * _padding.................Collections of padding classes and size
+ * _position................Utilities to position content
+ * _reboot..................Restart the default style of browsers
+ * _utility.................Collections of utilities
+ * _visibility..............Utilties to show or hide content on breakpoints,
+ *                          hover or touch
+ *
+ * COMPONENTS
+ * _messages................Colored messages block, callout or emphasize
+ * _modal...................Pop-up dialogs, that overlay on the page
+ * _nav.....................Collection of links
+ * _navbar..................A responsive horizontal navbar
+ * _subnav..................Horizontal navigation with different styles
+ * _toast...................Pop-up notification to alert users
+ *
+ * ELEMENTS
+ * _badge...................Display a number as notifications
+ * _button..................Classic button with different color, sizes
+ *                          and states
+ * _card....................Container with gutter and other differnt style
+ * _close...................Versatile delete/close cross
+ * _container...............Center your content horizontally
+ * _form....................Collection of user inputs
+ * _link....................Link with different style
+ * _list....................List with different modifiers
+ * _overlay.................Image overlay with different modifiers
+ * _table...................Display collection of data grouped into rows
+ * _text....................Depth for the page with different modifiers for
+ *                          title and paragraphs
+ *
+ * GRID
+ * _column..................Display content in multiple text columns
+ * _grid....................Create full-reponsive, fluid and nestable grid
+ *                          layout
+ * _width...................Define width of elements of different viewport size
+ *
+ * HELPERS
+ * _functions...............Collection of reusable helper methods
+ * _mixins..................Collections of creating different modifiers and
+ *                          grid system
+ * _variables...............Globally-available variables that will use of
+ *                          all elements and components
+ *
+ * LAYOUTS
+ * _header..................A showcasing hero text
+ * _main....................Collection of different sections of the page
+ * _wrapper.................A basic container of the page
+ * _section.................Container to divider your page
+ * _footer..................Contains information or list of navigations
+ *
+ * PAGES
+ * _auth....................A default page for application
+ *
+ * THEMES
+ * _gloomy..................Feminine and light colors
+ * _soft....................Light and pastel colors
+ * _night...................Night or dark colors
+ *
+ * APP......................A collection of all `scss` files
+ */
+
+/* Helpers and mixins
+   ================================================== */
+
+/* Breakpoint
+   ================================================== */
+
+/* Typography
+   ================================================== */
+
+/* Color
+   ================================================== */
+
+/* Color Yiq
+   ================================================== */
+
+/* Border Radius
+   ================================================== */
+
+/* Box Shadow
+   ================================================== */
+
+/* Spacing
+   ================================================== */
+
+/* Control height
+   ================================================== */
+
+/* layer
+   ================================================== */
+
+/*
+ * It create modifiers using `theme-colors`
+ */
+
+/*
+ * It create modifiers using `theme-colors` with selectors
+ * (hover, active, focus)
+ */
+
+/*
+ * It create text color modifiers using `text-colors`
+ */
+
+/*
+ * It create Outline modifiers using `theme-colors` with selectors
+ * (hover, active, focus)
+ */
+
+/*
+ * Mediq Queries
+ * for responsive design.
+ */
+
+/*
+ * Mediq Queries Portrait
+ * for responsive design.
+ */
+
+/*
+ * Clearfix
+ * To allow a container wraps it's floated and absolute children.
+ */
+
+/*
+ * create equal widths with breakpoints
+ */
+
+/*
+ * Create a single width with breakpoints
+ */
+
+/* Create pixel based widths */
+
+/*
+ * Create column width modifiers
+ */
+
+/*
+ * Create flex alignment utilities
+ */
+
+/*
+ * It create modifiers using `theme-colors` with selectors
+ * (hover, active, focus)
+ */
+
+/* Base
+   ================================================== */
+
+/* ==================================================
+  Component: Animation
+ ================================================== */
+
+/*
+ * Animation fill mode from `both` to `none`
+ * It causes bug in transform and z-index
+ */
+
+.uis-animate {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+}
+
+.uis-animate-infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+/* Style modifiers
+================================================== */
+
+/*
+* Animation Delay
+*/
+
+.uis-animate-delay-500ms {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.uis-animate-delay-1s {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.uis-animate-delay-2s {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.uis-animate-delay-3s {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.uis-animate-delay-4s {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.uis-animate-delay-5s {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+/*
+* Animation Duration
+*/
+
+.uis-animate-duration-slower {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.uis-animate-duration-slow {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.uis-animate-duration-fast {
+  -webkit-animation-duration: 800ms;
+          animation-duration: 800ms;
+}
+
+.uis-animate-duration-faster {
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+}
+
+/* Fade
+================================================== */
+
+/* Fade In */
+
+.uis-animate-fade-in {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade Out */
+
+.uis-animate-fade-out {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* Rotate
+================================================== */
+
+.uis-animate-rotate {
+  -webkit-animation-name: rotating;
+          animation-name: rotating;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/* Slide
+================================================== */
+
+/* Slide In Down */
+
+.uis-animate-slide-in-down {
+  -webkit-animation-name: slideInDown;
+          animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Slide In Down */
+
+.uis-animate-slide-in-up {
+  -webkit-animation-name: slideInUp;
+          animation-name: slideInUp;
+}
+
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Slide In Down */
+
+.uis-animate-slide-in-left {
+  -webkit-animation-name: slideInLeft;
+          animation-name: slideInLeft;
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Slide Out Up */
+
+.uis-animate-slide-out-up {
+  -webkit-animation-name: slideOutUp;
+          animation-name: slideOutUp;
+}
+
+@-webkit-keyframes slideOutUp {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+}
+
+/* ==================================================
+    Component: Cover
+   ================================================== */
+
+/*
+ * Works with iframes and embedded content
+ * 1. Reset responsiveness for embedded content
+ * 2. Center object
+ * Note: Percent values on the `top` property only works if this element
+ *       is absolute positioned or if the container has a height
+ */
+
+.uis-cover {
+  /* 1 */
+  max-width: none;
+  /* 2 */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+iframe.uis-cover {
+  pointer-events: none;
+}
+
+/* Cover container
+   ================================================== */
+
+.uis-cover-container {
+  /* 1 */
+  overflow: hidden;
+  /* 2 */
+  position: relative;
+}
+
+/* ========================================================================
+   Component: Flex
+ ========================================================================== */
+
+.uis-flex {
+  display: -webkit-box;
+  display: flex;
+}
+
+.uis-flex-inline {
+  display: -webkit-inline-box;
+  display: inline-flex;
+}
+
+/*
+ * Remove pseudo elements created by micro clearfix as precautions
+ */
+
+.uis-flex:before,
+.uis-flex:after,
+.uis-flex-inline:before,
+.uis-flex-inline:after {
+  display: none;
+}
+
+/* Alignment
+ ========================================================================== */
+
+/*
+ * Align items along the main axis of the current line of the flex container.
+ * Row: Horizontal
+ */
+
+.uis-flex-left {
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+}
+
+.uis-flex-center {
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.uis-flex-right {
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
+.uis-flex-between {
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.uis-flex-around {
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 640px) {
+  .uis-flex-left\@s {
+    -webkit-box-pack: start;
+            justify-content: flex-start;
+  }
+
+  .uis-flex-center\@s {
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+
+  .uis-flex-right\@s {
+    -webkit-box-pack: end;
+            justify-content: flex-end;
+  }
+
+  .uis-flex-between\@s {
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+  }
+
+  .uis-flex-around\@s {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .uis-flex-left\@m {
+    -webkit-box-pack: start;
+            justify-content: flex-start;
+  }
+
+  .uis-flex-center\@m {
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+
+  .uis-flex-right\@m {
+    -webkit-box-pack: end;
+            justify-content: flex-end;
+  }
+
+  .uis-flex-between\@m {
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+  }
+
+  .uis-flex-around\@m {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .uis-flex-left\@l {
+    -webkit-box-pack: start;
+            justify-content: flex-start;
+  }
+
+  .uis-flex-center\@l {
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+
+  .uis-flex-right\@l {
+    -webkit-box-pack: end;
+            justify-content: flex-end;
+  }
+
+  .uis-flex-between\@l {
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+  }
+
+  .uis-flex-around\@l {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .uis-flex-left\@xl {
+    -webkit-box-pack: start;
+            justify-content: flex-start;
+  }
+
+  .uis-flex-center\@xl {
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+
+  .uis-flex-right\@xl {
+    -webkit-box-pack: end;
+            justify-content: flex-end;
+  }
+
+  .uis-flex-between\@xl {
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+  }
+
+  .uis-flex-around\@xl {
+    justify-content: space-around;
+  }
+}
+
+/*
+ * Align items in the cross of the current line of the flex container
+ * Row: Vertical
+ */
+
+.uis-flex-stretch {
+  -webkit-box-align: stretch;
+          align-items: stretch;
+}
+
+.uis-flex-top {
+  -webkit-box-align: start;
+          align-items: flex-start;
+}
+
+.uis-flex-middle {
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.uis-flex-bottom {
+  -webkit-box-align: end;
+          align-items: flex-end;
+}
+
+/* Direction
+ ========================================================================== */
+
+.uis-flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+.uis-flex-row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+          flex-direction: row-reverse;
+}
+
+.uis-flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.uis-flex-column-reverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+          flex-direction: column-reverse;
+}
+
+/* Wrap
+ ========================================================================== */
+
+.uis-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.uis-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.uis-flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.uis-flex-wrap-stretch {
+  align-content: stretch;
+}
+
+.uis-flex-wrap-top {
+  align-content: flex-start;
+}
+
+.uis-flex-wrap-middle {
+  align-content: center;
+}
+
+.uis-flex-wrap-bottom {
+  align-content: flex-end;
+}
+
+.uis-flex-wrap-between {
+  align-content: space-between;
+}
+
+.uis-flex-wrap-around {
+  align-content: space-around;
+}
+
+/* Item Ordering
+ ========================================================================== */
+
+.uis-flex-first {
+  -webkit-box-ordinal-group: 0;
+          order: -1;
+}
+
+.uis-flex-last {
+  -webkit-box-ordinal-group: 100;
+          order: 99;
+}
+
+@media screen and (min-width: 640px) {
+  .uis-flex-first\@s {
+    -webkit-box-ordinal-group: 0;
+            order: -1;
+  }
+
+  .uis-flex-last\@s {
+    -webkit-box-ordinal-group: 100;
+            order: 99;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .uis-flex-first\@m {
+    -webkit-box-ordinal-group: 0;
+            order: -1;
+  }
+
+  .uis-flex-last\@m {
+    -webkit-box-ordinal-group: 100;
+            order: 99;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .uis-flex-first\@l {
+    -webkit-box-ordinal-group: 0;
+            order: -1;
+  }
+
+  .uis-flex-last\@l {
+    -webkit-box-ordinal-group: 100;
+            order: 99;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .uis-flex-first\@xl {
+    -webkit-box-ordinal-group: 0;
+            order: -1;
+  }
+
+  .uis-flex-last\@xl {
+    -webkit-box-ordinal-group: 100;
+            order: 99;
+  }
+}
+
+/* Item Dimensions
+ ========================================================================== */
+
+/*
+ * Initial: 0 1 auto
+ * Content dimensions, but shrinks
+ */
+
+/*
+ * No flex: 0 0 auto
+ * Content dimensions
+ */
+
+.uis-flex-none {
+  -webkit-box-flex: 0;
+          flex: none;
+}
+
+/*
+ * Relative flex 1 1 auto
+ * Space is allocated considering content
+ */
+
+.uis-flex-auto {
+  -webkit-box-flex: 1;
+          flex: auto;
+}
+
+/*
+ * Absolute Flex: 1 1 0%
+ * Space is allocated solely based on flex
+ */
+
+.uis-flex-1 {
+  -webkit-box-flex: 1;
+          flex: 1;
+}
+
+/* ==================================================
+    Component: Margin
+   ================================================== */
+
+/*
+ * Default
+ */
+
+.uis-margin {
+  margin-bottom: 20px !important;
+}
+
+* + .uis-margin {
+  margin-top: 20px !important;
+}
+
+.uis-margin-top {
+  margin-top: 20px !important;
+}
+
+.uis-margin-bottom {
+  margin-bottom: 20px !important;
+}
+
+.uis-margin-left {
+  margin-left: 20px !important;
+}
+
+.uis-margin-right {
+  margin-right: 20px !important;
+}
+
+/*
+ * Extra Small
+ */
+
+.uis-margin-xsmall {
+  margin-bottom: 5px !important;
+}
+
+* + .uis-margin-xsmall {
+  margin-top: 5px !important;
+}
+
+.uis-margin-xsmall-top {
+  margin-top: 5px !important;
+}
+
+.uis-margin-xsmall-bottom {
+  margin-bottom: 5px !important;
+}
+
+.uis-margin-xsmall-left {
+  margin-left: 5px !important;
+}
+
+.uis-margin-xsmall-right {
+  margin-right: 5px !important;
+}
+
+/*
+ * Small
+ */
+
+.uis-margin-small {
+  margin-bottom: 10px !important;
+}
+
+* + .uis-margin-small {
+  margin-top: 10px !important;
+}
+
+.uis-margin-small-top {
+  margin-top: 10px !important;
+}
+
+.uis-margin-small-bottom {
+  margin-bottom: 10px !important;
+}
+
+.uis-margin-small-left {
+  margin-left: 10px !important;
+}
+
+.uis-margin-small-right {
+  margin-right: 10px !important;
+}
+
+/*
+ * Medium
+ */
+
+.uis-margin-medium {
+  margin-bottom: 40px !important;
+}
+
+* + .uis-margin-medium {
+  margin-top: 40px !important;
+}
+
+.uis-margin-medium-top {
+  margin-top: 40px !important;
+}
+
+.uis-margin-medium-bottom {
+  margin-bottom: 40px !important;
+}
+
+.uis-margin-medium-left {
+  margin-left: 40px !important;
+}
+
+.uis-margin-medium-right {
+  margin-right: 40px !important;
+}
+
+/*
+ * Large
+ */
+
+.uis-margin-large {
+  margin-bottom: 40px !important;
+}
+
+* + .uis-margin-large {
+  margin-top: 40px !important;
+}
+
+.uis-margin-large-top {
+  margin-top: 40px !important;
+}
+
+.uis-margin-large-bottom {
+  margin-bottom: 40px !important;
+}
+
+.uis-margin-large-left {
+  margin-left: 40px !important;
+}
+
+.uis-margin-large-right {
+  margin-right: 40px !important;
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-margin-large {
+    margin-bottom: 70px !important;
+  }
+
+  * + .uis-margin-large {
+    margin-top: 70px !important;
+  }
+
+  .uis-margin-large-top {
+    margin-top: 70px !important;
+  }
+
+  .uis-margin-large-bottom {
+    margin-bottom: 70px !important;
+  }
+
+  .uis-margin-large-left {
+    margin-left: 70px !important;
+  }
+
+  .uis-margin-large-right {
+    margin-right: 70px !important;
+  }
+}
+
+/*
+ * Large
+ */
+
+.uis-margin-xlarge {
+  margin-bottom: 70px !important;
+}
+
+* + .uis-margin-xlarge {
+  margin-top: 70px !important;
+}
+
+.uis-margin-xlarge-top {
+  margin-top: 70px !important;
+}
+
+.uis-margin-xlarge-bottom {
+  margin-bottom: 70px !important;
+}
+
+.uis-margin-xlarge-left {
+  margin-left: 70px !important;
+}
+
+.uis-margin-xlarge-right {
+  margin-right: 70px !important;
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-margin-xlarge {
+    margin-bottom: 140px !important;
+  }
+
+  * + .uis-margin-xlarge {
+    margin-top: 140px !important;
+  }
+
+  .uis-margin-xlarge-top {
+    margin-top: 140px !important;
+  }
+
+  .uis-margin-xlarge-bottom {
+    margin-bottom: 140px !important;
+  }
+
+  .uis-margin-xlarge-left {
+    margin-left: 140px !important;
+  }
+
+  .uis-margin-xlarge-right {
+    margin-right: 140px !important;
+  }
+}
+
+/* Remove Margin
+   ================================================== */
+
+.uis-margin-remove {
+  margin: 0 !important;
+}
+
+.uis-margin-remove-top {
+  margin-top: 0 !important;
+}
+
+.uis-margin-remove-bottom {
+  margin-bottom: 0 !important;
+}
+
+.uis-margin-remove-left {
+  margin-left: 0 !important;
+}
+
+.uis-margin-remove-right {
+  margin-right: 0 !important;
+}
+
+.uis-margin-remove-vertical {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.uis-margin-remove-adjacent + * {
+  margin-top: !important;
+}
+
+/* Auto Margin
+   ================================================== */
+
+.uis-margin-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.uis-margin-auto-top {
+  margin-top: auto !important;
+}
+
+.uis-margin-auto-bottom {
+  margin-bottom: auto !important;
+}
+
+.uis-margin-auto-left {
+  margin-left: auto !important;
+}
+
+.uis-margin-auto-right {
+  margin-right: auto !important;
+}
+
+.uis-margin-auto-vertical {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+/* ==================================================
+    Component: Padding
+   ================================================== */
+
+.uis-padding {
+  padding: 30px !important;
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-padding {
+    padding: 40px !important;
+  }
+}
+
+/* Small
+   ================================================== */
+
+.uis-padding-small {
+  padding: 15px !important;
+}
+
+/* Large
+   ================================================== */
+
+.uis-padding-large {
+  padding: 30px !important;
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-padding-large {
+    padding: 70px !important;
+  }
+}
+
+/* Remove
+   ================================================== */
+
+.uis-padding-remove {
+  padding: 0 !important;
+}
+
+.uis-padding-remove-top {
+  padding-top: 0 !important;
+}
+
+.uis-padding-remove-bottom {
+  padding-bottom: 0 !important;
+}
+
+.uis-padding-remove-left {
+  padding-left: 0 !important;
+}
+
+.uis-padding-remove-right {
+  padding-right: 0 !important;
+}
+
+.uis-padding-remove-vertical {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.uis-padding-remove-horizontal {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ========================================================================
+   Component: Position
+ ========================================================================== */
+
+/* Directions
+ ========================================================================== */
+
+[class*=uis-position-top],
+[class*=uis-position-bottom],
+[class*=uis-position-left],
+[class*=uis-position-right],
+[class*=uis-position-center] {
+  position: absolute !important;
+}
+
+/* Edges
+ ========================================================================== */
+
+/* Don't use `width: 100%` because it is wrong if the parent has padding. */
+
+.uis-position-top {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.uis-position-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.uis-position-left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.uis-position-right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Corners
+ ========================================================================== */
+
+.uis-position-top-left {
+  top: 0;
+  left: 0;
+}
+
+.uis-position-top-right {
+  top: 0;
+  right: 0;
+}
+
+.uis-position-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.uis-position-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+/*
+ * Center
+ * 1. Fix text wrapping if content is larger than 50% of the
+ *    container (Not working in Firefox)
+ * 2. Fix text wrapping for Firefox
+ */
+
+.uis-position-center {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* 1 */
+  display: table;
+  /* 2 */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Vertical */
+
+[class*=uis-position-center-left],
+[class*=uis-position-center-right] {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.uis-position-center-left {
+  left: 0;
+}
+
+.uis-position-center-right {
+  right: 0;
+}
+
+.uis-position-center-left-out {
+  right: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.uis-position-center-right-out {
+  left: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+/* Horizontal */
+
+.uis-position-top-center,
+.uis-position-bottom-center {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  /* 1 */
+  display: table;
+  /* 2 */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.uis-position-top-center {
+  top: 0;
+}
+
+.uis-position-bottom-center {
+  bottom: 0;
+}
+
+/* Cover
+ ========================================================================== */
+
+.uis-position-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Utility
+ ========================================================================== */
+
+.uis-position-relative {
+  position: relative !important;
+}
+
+.uis-position-absolute {
+  position: absolute !important;
+}
+
+.uis-position-fixed {
+  position: fixed !important;
+}
+
+.uis-position-z-index {
+  z-index: 1;
+}
+
+/* Margin modifier
+ ========================================================================== */
+
+/*
+ * Small
+ */
+
+.uis-position-small {
+  margin: 30px;
+}
+
+.uis-position-small.uis-position-center {
+  -webkit-transform: translate(-50%, -50%) translate(-30px, -30px);
+          transform: translate(-50%, -50%) translate(-30px, -30px);
+}
+
+.uis-position-small[class*=uis-position-center-left],
+.uis-position-small[class*=uis-position-center-right] {
+  -webkit-transform: translateY(-50%) translateY(-30px);
+          transform: translateY(-50%) translateY(-30px);
+}
+
+.uis-position-small.uis-position-top-center,
+.uis-position-small.uis-position-bottom-center {
+  -webkit-transform: translateX(-50%) translateX(-30px);
+          transform: translateX(-50%) translateX(-30px);
+}
+
+/*
+ * Medium
+ */
+
+.uis-position-medium {
+  margin: 40px;
+}
+
+.uis-position-medium.uis-position-center {
+  -webkit-transform: translate(-50%, -50%) translate(-40px, -40px);
+          transform: translate(-50%, -50%) translate(-40px, -40px);
+}
+
+.uis-position-medium[class*=uis-position-center-left],
+.uis-position-medium[class*=uis-position-center-right] {
+  -webkit-transform: translateY(-50%) translateY(-40px);
+          transform: translateY(-50%) translateY(-40px);
+}
+
+.uis-position-medium.uis-position-top-center,
+.uis-position-medium.uis-position-bottom-center {
+  -webkit-transform: translateX(-50%) translateX(-40px);
+          transform: translateX(-50%) translateX(-40px);
+}
+
+/*
+ * Large
+ */
+
+.uis-position-large {
+  margin: 30px;
+}
+
+.uis-position-large.uis-position-center {
+  -webkit-transform: translate(-50%, -50%) translate(-30px, -30px);
+          transform: translate(-50%, -50%) translate(-30px, -30px);
+}
+
+.uis-position-large[class*=uis-position-center-left],
+.uis-position-large[class*=uis-position-center-right] {
+  -webkit-transform: translateY(-50%) translateY(-30px);
+          transform: translateY(-50%) translateY(-30px);
+}
+
+.uis-position-large.uis-position-top-center,
+.uis-position-large.uis-position-bottom-center {
+  -webkit-transform: translateX(-50%) translateX(-30px);
+          transform: translateX(-50%) translateX(-30px);
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-position-large {
+    margin: 50px;
+  }
+
+  .uis-position-large.uis-position-center {
+    -webkit-transform: translate(-50%, -50%) translate(-50px, -50px);
+            transform: translate(-50%, -50%) translate(-50px, -50px);
+  }
+
+  .uis-position-large[class*=uis-position-center-left],
+  .uis-position-large[class*=uis-position-center-right] {
+    -webkit-transform: translateY(-50%) translateY(-50px);
+            transform: translateY(-50%) translateY(-50px);
+  }
+
+  .uis-position-large.uis-position-top-center,
+  .uis-position-large.uis-position-bottom-center {
+    -webkit-transform: translateX(-50%) translateX(-50px);
+            transform: translateX(-50%) translateX(-50px);
+  }
+}
+
+/* ==================================================
+    Component: Reboot
+   ================================================== */
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  src: url(/fonts/Poppins-Regular.ttf?41e8dead03fb979ecc23b8dfb0fef627);
+}
+
+/*
+ * 1. Set `font-size` to support `rem` units
+ *    Not using `font` property because a leading hypen (e.g. -apple-system)
+ *    causes the font to break in IE11 and Edge
+ * 2. Style
+ */
+
+html {
+  /* 1 */
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  /* 2 */
+  background: #FFFFFF;
+  color: #454545;
+  scroll-behavior: smooth;
+}
+
+/*
+ * Remove the margin in all browsers
+ */
+
+body {
+  margin: 0;
+}
+
+/* Scrollbar
+   ================================================== */
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #E5E5E5;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background-color: #5C5C5C;
+  border-radius: 100px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #454545;
+}
+
+/* Links
+   ================================================== */
+
+/*
+ * Remove the outline on focused links when they are also active or hovered
+ */
+
+a:active,
+a:hover {
+  outline: none;
+}
+
+/*
+ * Style
+ */
+
+a,
+.uis-link {
+  color: #0D70D3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover,
+.uis-link:hover {
+  color: #0c63bb;
+  text-decoration: underline;
+}
+
+/* Text-level semantics
+   ================================================== */
+
+/*
+ * 1. Remove the bottom border in Chrome 57-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  /* 1 */
+  border-bottom: none;
+  /* 2 */
+  text-decoration: underline;
+}
+
+/*
+ * Add the correct font weight in chrome, edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+ * 1. Consolas
+ *
+ *
+ */
+
+:not(pre) > code,
+:not(pre) > kbd,
+:not(pre) > samp {
+  /* 1 */
+  font-family: Open Sans;
+  /* 2 */
+  font-size: 0.875rem;
+  /* 3 */
+  color: #E32626;
+  white-space: nowrap;
+}
+
+/*
+ * Emphasize
+ */
+
+em {
+  color: #E32626;
+}
+
+/*
+ * Insert
+ */
+
+ins {
+  background: #FFFFDD;
+  color: #454545;
+  text-decoration: none;
+}
+
+/*
+ * Mark
+ */
+
+mark {
+  background: rgba(109, 55, 218, 0.1);
+  color: #2591D0;
+}
+
+/*
+ * Quote
+ */
+
+q {
+  font-style: italic;
+}
+
+/*
+ * Add the correct font size in all browsers
+ */
+
+small {
+  font-size: 80%;
+}
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: 0.25em;
+}
+
+/* Embedded content
+   ================================================== */
+
+/*
+ * Remove the gap between embedded content and the bottom of their contents.
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Responsiveness
+ * 1. Set a maximum width
+ * 2. Auto scale the height. Only needed if `height`attribute is present
+ * 3. Corrects `max-width` behavior if padding and border are used
+ */
+
+audio,
+canvas,
+img,
+video {
+  /* 1 */
+  max-width: 100%;
+  /* 2 */
+  height: auto;
+  /* 3 */
+  box-sizing: border-box;
+}
+
+/*
+ * Hide overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/*
+ * Hide `allt` for lazy load images
+ * Selector for background while loading img[data-src*='.jpg'
+ * [src*='data:image']  { background: grey; }
+ */
+
+img:not([src]) {
+  visibility: hidden;
+}
+
+/* Block elements
+   ================================================== */
+
+/*
+ * Margins
+ */
+
+p,
+ul,
+ol,
+dl,
+pre,
+address,
+fieldset,
+figure {
+  margin: 0 0 10px 0;
+}
+
+/* Add margin if adjacent element */
+
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + pre,
+* + address,
+* + fieldset,
+* + figure {
+  margin-top: 10px;
+}
+
+/* Headings
+   ================================================== */
+
+* + h1,
+* + .uis-h1,
+* + h2,
+* + .uis-h2,
+* + h3,
+* + .uis-h3,
+* + h4,
+* + .uis-h4,
+* + h5,
+* + .uis-h5,
+* + h6,
+* + .uis-h6 {
+  margin-top: 20px;
+}
+
+/*
+ * Sizes
+ */
+
+h1,
+.uis-h1 {
+  font-size: 2.23125rem;
+  line-height: 1.2;
+}
+
+h2,
+.uis-h2 {
+  font-size: 1.7rem;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+h3,
+.uis-h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+h4,
+.uis-h4 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+h5,
+.uis-h5 {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+h6,
+.uis-h6 {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Tablet landscape and bigger */
+
+@media (min-width: 960px) {
+  h1,
+  .uis-h1 {
+    font-size: 2.625rem;
+  }
+
+  h2,
+  .uis-h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Lists
+   ================================================== */
+
+ul,
+ol {
+  padding-left: 30px;
+}
+
+/*
+ *  Reset margin for nested lists
+ */
+
+ul > li > ul,
+ul > li > ol,
+ol > li > ol,
+ol > li > ul {
+  margin-top: 0;
+}
+
+/* Description lists
+   ================================================== */
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin-left: 0;
+}
+
+/* Horizontal rules
+   ================================================== */
+
+/*
+ * 1. Add the correct box sizing and height in firefox.
+ * 2. Show the overflow in Edge and IE
+ * 3. Add the correct text-align in Edge and IE
+ * 4. Styles
+ */
+
+hr,
+.uis-hr {
+  /* 1 */
+  box-sizing: content-box;
+  height: 0;
+  /* 2 */
+  overflow: visible;
+  /* 3 */
+  text-align: inherit;
+  /* 4 */
+  margin: 0 0 10px 0;
+  border: 0;
+  border-top: 1px solid #E5E5E5;
+}
+
+/* Add margin if adjacent element */
+
+* + hr,
+* + .uis-hr {
+  margin-top: 10px;
+}
+
+/* Horizontal rules
+   ================================================== */
+
+address {
+  font-size: normal;
+}
+
+/* Blockquotes
+   ================================================== */
+
+blockquote {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Add margin if adjacent element */
+
+* + blockquote {
+  margin-top: 10px;
+}
+
+/*
+ * Content
+ */
+
+blockquote p:last-of-type {
+  margin-bottom: 0;
+}
+
+blockquote footer {
+  margin-top: 5px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Preformatted text
+   ================================================== */
+
+/*
+ * 1. Contain overflow in all browsers.
+ */
+
+pre {
+  font: 0.875rem / 1.5 Open Sans;
+  color: text-color(#454545);
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+  /* 1 */
+  overflow: auto;
+}
+
+pre code {
+  font-family: Open Sans;
+}
+
+/* Selection pseudo-element
+   ================================================== */
+
+::-moz-selection {
+  background: #3399FF;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+::selection {
+  background: #3399FF;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* HTML5 elements
+   ================================================== */
+
+/*
+ * 1. Add the correct display in Edge, IE 10+, and Firefox
+ * 2. Add the correct display in IE
+ */
+
+details,
+main {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/*
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/*
+ * Iframe
+ */
+
+iframe {
+  border: 0;
+}
+
+pre {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 0px;
+  margin: 0px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+/* ========================================================================
+   Component: Utility
+ ========================================================================== */
+
+/* Panel
+ ========================================================================== */
+
+.uis-panel {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #F9F9F9;
+}
+
+/*
+ * Micro clearfix
+ */
+
+.uis-panel:before,
+.uis-panel:after {
+  content: "";
+  display: table;
+}
+
+.uis-panel:after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-panel > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+ *
+ */
+
+.uis-panel-scrollable {
+  height: 170px;
+  padding: 10px;
+  border: 1px solid #E5E5E5;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  resize: both;
+}
+
+/* Cleafix
+ ========================================================================== */
+
+/*
+ * 1. `table-cell` is used with `::before` because `table` creates a
+ *    1px gap when it becomse a flex item, only in Webkit
+ *    `table` is used again with `::after` because `clear` only works with
+ *     block elements.
+ * Note: `display: block` with `overflow: hidden` is currently not working in
+ *       the latest Safari
+ */
+
+.uis-clearfix:before,
+.uis-clearfix:after {
+  content: "";
+  display: table;
+}
+
+.uis-clearfix:after {
+  clear: both;
+}
+
+/* Float
+ ========================================================================== */
+
+/*
+ * 1. Prevent content overflow
+ */
+
+.uis-float-left {
+  float: left;
+}
+
+.uis-float-right {
+  float: right;
+}
+
+/* 1 */
+
+[class*=uis-float-] {
+  max-width: 100%;
+}
+
+/* Overflow
+ ========================================================================== */
+
+.uis-overflow-hidden {
+  overflow: hidden;
+}
+
+/*
+ * Enable scrollbars  if content is clipped
+ * Note: firefox ignores `padding-bottom` for the scrollable
+ *       overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
+ */
+
+.uis-overflow-auto {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.uis-overflow-auto > :last-child {
+  margin-bottom: 0;
+}
+
+/* Resize
+ ========================================================================== */
+
+.uis-resize {
+  resize: both;
+}
+
+.uis-resize-vertical {
+  resize: vertical;
+}
+
+/* Display
+ ========================================================================== */
+
+.uis-display-block {
+  display: block !important;
+}
+
+.uis-display-inline {
+  display: inline !important;
+}
+
+.uis-display-inline-block {
+  display: inline-block !important;
+}
+
+.uis-display-none {
+  display: none;
+}
+
+/* Inline
+ ========================================================================== */
+
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Behave like most inline-block elements
+ * 5. Clip child elements
+ */
+
+[class*=uis-inline] {
+  /* 1 */
+  display: inline-block;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  max-width: 100%;
+  /* 4 */
+  vertical-align: middle;
+}
+
+.uis-inline-clip {
+  /* 5 */
+  overflow: hidden;
+}
+
+/* Responsive objects
+ ========================================================================== */
+
+/*
+ * Preserve original dimensions
+ * Because `img`, `video`, `canvas` and `audio` are already responsive
+ * by default, see the Reboot component
+ */
+
+.uis-preserve-width,
+.uis-preserve-width audio,
+.uis-preserve-width canvas,
+.uis-preserve-width img,
+.uis-preserve-width svg,
+.uis-preserve-width video {
+  max-width: none;
+}
+
+/*
+ * Responsiveness
+ * Corrects `max-width` and `max-height` behavior if padding and border are used
+ */
+
+.uis-responsive-width,
+.uis-responsive-height {
+  box-sizing: border-box;
+}
+
+/*
+ * 1. Set a maximum width `important` needed to override
+      `uis-preserve-width img`
+ * 2. Auto scale the height. Only needed if `height` attribute is present
+ */
+
+.uis-responsive-width {
+  /* 1 */
+  max-width: 100% !important;
+  /* 2 */
+  height: auto;
+}
+
+/* Border
+ ========================================================================== */
+
+.uis-border-circle {
+  border-radius: 50%;
+}
+
+.uis-border-pill {
+  border-radius: 500px;
+}
+
+.uis-border-rounded {
+  border-radius: 5px;
+}
+
+/* Box-shadow
+ ========================================================================== */
+
+.uis-box-shadow-small {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.uis-box-shadow-medium {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.uis-box-shadow-large {
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+}
+
+.uis-box-shadow-xlarge {
+  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.16);
+}
+
+/*
+ * Hover
+ */
+
+[class*=uis-box-shadow-hover] {
+  -webkit-transition: box-shadow 0.1s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.uis-box-shadow-hover-small:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.uis-box-shadow-hover-medium:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.uis-box-shadow-hover-large:hover {
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+}
+
+.uis-box-shadow-hover-xlarge:hover {
+  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.16);
+}
+
+/* Disabled State
+ ========================================================================== */
+
+.uis-disabled {
+  pointer-events: none;
+}
+
+/* Drag State
+ ========================================================================== */
+
+.uis-drag,
+.uis-drag * {
+  cursor: move;
+}
+
+/* 2 */
+
+.uis-drag iframe {
+  pointer-events: none;
+}
+
+/* Dragover State
+ ========================================================================== */
+
+/*
+ * Create a box-shadow when dragging a file over the upload area
+ */
+
+.uis-dragover {
+  box-shadow: 0 0 20px rgba(100, 100, 100, 0.3);
+}
+
+/* Point State
+ ========================================================================== */
+
+.uis-point,
+.uis-point * {
+  cursor: pointer;
+}
+
+/* Pointover State
+ ========================================================================== */
+
+/*
+ * Create a box-shadow when pointing a file over the upload area
+ */
+
+.uis-pointover {
+  box-shadow: 0 0 20px rgba(100, 100, 100, 0.3);
+}
+
+/* Text Overflow
+ ========================================================================== */
+
+.uis-text-ellipsis {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.5em;
+  max-height: 4em;
+  text-align: left;
+}
+
+/* Offset
+ ========================================================================== */
+
+.uis-offset-top {
+  position: relative;
+  top: -3vh;
+}
+
+/*
+ * Hidden
+ * `hidden` attribute also set here to make it stronger
+ */
+
+[hidden],
+.uis-hidden {
+  display: none !important;
+}
+
+/* Phone landscape and bigger */
+
+@media screen and (min-width: 640px) {
+  .uis-hidden\@s {
+    display: none !important;
+  }
+}
+
+/* Tablet landscape and bigger */
+
+@media screen and (min-width: 960px) {
+  .uis-hidden\@m {
+    display: none !important;
+  }
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-hidden\@l {
+    display: none !important;
+  }
+}
+
+/* Large screen and bigger */
+
+@media screen and (min-width: 1600px) {
+  .uis-hidden\@xl {
+    display: none !important;
+  }
+}
+
+/*
+ * Visible
+ */
+
+/* Phone portrait and smaller */
+
+@media screen and (max-width: 639px) {
+  .uis-visible\@s {
+    display: none !important;
+  }
+}
+
+/* Phone landscape and smaller */
+
+@media screen and (max-width: 959px) {
+  .uis-visible\@m {
+    display: none !important;
+  }
+}
+
+/* Tablet landscape and smaller */
+
+@media screen and (max-width: 1199px) {
+  .uis-visible\@l {
+    display: none !important;
+  }
+}
+
+/* Desktop and smaller */
+
+@media screen and (max-width: 1599px) {
+  .uis-visible\@xl {
+    display: none !important;
+  }
+}
+
+/* Visibility
+   ================================================== */
+
+.uis-invisible {
+  visibility: hidden !important;
+}
+
+/* Hover
+   ================================================== */
+
+/*
+ * Hidden
+ * Can't use `display: hidden` because it's not focusable.
+ * This is accessible through keyboard.
+ */
+
+.uis-visible-toggle:not(:hover):not(.uis-hover) .uis-hidden-hover:not(:focus) {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/*
+ * Invisible
+ * Can't use `visibility: hidden` because it's not focusable.
+ * This is accessible through keyboard.
+ */
+
+.uis-visible-toggle:not(:hover):not(.uis-hover) .uis-invisible-hover:not(:focus) {
+  opacity: 0 !important;
+}
+
+/* Touch
+ ========================================================================== */
+
+/*
+ * Hide if primary pointing device has limited accuracy, e.g. a touch screen.
+ * Works on mobile browsers: Safari, Chrome and Android browser
+ */
+
+@media (pointer: coarse) {
+  .uis-hidden-touch {
+    display: none !important;
+  }
+}
+
+/*
+ * Hide if primary pointing device is accurate, e.g. mouse.
+ * 1. Fallback for IE11 and Firefox, because `pointer` is not supported
+ * 2. Reset if supported
+ */
+
+/* 1 */
+
+.uis-hidden-notouch {
+  display: none !important;
+}
+
+@media (pointer: coarse) {
+  .uis-hidden-notouch {
+    display: block !important;
+  }
+}
+
+/* Components
+   ================================================== */
+
+/* ========================================================================
+   Component: message
+ ========================================================================== */
+
+.uis-message {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 20px 20px 20px 20px;
+  background-color: #F9F9F9;
+}
+
+.uis-message-with-icon {
+  padding-left: 50px;
+}
+
+/* Add margin if adjacent element */
+
+* + .uis-message {
+  margin-top: 30px;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-message > :last-child {
+  margin-bottom: 0;
+}
+
+/* Item
+ ========================================================================== */
+
+.uis-message > * {
+  color: #454545;
+  font-size: 14px;
+}
+
+/* Close
+ * Adopts `uis-close`
+ ========================================================================== */
+
+.uis-message-close {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -5px;
+  font-size: 10px;
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+
+.uis-message-close:first-child + * {
+  margin-top: 0;
+}
+
+/* Style modifiers
+ ========================================================================== */
+
+.uis-message-default {
+  background-color: #FFFFFF;
+  color: #454545;
+}
+
+.uis-message-primary {
+  background-color: #2591D0;
+  color: #FFFFFF;
+}
+
+.uis-message-accent {
+  background-color: #FECC00;
+  color: #454545;
+}
+
+.uis-message-secondary {
+  background-color: #0B2E4A;
+  color: #FFFFFF;
+}
+
+.uis-message-success {
+  background-color: #26CC6E;
+  color: #FFFFFF;
+}
+
+.uis-message-warning {
+  background-color: #FF9E0F;
+  color: #FFFFFF;
+}
+
+.uis-message-danger {
+  background-color: #E32626;
+  color: #FFFFFF;
+}
+
+.uis-message-inverse {
+  background-color: #FFFFFF;
+  color: #454545;
+}
+
+/* ==================================================
+    Component: Modal
+   ================================================== */
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Allow scrolling for the modal dialog
+ * 4. Horizontal padding
+ * 5. Mask the background-page
+ * 6. Fade-in transition
+ */
+
+.uis-modal {
+  /* 1 */
+  display: none;
+  /* 2 */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  /* 3 */
+  overflow: hidden;
+  /* 4 */
+  padding: 15px 15px;
+  /* 5 */
+  background: rgba(0, 0, 0, 0.6);
+  /* 6 */
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear !important;
+  transition: opacity 0.15s linear !important;
+}
+
+.uis-modal.uis-search-modal {
+  background: #FFFFFF;
+}
+
+/* Phone landscape and bigger */
+
+@media screen and (min-width: 640px) {
+  .uis-modal {
+    padding: 50px 30px;
+  }
+}
+
+/* Tablet landscape and bigger */
+
+@media screen and (min-width: 960px) {
+  .uis-modal {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/*
+ * Open
+ */
+
+.uis-modal.uis-open {
+  opacity: 1;
+}
+
+/* Page
+   ================================================== */
+
+/*
+ * Prevent scrollbars
+ */
+
+.uis-modal-page {
+  overflow: hidden;
+}
+
+/* Dialog
+   ================================================== */
+
+/*
+ * 1. Create position contex for spinner and close button
+ * 2. Dimensions
+ * 3. Fix `max-width: 100%` not working in combination with flex and responsive
+ *    images in IE11 `!important` needed to overwrite `uis-width-auto`.
+ *    See `#modal-media-image` in tests
+ * 4. Style
+ * 5. Slide-in transition
+ */
+
+.uis-modal-dialog {
+  /* 1 */
+  position: relative;
+  /* 2 */
+  box-sizing: border-box;
+  border-radius: 0.235rem;
+  margin: 0 auto;
+  width: 600px;
+  /* 3 */
+  max-width: calc(100% - 0.01px) !important;
+  /* 4 */
+  background: #FFFFFF;
+  /* 5 */
+  opacity: 0;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+}
+
+.uis-modal.uis-search-modal .uis-modal-dialog {
+  background: transparent;
+}
+
+/*
+ * Open
+ */
+
+.uis-open > .uis-modal-dialog {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+/* Size modifier
+   ================================================== */
+
+/*
+ * Container size
+ * Take the same size as the Container component
+ */
+
+.uis-modal-container .uis-modal-dialog {
+  width: 1200px;
+}
+
+/*
+ * Full size
+ * 1. Remove the padding and background from modal
+ * 2. Reset all default declartion from modal dialog
+ */
+
+/* 1 */
+
+.uis-modal-full {
+  padding: 0;
+  background: none;
+}
+
+/* 2 */
+
+.uis-modal-full .uis-modal-dialog {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+/* Sections
+   ================================================== */
+
+.uis-modal-body {
+  padding: 30px 30px;
+}
+
+.uis-modal-header {
+  padding: 15px 30px;
+  background: #FFFFFF;
+  border-bottom: 0.235px solid #E5E5E5;
+}
+
+.uis-modal-footer {
+  padding: 15px 30px;
+  background: #FFFFFF;
+  border-top: 0.235px solid #E5E5E5;
+}
+
+/*
+ * Micro clearfix
+ */
+
+.uis-modal-body:before,
+.uis-modal-body:after,
+.uis-modal-header:before,
+.uis-modal-header:after,
+.uis-modal-footer:before,
+.uis-modal-footer:after {
+  content: "";
+  display: table;
+}
+
+.uis-modal-body:after,
+.uis-modal-header:after,
+.uis-modal-footer:after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last child
+ */
+
+.uis-modal-body > :last-child,
+.uis-modal-header > :last-child,
+.uis-modal-footer > :last-child {
+  margin-bottom: 0;
+}
+
+/* Title
+   ================================================== */
+
+.uis-modal-title {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Close
+ * Adopts `uis-close`
+   ================================================== */
+
+[class*=uis-modal-close] {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+}
+
+.uis-modal.uis-search-modal [class*=uis-modal-close] {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 5px;
+  z-index: 1200;
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+
+[class*=uis-modal-close]:first-child + * {
+  margin-top: 0;
+}
+
+/*
+ * Outside
+ * 1. Prevent scrollbar on small devices
+ */
+
+.uis-modal-close-outside {
+  top: 0;
+  /* 1 */
+  right: 0;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  color: #cccccc;
+}
+
+.uis-modal-close-outside:hover {
+  color: #FFFFFF;
+}
+
+@media screen and (min-width: 960px) {
+  /* 1 */
+
+  .uis-modal-close-outside {
+    right: 0;
+    -webkit-transform: translate(100%, -100%);
+            transform: translate(100%, -100%);
+  }
+}
+
+/*
+ * Full
+ */
+
+.uis-modal-close-full {
+  top: 0;
+  right: 0;
+  padding: 20px;
+  background: #FFFFFF;
+}
+
+/* ==================================================
+    Component: Nav
+   ================================================== */
+
+/*
+ * Reset
+ * 1. Prepare lists
+ * 2. Prepare links
+ * 3. Remove default focus style
+ */
+
+/* 1 */
+
+.uis-nav,
+.uis-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.uis-nav li > a {
+  display: block;
+  text-decoration: none;
+}
+
+/* 3 */
+
+.uis-nav li > a:focus {
+  outline: none;
+}
+
+/*
+ * Items
+ * Must target `a` elements to exclude other elements (e.g. lists)
+ */
+
+.uis-nav > li > a {
+  padding: 5px 0;
+}
+
+.uis-nav.uis-nav-large > li > a {
+  font-size: 1.25rem;
+  padding: 12px 0;
+}
+
+/* Sublist
+   ================================================== */
+
+/*
+ * Level 2
+ * `ul` needed for higher specificity to override padding
+ */
+
+ul.uis-nav-sub {
+  padding: 5px 0 2px 15px;
+}
+
+/*
+ * Level 3 and deeper
+ */
+
+.uis-nav-sub ul {
+  padding-left: 15px;
+}
+
+/*
+ * Items
+ */
+
+.uis-nav-sub a {
+  padding: 2px 0;
+}
+
+/* Paren icon modifier
+   ================================================== */
+
+.uis-nav-parent-icon > .uis-parent > a:after {
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  float: right;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22#000%22%20stroke-width%3D%221.1%22%20points%3D%2210%201%204%207%2010%2013%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.uis-nav-parent-icon > .uis-parent.uis-open > a:after {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22#000%22%20stroke-width%3D%221.1%22%20points%3D%221%204%207%2010%2013%204%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+/* Header
+   ================================================== */
+
+.uis-nav-header {
+  padding: 5px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.uis-nav-header:not(:first-child) {
+  margin-top: 20px;
+}
+
+/* Divider
+   ================================================== */
+
+.uis-nav-divider {
+  margin: 10px 0;
+}
+
+/* Divider
+   ================================================== */
+
+.uis-nav-default {
+  font-size: 14px;
+}
+
+/*
+ * Items
+ */
+
+.uis-nav-default > li > a {
+  color: #5C5C5C;
+}
+
+/* Hover + Focus */
+
+.uis-nav-default > li > a:hover,
+.uis-nav-default > li > a:focus {
+  color: #454545;
+}
+
+/* Active */
+
+.uis-nav-default > li.uis-active > a {
+  color: #2591D0;
+}
+
+/*
+ * Header
+ */
+
+.uis-nav-default .uis-nav-header {
+  color: 0.5px;
+}
+
+/*
+ * Divider
+ */
+
+.uis-nav-default .uis-nav-divider,
+.uis-nav-divider {
+  border-top: 1px solid #E5E5E5;
+}
+
+/*
+ * Sublists
+ */
+
+.uis-nav-default .uis-nav-sub a {
+  color: #5C5C5C;
+}
+
+.uis-nav-default .uis-nav-sub a:hover,
+.uis-nav-default .uis-nav-sub a:focus {
+  color: #454545;
+}
+
+/* Alignment Modifier
+   ================================================== */
+
+.uis-nav-center {
+  text-align: center;
+}
+
+/* Sublists */
+
+.uis-nav-center .uis-nav-sub,
+.uis-nav-center .uis-nav-sub ul {
+  padding-left: 0;
+}
+
+/* Parent Icon Modifier */
+
+.uis-nav-center.uis-nav-parent-icon > .uis-parent > a:after {
+  position: absolute;
+}
+
+/* Accordion
+   ================================================== */
+
+[uis-nav-accordion] ul.uis-nav-sub,
+[uis-nav-accordion] ul {
+  display: none;
+}
+
+/* ==================================================
+    Component: Navbar
+   ================================================== */
+
+/*
+ * 1. Create position context to center navbar group
+ */
+
+.uis-navbar {
+  display: -webkit-box;
+  display: flex;
+  /* 1 */
+  position: relative;
+}
+
+/* Container
+ ========================================================================== */
+
+.uis-navbar-container {
+  width: 100%;
+  z-index: 1050;
+  padding: 20px 0px;
+  box-sizing: border-box;
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+
+.uis-navbar-wrapper {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (min-width: 640px) {
+  .uis-navbar-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .uis-navbar-wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  .uis-navbar-wrapper {
+    max-width: calc(1200px - 40px);
+  }
+}
+
+.uis-navbar-container:not(.uis-navbar-transparent) {
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/*
+ * Remove pseudo elements created by micro clearfix as
+ * precaution (if Container component is used)
+ */
+
+.uis-navbar-container > :before,
+.uis-navbar-container > :after {
+  display: none !important;
+}
+
+/* Fixed
+ ========================================================================== */
+
+.uis-navbar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (min-width: 960px) {
+  .uis-navbar-fixed.uis-navbar-offset-top {
+    top: 40px;
+  }
+}
+
+/* Groups
+ ========================================================================== */
+
+/*
+ * 1. Align navs and items vertically if they have a different height
+ * 2. Note: IE 11 requires an extra `div` which affects the center selector
+ */
+
+.uis-navbar-left,
+.uis-navbar-right,
+.uis-navbar-center,
+.uis-navbar-center-left > *,
+.uis-navbar-center-right > * {
+  display: -webkit-box;
+  display: flex;
+  /* 1 */
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+/*
+ * Horizontal alignment
+ * 1. Create position context for centered navbar with sub groups (left/right)
+ * 2. Needed for dropdowns because a new position context is created
+ *    `z-index` must be smaller than off-canvas
+ * 3. Fix text wrapping if the centered section is larger than 50% of the navbar
+ * 4. Align sub groups for centered navbar
+ */
+
+.uis-navbar-right {
+  margin-left: auto;
+}
+
+.uis-navbar-center:only-child {
+  margin-left: auto;
+  margin-right: auto;
+  /* 1 */
+  position: relative;
+}
+
+.uis-navbar-center:not(:only-child) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* 2 */
+  z-index: 1000;
+}
+
+/* 3 */
+
+.uis-navbar-center:not(:only-child) .uis-navbar-nav > li > a,
+.uis-navbar-center:not(:only-child) .uis-navbar-item,
+.uis-navbar-center:not(:only-child) .uis-navbar-toggle {
+  white-space: nowrap;
+}
+
+/* 4 */
+
+.uis-navbar-center-left,
+.uis-navbar-center-right {
+  position: absolute;
+  top: 0;
+}
+
+.uis-navbar-center-left {
+  right: 100%;
+}
+
+.uis-navbar-center-right {
+  left: 100%;
+}
+
+[class*=uis-navbar-center-] .uis-navbar-nav > li > a,
+[class*=uis-navbar-center-] .uis-navbar-item,
+[class*=uis-navbar-center-] .uis-navbar-toggle {
+  white-space: nowrap;
+}
+
+/* Nav
+ ========================================================================== */
+
+/*
+ * 1. Reset list
+ */
+
+.uis-navbar-nav {
+  display: -webkit-box;
+  display: flex;
+  /* 1 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+ * Allow items to wrap into the next line
+ * Only not `absolute` positioned groups
+ */
+
+.uis-navbar-left,
+.uis-navbar-right,
+.uis-navbar-center:only-child {
+  flex-wrap: wrap;
+}
+
+/*
+ * Items
+ * 1. Center content vertically and horizontally
+ * 2. Dimensions
+ * 3. Style
+ * 4. Required for `a`
+ */
+
+.uis-navbar-nav > li > a,
+.uis-navbar-item,
+.uis-navbar-toggle {
+  /* 1 */
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  /* 2 */
+  box-sizing: border-box;
+  min-height: 30px;
+  padding: 0 15px;
+  /* 3 */
+  font-size: 16px;
+  font-family: Poppins;
+  /* 4 */
+  text-decoration: none;
+}
+
+/*
+ * Nav items
+ */
+
+.uis-navbar-nav > li > a {
+  color: #5C5C5C;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+/*
+ * Hover
+ * Apply hover style also to focus state and if dropdown is opened
+ */
+
+.uis-navbar-nav > li > a:hover,
+.uis-navbar-nav > li > a:focus,
+.uis-navbar-nav > li > a.uis-open {
+  color: #2591D0;
+  outline: none;
+}
+
+/* OnClick */
+
+.uis-navbar-nav > li > a:active {
+  color: #2591D0;
+}
+
+/* Active */
+
+.uis-navbar-nav > li.uis-active > a {
+  color: #2591D0;
+}
+
+/*
+ * Transparent Nav items
+ */
+
+.uis-navbar-transparent .uis-navbar-nav > li > a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*
+ * Hover
+ * Apply hover style also to focus state and if dropdown is opened
+ */
+
+.uis-navbar-transparent .uis-navbar-nav > li > a:hover,
+.uis-navbar-transparent .uis-navbar-nav > li > a:focus,
+.uis-navbar-transparent .uis-navbar-nav > li > a.uis-open {
+  color: #FFFFFF;
+  outline: none;
+  -webkit-transition: all 0.3 ease-in-out;
+  transition: all 0.3 ease-in-out;
+}
+
+/* OnClick */
+
+.uis-navbar-transparent .uis-navbar-nav > li > a:active {
+  color: #2591D0;
+}
+
+/* Active */
+
+.uis-navbar-transparent .uis-navbar-nav > li.uis-active > a {
+  color: #FFFFFF;
+}
+
+/* Divider
+ ========================================================================== */
+
+.uis-navbar-nav-divider {
+  height: 24px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.uis-navbar-transparent .uis-navbar-nav .uis-navbar-nav-divider {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Item
+ ========================================================================== */
+
+.uis-navbar-item {
+  color: #454545;
+}
+
+/* Toggle
+   ================================================== */
+
+.uis-navbar-toggle {
+  color: #5C5C5C;
+}
+
+.uis-navbar-toggle:hover,
+.uis-navbar-toggle:focus,
+.uis-navbar-toggle.uis-open {
+  color: #454545;
+  outline: none;
+  text-decoration: none;
+}
+
+/* Style Modifiers
+   ================================================== */
+
+.uis-navbar-sticky {
+  position: fixed;
+  top: 0;
+  z-index: 1050;
+}
+
+/* Subtitle
+ ========================================================================== */
+
+.uis-navbar-subtitle {
+  font-size: 0.875rem;
+}
+
+/* Dropdown
+ ========================================================================== */
+
+/*
+ * Adopts `uk-dropdown`
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Set a default width
+ * 4. Style
+ */
+
+.uis-navbar-dropdown {
+  /* 1 */
+  display: none;
+  /* 2 */
+  position: absolute;
+  z-index: 1000;
+  /* 3 */
+  box-sizing: border-box;
+  width: 250px;
+  /* 4 */
+  padding: 25px;
+  background: #FFFFFF;
+  color: #FFFFFF;
+}
+
+/* Show */
+
+.uis-navbar-dropdown.uis-open {
+  display: block;
+}
+
+/*
+ * Direction / Alignment modifiers
+ */
+
+/* Direction */
+
+[class*=uis-navbar-dropdown-top] {
+  margin-top: 0;
+}
+
+[class*=uis-navbar-dropdown-bottom] {
+  margin-top: 0;
+}
+
+[class*=uis-navbar-dropdown-left] {
+  margin-left: 0;
+}
+
+[class*=uis-navbar-dropdown-right] {
+  right: 0;
+  margin-left: 0;
+}
+
+/*
+ * Grid
+ * Adopts `uis-grid`
+ */
+
+/* Gutter Horizontal */
+
+.uis-navbar-dropdown-grid {
+  margin-left: -30px;
+}
+
+.uis-navbar-dropdown-grid > * {
+  padding-left: 30px;
+}
+
+/* Gutter Vertical */
+
+.uis-navbar-dropdown-grid > .uis-grid-margin {
+  margin-top: 30px;
+}
+
+/* Stack */
+
+.uis-navbar-dropdown-stack .uis-navbar-dropdown-grid > * {
+  width: 100% !important;
+}
+
+/*
+ * Width modifier
+ */
+
+.uis-navbar-dropdown-width-2:not(.uis-navbar-dropdown-stack) {
+  width: 500px;
+}
+
+.uis-navbar-dropdown-width-3:not(.uis-navbar-dropdown-stack) {
+  width: 750px;
+}
+
+.uis-navbar-dropdown-width-4:not(.uis-navbar-dropdown-stack) {
+  width: 1000px;
+}
+
+.uis-navbar-dropdown-width-5:not(.uis-navbar-dropdown-stack) {
+  width: 1250px;
+}
+
+/* ==================================================
+    Component: Subnav
+   ================================================== */
+
+/*
+ * 1. Don't allow items to wrap into the next line
+ * 2. Reset list
+ */
+
+.uis-subnav {
+  display: -webkit-box;
+  display: flex;
+  /* 1 */
+  flex-wrap: flex;
+  /* 2 */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.uis-subnav-horizontal-scroll {
+  overflow-x: auto;
+}
+
+.uis-subnav-horizontal-scroll:-webkit-scrollbar {
+  display: none;
+}
+
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Create position context for dropdowns
+ */
+
+.uis-subnav > * {
+  /* 1 */
+  -webkit-box-flex: 0;
+          flex: none;
+  /* 2 */
+  position: relative;
+}
+
+/* Items
+ ========================================================================== */
+
+/*
+ * Items must target `a` elements to exclude other elements (e.g. dropdowns)
+ * Using `:first-child` instead of `a` to support `span` elements for text
+ * 1. Prevent gap if child element is `inline-block`, e.g. an icon
+ * 2. Style
+ */
+
+.uis-subnav > li {
+  height: 65px;
+  min-width: 60px;
+  box-sizing: border-box;
+  padding: 10px 30px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
+.uis-subnav > * > :first-child {
+  /* 1 */
+  display: block;
+  /* 2 */
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.uis-subnav > li > a {
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+/* Hover + Focus */
+
+.uis-subnav > li > a:hover,
+.uis-subnav > li > a:focus {
+  color: #FFFFFF;
+  text-decoration: none;
+  outline: none;
+}
+
+.uis-subnav > li.uis-active {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(37, 145, 208, 0.4)));
+  background: linear-gradient(to bottom, transparent, rgba(37, 145, 208, 0.4));
+}
+
+/* Active */
+
+.uis-subnav > .uis-active > a {
+  color: #FFFFFF;
+}
+
+/* Divider modifier
+ ========================================================================== */
+
+/*
+ * 1. Align items and divider vertically
+ */
+
+.uis-subnav-divider > * {
+  /* 1 */
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+/*
+ * Divider
+ * `nth-child` makes it also work without JS if it's only one row
+ */
+
+.uis-subnav-divider > :nth-child(n+2):not(.uis-first-column):before {
+  content: "";
+  height: 1.5em;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-left: 1px solid #E5E5E5;
+}
+
+/* Plain
+ ========================================================================== */
+
+.uis-subnav-default {
+  border-bottom: 1px solid #E5E5E5;
+}
+
+/*
+ * Items
+ */
+
+.uis-subnav-default > * > a {
+  padding: 0px 16px 12px;
+}
+
+.uis-subnav-default > .uis-active {
+  color: #2591D0;
+  border-bottom: 1px solid #2591D0;
+}
+
+.uis-subnav-default > *:hover > a {
+  color: #2591D0;
+}
+
+/* Direction Modifier
+ ========================================================================== */
+
+.uis-subnav-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+/* Disabled
+ * The same for all style modifiers
+ ========================================================================== */
+
+.uis-subnav > .uis-disabled > a {
+  color: #5C5C5C;
+}
+
+/* Default Full
+ ========================================================================== */
+
+.uis-subnav-default.uis-subnav-default-full {
+  border-bottom: 0px;
+}
+
+/*
+ * Items
+ */
+
+.uis-subnav-default.uis-subnav-default-full > * {
+  -webkit-box-flex: 1;
+          flex: 1;
+  position: relative;
+  margin-right: 24px;
+}
+
+.uis-subnav-default.uis-subnav-default-full > *:last-child {
+  margin-right: 0px;
+}
+
+.uis-subnav-default.uis-subnav-default-full > .uis-active {
+  color: #2591D0;
+  border-bottom: 1px solid #2591D0;
+}
+
+.uis-subnav-default.uis-subnav-default-full > :not(.uis-active) {
+  color: #454545;
+  border-bottom: 1px solid #5C5C5C;
+}
+
+.uis-subnav-default.uis-subnav-default-full > *:hover > a {
+  color: #2591D0;
+}
+
+.uis-subnav-default.uis-subnav-default-full > *:hover {
+  border-color: #2591D0;
+}
+
+/* ========================================================================
+   Component: Notification
+ ========================================================================== */
+
+/*
+ * 1. Set position
+ * 2. Dimensions
+ */
+
+.uis-notification {
+  /* 1 */
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1350;
+  /* 2 */
+  box-sizing: border-box;
+  width: 300px;
+}
+
+/* Position modifiers
+ ========================================================================== */
+
+.uis-notification-top-right,
+.uis-notification-bottom-right {
+  left: auto;
+  right: 10px;
+}
+
+.uis-notification-top-center,
+.uis-notification-bottom-center {
+  left: 50%;
+  margin-left: -150px;
+}
+
+.uis-notification-bottom-left,
+.uis-notification-bottom-right,
+.uis-notification-bottom-center {
+  top: auto;
+  bottom: 10px;
+}
+
+/* Responsiveness
+ ========================================================================== */
+
+/* Phones portrait and smaller */
+
+@media screen and (max-width: 639px) {
+  .uis-notification {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    margin: 0;
+  }
+}
+
+/* Message
+ ========================================================================== */
+
+.uis-notification-message {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 20px;
+  background: #5C5C5C;
+  color: #454545;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.uis-notification-icon,
+.uis-notification-content {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.uis-notification-icon {
+  margin-top: 2px;
+  margin-right: 12px;
+}
+
+.uis-notification-icon {
+  width: auto;
+  margin-right: 16px;
+}
+
+.uis-notification-icon + .uis-notification-content {
+  width: calc(100% - 50px);
+}
+
+/* Close
+ * Adopts `uis-close`
+ ========================================================================== */
+
+.uis-notification-close {
+  display: none;
+  position: absolute;
+  font-size: 12px;
+  top: 25px;
+  right: 20px;
+}
+
+.uis-notification-message:hover .uis-notification-close {
+  display: block;
+}
+
+/* Style modifiers
+ ========================================================================== */
+
+.uis-notification-message-dark {
+  background-color: rgba(23, 23, 23, 0.8);
+  color: #FFFFFF;
+}
+
+.uis-notification-message-default {
+  background-color: #FFFFFF;
+  color: #454545;
+}
+
+.uis-notification-message-primary {
+  background-color: #2591D0;
+  color: #FFFFFF;
+}
+
+.uis-notification-message-accent {
+  background-color: #FECC00;
+  color: #454545;
+}
+
+.uis-notification-message-secondary {
+  background-color: #0B2E4A;
+  color: #FFFFFF;
+}
+
+.uis-notification-message-success {
+  background-color: #26CC6E;
+  color: #FFFFFF;
+}
+
+.uis-notification-message-warning {
+  background-color: #FF9E0F;
+  color: #FFFFFF;
+}
+
+.uis-notification-message-danger {
+  background-color: #E32626;
+  color: #FFFFFF;
+}
+
+.uis-notification-message-inverse {
+  background-color: #FFFFFF;
+  color: #454545;
+}
+
+/* Elements
+   ================================================== */
+
+/* ==================================================
+    Component: Badge
+   ================================================== */
+
+/*
+ * 1. Style
+ * 2. Center child vertically and horizontally
+ */
+
+.uis-badge {
+  box-sizing: border-box;
+  min-width: 22px;
+  height: 22px;
+  padding: 4px 10px;
+  border-radius: 500px;
+  vertical-align: middle;
+  margin-left: 8px;
+  /* 1 */
+  background: #2591D0;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  /* 2 */
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+/*
+ * Required for `a`
+ */
+
+.uis-badge:hover,
+.uis-badge:focus {
+  color: #FFFFFF;
+  text-decoration: none;
+  outline: none;
+}
+
+/*
+ * 1. Remove margins in Chrome, Safari, and Opera.
+ * 2. Remove borders for `button`.
+ * 3. Remove border-radius in Chrome.
+ * 4. Address `overflow` set to `hidden` in IE.
+ * 5. Correct `font` properties and `color` not being inherited for `button`.
+ * 6. Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 7. Style
+ * 8. `line-height` is used to create a height because it also centers the text
+ *    vertically for `a` elements.
+ *    Better would be to use height and flexbox to center the text vertically
+ *    but flexb ox doesn't work in Firefox on `button` elements.
+ * 9. Align text if button has a width.
+ * 10. Require for `a`.
+ */
+
+.uis-button {
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  border: none;
+  /* 3 */
+  border-radius: 0.25rem;
+  /* 4 */
+  overflow: visible;
+  /* 5 */
+  font: inherit;
+  color: inherit;
+  /* 6 */
+  text-transform: none;
+  /* 7 */
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 30px;
+  vertical-align: middle;
+  font-size: 16px;
+  /* 8 */
+  line-height: 40px;
+  /* 9 */
+  text-align: center;
+  /* 10 */
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/*
+ * We added :before to create invisible
+ * box behind and we add box-shadow on
+ * modifiers
+ */
+
+.uis-button-3d:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.uis-button:not(:disabled) {
+  cursor: pointer;
+}
+
+.uis-button:disabled {
+  cursor: not-allowed;
+}
+
+/*
+ * Remove the inner border and padding in Firefox
+ */
+
+.uis-button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Hover */
+
+.uis-button:hover {
+  /* 8 */
+  text-decoration: none;
+}
+
+/* Focus */
+
+.uis-button:focus {
+  outline: none;
+}
+
+/*
+ * Disabled
+ * The same for all style modifiers
+ */
+
+.uis-button-default:disabled,
+.uis-button-primary:disabled,
+.uis-button-secondary:disabled,
+.uis-button-success:disabled,
+.uis-button-warning:disabled,
+.uis-button-danger:disabled {
+  background-color: #F9F9F9;
+  color: #5C5C5C;
+  border: 1px solid #F9F9F9;
+}
+
+.uis-button-default:disabled:hover,
+.uis-button-default:disabled:focus,
+.uis-button-primary:disabled:hover,
+.uis-button-primary:disabled:focus,
+.uis-button-secondary:disabled:hover,
+.uis-button-secondary:disabled:focus,
+.uis-button-success:disabled:hover,
+.uis-button-success:disabled:focus,
+.uis-button-warning:disabled:hover,
+.uis-button-warning:disabled:focus,
+.uis-button-danger:disabled:hover,
+.uis-button-danger:disabled:focus {
+  background-color: #F9F9F9;
+  color: #5C5C5C;
+  border: 1px solid #F9F9F9;
+}
+
+/* Style modifiers
+   ================================================== */
+
+.uis-button-default {
+  background-color: #FFFFFF;
+  color: #454545;
+  border: 1px solid #d9d9d9;
+}
+
+/* Hover + Focus */
+
+.uis-button-default:hover,
+.uis-button-default:focus {
+  background-color: #f2f2f2;
+  color: #454545;
+  border: 1px solid #f2f2f2;
+}
+
+/* Onclick + Active */
+
+.uis-button-default:active,
+.uis-button-default.uis-active {
+  background-color: #e6e6e6;
+  color: #454545;
+  border: 1px solid #e6e6e6;
+}
+
+.uis-button-primary {
+  background-color: #2591D0;
+  color: #FFFFFF;
+  border: 1px solid #2591D0;
+}
+
+/* Hover + Focus */
+
+.uis-button-primary:hover,
+.uis-button-primary:focus {
+  background-color: #2182ba;
+  color: #FFFFFF;
+  border: 1px solid #2182ba;
+}
+
+/* Onclick + Active */
+
+.uis-button-primary:active,
+.uis-button-primary.uis-active {
+  background-color: #1d73a5;
+  color: #FFFFFF;
+  border: 1px solid #1d73a5;
+}
+
+.uis-button-accent {
+  background-color: #FECC00;
+  color: #454545;
+  border: 1px solid #FECC00;
+}
+
+/* Hover + Focus */
+
+.uis-button-accent:hover,
+.uis-button-accent:focus {
+  background-color: #e5b800;
+  color: #454545;
+  border: 1px solid #e5b800;
+}
+
+/* Onclick + Active */
+
+.uis-button-accent:active,
+.uis-button-accent.uis-active {
+  background-color: #cba300;
+  color: #454545;
+  border: 1px solid #cba300;
+}
+
+.uis-button-secondary {
+  background-color: #0B2E4A;
+  color: #FFFFFF;
+  border: 1px solid #0B2E4A;
+}
+
+/* Hover + Focus */
+
+.uis-button-secondary:hover,
+.uis-button-secondary:focus {
+  background-color: #082034;
+  color: #FFFFFF;
+  border: 1px solid #082034;
+}
+
+/* Onclick + Active */
+
+.uis-button-secondary:active,
+.uis-button-secondary.uis-active {
+  background-color: #04121e;
+  color: #FFFFFF;
+  border: 1px solid #04121e;
+}
+
+.uis-button-success {
+  background-color: #26CC6E;
+  color: #FFFFFF;
+  border: 1px solid #26CC6E;
+}
+
+/* Hover + Focus */
+
+.uis-button-success:hover,
+.uis-button-success:focus {
+  background-color: #22b762;
+  color: #FFFFFF;
+  border: 1px solid #22b762;
+}
+
+/* Onclick + Active */
+
+.uis-button-success:active,
+.uis-button-success.uis-active {
+  background-color: #1ea157;
+  color: #FFFFFF;
+  border: 1px solid #1ea157;
+}
+
+.uis-button-warning {
+  background-color: #FF9E0F;
+  color: #FFFFFF;
+  border: 1px solid #FF9E0F;
+}
+
+/* Hover + Focus */
+
+.uis-button-warning:hover,
+.uis-button-warning:focus {
+  background-color: #f59200;
+  color: #FFFFFF;
+  border: 1px solid #f59200;
+}
+
+/* Onclick + Active */
+
+.uis-button-warning:active,
+.uis-button-warning.uis-active {
+  background-color: #db8200;
+  color: #FFFFFF;
+  border: 1px solid #db8200;
+}
+
+.uis-button-danger {
+  background-color: #E32626;
+  color: #FFFFFF;
+  border: 1px solid #E32626;
+}
+
+/* Hover + Focus */
+
+.uis-button-danger:hover,
+.uis-button-danger:focus {
+  background-color: #d41b1b;
+  color: #FFFFFF;
+  border: 1px solid #d41b1b;
+}
+
+/* Onclick + Active */
+
+.uis-button-danger:active,
+.uis-button-danger.uis-active {
+  background-color: #be1818;
+  color: #FFFFFF;
+  border: 1px solid #be1818;
+}
+
+.uis-button-inverse {
+  background-color: #FFFFFF;
+  color: #454545;
+  border: 1px solid #FFFFFF;
+}
+
+/* Hover + Focus */
+
+.uis-button-inverse:hover,
+.uis-button-inverse:focus {
+  background-color: #f2f2f2;
+  color: #454545;
+  border: 1px solid #f2f2f2;
+}
+
+/* Onclick + Active */
+
+.uis-button-inverse:active,
+.uis-button-inverse.uis-active {
+  background-color: #e6e6e6;
+  color: #454545;
+  border: 1px solid #e6e6e6;
+}
+
+.uis-button-3d-default {
+  background-color: #FFFFFF;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #e6e6e6;
+}
+
+.uis-button-3d-default:before {
+  box-shadow: 8px 8px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-default:hover,
+.uis-button-3d-default:focus {
+  background-color: #f2f2f2;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #d9d9d9;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-default:active,
+.uis-button-3d-default.uis-active {
+  background-color: #e6e6e6;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #d9d9d9;
+}
+
+.uis-button-3d-default:hover:before {
+  box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.3);
+}
+
+.uis-button-3d-primary {
+  position: relative;
+  background-color: #2591D0;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #1d73a5;
+}
+
+.uis-button-3d-primary:before {
+  box-shadow: 8px 8px 12px rgba(37, 145, 208, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-primary:hover,
+.uis-button-3d-primary:focus {
+  background-color: #2182ba;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #19648f;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-primary:active,
+.uis-button-3d-primary.uis-active {
+  background-color: #1d73a5;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #19648f;
+}
+
+.uis-button-3d-primary:hover:before {
+  box-shadow: 0px 0px 0px rgba(37, 145, 208, 0.3);
+}
+
+.uis-button-3d-accent {
+  position: relative;
+  background-color: #FECC00;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #cba300;
+}
+
+.uis-button-3d-accent:before {
+  box-shadow: 8px 8px 12px rgba(254, 204, 0, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-accent:hover,
+.uis-button-3d-accent:focus {
+  background-color: #e5b800;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #b28f00;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-accent:active,
+.uis-button-3d-accent.uis-active {
+  background-color: #cba300;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #b28f00;
+}
+
+.uis-button-3d-accent:hover:before {
+  box-shadow: 0px 0px 0px rgba(254, 204, 0, 0.3);
+}
+
+.uis-button-3d-secondary {
+  position: relative;
+  background-color: #0B2E4A;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #04121e;
+}
+
+.uis-button-3d-secondary:before {
+  box-shadow: 8px 8px 12px rgba(11, 46, 74, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-secondary:hover,
+.uis-button-3d-secondary:focus {
+  background-color: #082034;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #010507;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-secondary:active,
+.uis-button-3d-secondary.uis-active {
+  background-color: #04121e;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #010507;
+}
+
+.uis-button-3d-secondary:hover:before {
+  box-shadow: 0px 0px 0px rgba(11, 46, 74, 0.3);
+}
+
+.uis-button-3d-success {
+  position: relative;
+  background-color: #26CC6E;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #1ea157;
+}
+
+.uis-button-3d-success:before {
+  box-shadow: 8px 8px 12px rgba(38, 204, 110, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-success:hover,
+.uis-button-3d-success:focus {
+  background-color: #22b762;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #1a8c4b;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-success:active,
+.uis-button-3d-success.uis-active {
+  background-color: #1ea157;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #1a8c4b;
+}
+
+.uis-button-3d-success:hover:before {
+  box-shadow: 0px 0px 0px rgba(38, 204, 110, 0.3);
+}
+
+.uis-button-3d-warning {
+  position: relative;
+  background-color: #FF9E0F;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #db8200;
+}
+
+.uis-button-3d-warning:before {
+  box-shadow: 8px 8px 12px rgba(255, 158, 15, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-warning:hover,
+.uis-button-3d-warning:focus {
+  background-color: #f59200;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #c27300;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-warning:active,
+.uis-button-3d-warning.uis-active {
+  background-color: #db8200;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #c27300;
+}
+
+.uis-button-3d-warning:hover:before {
+  box-shadow: 0px 0px 0px rgba(255, 158, 15, 0.3);
+}
+
+.uis-button-3d-danger {
+  position: relative;
+  background-color: #E32626;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #be1818;
+}
+
+.uis-button-3d-danger:before {
+  box-shadow: 8px 8px 12px rgba(227, 38, 38, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-danger:hover,
+.uis-button-3d-danger:focus {
+  background-color: #d41b1b;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #a71616;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-danger:active,
+.uis-button-3d-danger.uis-active {
+  background-color: #be1818;
+  color: #FFFFFF;
+  box-shadow: inset -8px -8px 0px #a71616;
+}
+
+.uis-button-3d-danger:hover:before {
+  box-shadow: 0px 0px 0px rgba(227, 38, 38, 0.3);
+}
+
+.uis-button-3d-inverse {
+  position: relative;
+  background-color: #FFFFFF;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #e6e6e6;
+}
+
+.uis-button-3d-inverse:before {
+  box-shadow: 8px 8px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Hover + Focus */
+
+.uis-button-3d-inverse:hover,
+.uis-button-3d-inverse:focus {
+  background-color: #f2f2f2;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #d9d9d9;
+}
+
+/* Onclick + Active */
+
+.uis-button-3d-inverse:active,
+.uis-button-3d-inverse.uis-active {
+  background-color: #e6e6e6;
+  color: #454545;
+  box-shadow: inset -8px -8px 0px #d9d9d9;
+}
+
+.uis-button-3d-inverse:hover:before {
+  box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.3);
+}
+
+/* Outline Style modifiers
+   ================================================== */
+
+.uis-button-outline-default {
+  background-color: transparent;
+  border: 1px solid #d9d9d9;
+  color: #454545;
+}
+
+/* Hover + Focus */
+
+.uis-button-outline-default:hover,
+.uis-button-outline-default:focus {
+  background-color: #f2f2f2;
+  border: 1px solid #FFFFFF;
+  color: #454545;
+}
+
+/* Onclick + Active */
+
+.uis-button-outline-default:active,
+.uis-button-outline-default.uis-active {
+  background-color: #e6e6e6;
+  border: 1px solid #FFFFFF;
+  color: #454545;
+}
+
+.uis-button-outline-primary {
+  background-color: transparent;
+  border: 1px solid #2591D0;
+  color: #2591D0;
+}
+
+/* Hover + Focus */
+
+.uis-button-outline-primary:hover,
+.uis-button-outline-primary:focus {
+  background-color: #2182ba;
+  border: 1px solid #2591D0;
+  color: #FFFFFF;
+}
+
+/* Onclick + Active */
+
+.uis-button-outline-primary:active,
+.uis-button-outline-primary.uis-active {
+  background-color: #1d73a5;
+  border: 1px solid #2591D0;
+  color: #FFFFFF;
+}
+
+.uis-button-outline-accent {
+  background-color: transparent;
+  border: 1px solid #FECC00;
+  color: #FECC00;
+}
+
+/* Hover + Focus */
+
+.uis-button-outline-accent:hover,
+.uis-button-outline-accent:focus {
+  background-color: #e5b800;
+  border: 1px solid #FECC00;
+  color: #454545;
+}
+
+/* Onclick + Active */
+
+.uis-button-outline-accent:active,
+.uis-button-outline-accent.uis-active {
+  background-color: #cba300;
+  border: 1px solid #FECC00;
+  color: #454545;
+}
+
+.uis-button-outline-secondary {
+  background-color: transparent;
+  border: 1px solid #0B2E4A;
+  color: #0B2E4A;
+}
+
+/* Hover + Focus */
+
+.uis-button-outline-secondary:hover,
+.uis-button-outline-secondary:focus {
+  background-color: #082034;
+  border: 1px solid #0B2E4A;
+  color: #FFFFFF;
+}
+
+/* Onclick + Active */
+
+.uis-button-outline-secondary:active,
+.uis-button-outline-secondary.uis-active {
+  background-color: #04121e;
+  border: 1px solid #0B2E4A;
+  color: #FFFFFF;
+}
+
+.uis-button-outline-success {
+  background-color: transparent;
+  border: 1px solid #26CC6E;
+  color: #26CC6E;
+}
+
+/* Hover + Focus */
+
+.uis-button-outline-success:hover,
+.uis-button-outline-success:focus {
+  background-color: #22b762;
+  border: 1px solid #26CC6E;
+  color: #FFFFFF;
+}
+
+/* Onclick + Active */
+
+.uis-button-outline-success:active,
+.uis-button-outline-success.uis-active {
+  background-color: #1ea157;
+  border: 1px solid #26CC6E;
+  color: #FFFFFF;
+}
+
+.uis-button-outline-warning {
+  background-color: transparent;
+  border: 1px solid #FF9E0F;
+  color: #FF9E0F;
+}
+
+/* Hover + Focus */
+
+.uis-button-outline-warning:hover,
+.uis-button-outline-warning:focus {
+  background-color: #f59200;
+  border: 1px solid #FF9E0F;
+  color: #FFFFFF;
+}
+
+/* Onclick + Active */
+
+.uis-button-outline-warning:active,
+.uis-button-outline-warning.uis-active {
+  background-color: #db8200;
+  border: 1px solid #FF9E0F;
+  color: #FFFFFF;
+}
+
+.uis-button-outline-danger {
+  background-color: transparent;
+  border: 1px solid #E32626;
+  color: #E32626;
+}
+
+/* Hover + Focus */
+
+.uis-button-outline-danger:hover,
+.uis-button-outline-danger:focus {
+  background-color: #d41b1b;
+  border: 1px solid #E32626;
+  color: #FFFFFF;
+}
+
+/* Onclick + Active */
+
+.uis-button-outline-danger:active,
+.uis-button-outline-danger.uis-active {
+  background-color: #be1818;
+  border: 1px solid #E32626;
+  color: #FFFFFF;
+}
+
+.uis-button-outline-inverse {
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+/* Hover + Focus */
+
+.uis-button-outline-inverse:hover,
+.uis-button-outline-inverse:focus {
+  background-color: #f2f2f2;
+  border: 1px solid #FFFFFF;
+  color: #454545;
+}
+
+/* Onclick + Active */
+
+.uis-button-outline-inverse:active,
+.uis-button-outline-inverse.uis-active {
+  background-color: #e6e6e6;
+  border: 1px solid #FFFFFF;
+  color: #454545;
+}
+
+/* Size Style modifiers
+   ================================================== */
+
+.uis-button-small {
+  padding: 0 15px;
+  line-height: 30px;
+  font-size: 0.875rem;
+}
+
+.uis-button-large {
+  padding: 0 70px;
+  line-height: 55px;
+  font-size: 1.5rem;
+}
+
+.uis-button-wide {
+  padding: 0 70px;
+}
+
+/* Text Button
+   ================================================== */
+
+.uis-button-text {
+  /* 1 */
+  padding: 0;
+  line-height: 1.5;
+  background: none;
+  /* 2 */
+  color: #5C5C5C;
+}
+
+/* Hover + Focus */
+
+.uis-button-text:hover,
+.uis-button-text:focus {
+  color: #454545;
+}
+
+/* Disabled */
+
+.uis-button-text:disabled {
+  color: #5C5C5C;
+  cursor: not-allowed;
+}
+
+.uis-button-text-danger:enabled {
+  color: #E32626;
+}
+
+.uis-button-text-danger:hover:not(:disabled) {
+  color: #a71616;
+}
+
+/* Text Button Modifier
+   ================================================== */
+
+/*
+ *default
+ */
+
+.uis-button-text-default {
+  color: #FFFFFF;
+}
+
+/* Hover + Focus */
+
+.uis-button-text-default:hover,
+.uis-button-text-default:focus {
+  color: #f2f2f2;
+}
+
+/* Onclick + Active */
+
+.uis-button-text-default:active,
+.uis-button-text-default.uis-active {
+  color: #e6e6e6;
+}
+
+/*
+ *primary
+ */
+
+.uis-button-text-primary {
+  color: #2591D0;
+}
+
+/* Hover + Focus */
+
+.uis-button-text-primary:hover,
+.uis-button-text-primary:focus {
+  color: #2182ba;
+}
+
+/* Onclick + Active */
+
+.uis-button-text-primary:active,
+.uis-button-text-primary.uis-active {
+  color: #1d73a5;
+}
+
+/*
+ *accent
+ */
+
+.uis-button-text-accent {
+  color: #FECC00;
+}
+
+/* Hover + Focus */
+
+.uis-button-text-accent:hover,
+.uis-button-text-accent:focus {
+  color: #e5b800;
+}
+
+/* Onclick + Active */
+
+.uis-button-text-accent:active,
+.uis-button-text-accent.uis-active {
+  color: #cba300;
+}
+
+/*
+ *secondary
+ */
+
+.uis-button-text-secondary {
+  color: #0B2E4A;
+}
+
+/* Hover + Focus */
+
+.uis-button-text-secondary:hover,
+.uis-button-text-secondary:focus {
+  color: #082034;
+}
+
+/* Onclick + Active */
+
+.uis-button-text-secondary:active,
+.uis-button-text-secondary.uis-active {
+  color: #04121e;
+}
+
+/*
+ *success
+ */
+
+.uis-button-text-success {
+  color: #26CC6E;
+}
+
+/* Hover + Focus */
+
+.uis-button-text-success:hover,
+.uis-button-text-success:focus {
+  color: #22b762;
+}
+
+/* Onclick + Active */
+
+.uis-button-text-success:active,
+.uis-button-text-success.uis-active {
+  color: #1ea157;
+}
+
+/*
+ *warning
+ */
+
+.uis-button-text-warning {
+  color: #FF9E0F;
+}
+
+/* Hover + Focus */
+
+.uis-button-text-warning:hover,
+.uis-button-text-warning:focus {
+  color: #f59200;
+}
+
+/* Onclick + Active */
+
+.uis-button-text-warning:active,
+.uis-button-text-warning.uis-active {
+  color: #db8200;
+}
+
+/*
+ *danger
+ */
+
+.uis-button-text-danger {
+  color: #E32626;
+}
+
+/* Hover + Focus */
+
+.uis-button-text-danger:hover,
+.uis-button-text-danger:focus {
+  color: #d41b1b;
+}
+
+/* Onclick + Active */
+
+.uis-button-text-danger:active,
+.uis-button-text-danger.uis-active {
+  color: #be1818;
+}
+
+/*
+ *inverse
+ */
+
+.uis-button-text-inverse {
+  color: #FFFFFF;
+}
+
+/* Hover + Focus */
+
+.uis-button-text-inverse:hover,
+.uis-button-text-inverse:focus {
+  color: #f2f2f2;
+}
+
+/* Onclick + Active */
+
+.uis-button-text-inverse:active,
+.uis-button-text-inverse.uis-active {
+  color: #e6e6e6;
+}
+
+/* Link Button
+   ================================================== */
+
+/*
+ * Link
+ * 1, Reset
+ * 2. Style
+ */
+
+.uis-button-link {
+  /* 1 */
+  padding: 0;
+  line-height: 1.5;
+  background: none;
+  /* 2 */
+  color: link(base);
+}
+
+/* Hover + Focus */
+
+.uis-button-link:hover,
+.uis-button-link:focus {
+  color: link(dark);
+  text-decoration: underline;
+}
+
+/* Disabled */
+
+.uis-button-link:disabled {
+  color: #5C5C5C;
+  text-decoration: none;
+}
+
+/* Group
+   ================================================== */
+
+/*
+ * 1. Using `flex` instead of `inline-block` to prevent
+ *    whitespace between child elements
+ * 2. Behave like button
+ * 3. Create position context
+ */
+
+.uis-button-group {
+  /* 1 */
+  display: -webkit-inline-box;
+  display: inline-flex;
+  /* 2 */
+  vertical-align: middle;
+  /* 3 */
+  position: relative;
+}
+
+/* Floating
+   ================================================== */
+
+/*
+ * Floating Button
+ * 1. set position
+ * 2. set size
+ * 3. Style
+ */
+
+.uis-floating-button {
+  /* 1 */
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  /* 2 */
+  height: 60px;
+  width: 60px;
+  /* 3 */
+  background-color: #2591D0;
+  border: none;
+  border-radius: 50%;
+  color: #FFFFFF;
+  z-index: 1250;
+  text-align: center;
+  line-height: 60px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Load More Ghost Button
+   ================================================== */
+
+.uis-ghost-button {
+  background-color: transparent;
+  border: solid 1px #2591D0;
+  color: #2591D0;
+  padding: 10px 40px;
+}
+
+.uis-ghost-button:hover,
+.uis-ghost-button:focus {
+  background-color: #2591D0;
+  color: #FFFFFF;
+}
+
+/* Icon Modifiers
+   ================================================== */
+
+/*
+ * 1. Set position
+ * 2. Set width
+ * 3. Center icon vertically and horizontally
+ * 4. Style
+ */
+
+.uis-button-icon {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* 2 */
+  width: 40px;
+  /* 3 */
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  /* 4 */
+  background-color: #e6e6e6;
+  color: #454545;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+/* Primary */
+
+.uis-button-icon.uis-button-icon-primary {
+  background-color: #49a8df;
+  color: #FFFFFF;
+}
+
+.uis-button-icon.uis-button-icon-primary:hover + .uis-button-primary,
+.uis-button-icon.uis-button-icon-primary:focus + .uis-button-primary {
+  background-color: #2182ba;
+}
+
+/* Secondary */
+
+.uis-button-icon.uis-button-icon-secondary {
+  background-color: #124a76;
+  color: #FFFFFF;
+}
+
+.uis-button-icon.uis-button-icon-secondary:hover + .uis-button-secondary,
+.uis-button-icon.uis-button-icon-secondary:focus + .uis-button-secondary {
+  background-color: #082034;
+}
+
+/* Success */
+
+.uis-button-icon.uis-button-icon-success {
+  background-color: #48dd89;
+  color: #FFFFFF;
+}
+
+.uis-button-icon.uis-button-icon-success:hover + .uis-button-success,
+.uis-button-icon.uis-button-icon-success:focus + .uis-button-success {
+  background-color: #22b762;
+}
+
+/* Warning */
+
+.uis-button-icon.uis-button-icon-warning {
+  background-color: #ffb342;
+  color: #FFFFFF;
+}
+
+.uis-button-icon.uis-button-icon-warning:hover + .uis-button-warning,
+.uis-button-icon.uis-button-icon-warning:focus + .uis-button-warning {
+  background-color: #f59200;
+}
+
+/* Danger */
+
+.uis-button-icon.uis-button-icon-danger {
+  background-color: #e95353;
+  color: #FFFFFF;
+}
+
+.uis-button-icon.uis-button-icon-danger:hover + .uis-button-danger,
+.uis-button-icon.uis-button-icon-danger:focus + .uis-button-danger {
+  background-color: #d41b1b;
+}
+
+/* ==================================================
+    Component: Card
+   ================================================== */
+
+.uis-card {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 959px) {
+  .uis-card.uis-news-card {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .uis-card.uis-news-card {
+    width: 500px;
+  }
+
+  div:nth-child(odd) > .uis-card.uis-news-card {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .uis-card.uis-news-card {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  div:nth-child(odd) > .uis-card.uis-news-card {
+    margin-left: auto;
+  }
+
+  div:nth-child(even) > .uis-card.uis-news-card {
+    margin-top: 140px;
+  }
+}
+
+/* Sections
+   ================================================== */
+
+.uis-card-body {
+  padding: 30px 30px;
+}
+
+.uis-card-header {
+  padding: 15px 30px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.uis-card-footer {
+  padding: 15px 30px;
+  background-color: #fcfcfc;
+}
+
+/* Desktop and bigget */
+
+@media screen and (min-width: 1200px) {
+  .uis-card-body {
+    padding: 40px 40px;
+  }
+
+  .uis-card-header {
+    padding: 20px 40px;
+  }
+
+  .uis-card-footer {
+    padding: 20px 40px;
+  }
+}
+
+/*
+ * Micro clearfix
+ */
+
+.uis-card-body:before,
+.uis-card-body:after,
+.uis-card-header:before,
+.uis-card-header:after,
+.uis-card-footer:before,
+.uis-card-footer:after {
+  content: "";
+  display: table;
+}
+
+.uis-card-body:after,
+.uis-card-header:after,
+.uis-card-footer:after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last child
+ */
+
+.uis-card-body > :last-child,
+.uis-card-header > :last-child,
+.uis-card-footer > :last-child {
+  margin-bottom: 0;
+}
+
+/* Section Modifier
+   ================================================== */
+
+/*
+ * 1. Set the position
+ * 2. set min-height
+ * 3. Get the full width of the parent and subtract by 15%
+ * 4. Tells the browser to account any broder or padding in the
+ *    values you specific in the lement inside.
+ */
+
+@media screen and (min-width: 960px) {
+  .uis-card-body.uis-card-body-pullup {
+    /* 1 */
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    /* 2 */
+    min-height: 200px;
+    /* 3 */
+    width: calc(100% - 15%);
+    /* 4 */
+    box-sizing: border-box;
+    /* 5 */
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Media
+   ================================================== */
+
+/*
+ * 1. Set a specific dimension
+ * 2. Set overflow hidden
+ */
+
+[class*=uis-card-media-] {
+  /* 1 */
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/*
+ * 1. Set the dimensions
+ * 2. Make the object fit the parent
+ *    We set the object to cover and overflow hidden on its parent to avoid
+ *    inconsistent sizes of images, it will mask the image of its parent
+ *    container which are 'uis-card-media-*'
+ */
+
+[class*=uis-card-media-] img,
+[class*=uis-card-media-] video {
+  /* 1 */
+  height: 100%;
+  width: 100%;
+  /* 2 */
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+/*
+ * Zoom the image by default
+ */
+
+[class*=uis-card-media-] img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+/*
+ * When hover or touch/click
+ * Zoom out the image
+ */
+
+.uis-card:hover [class*=uis-card-media-] img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+/* Title
+   ================================================== */
+
+.uis-card-title {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+/* Dropdown
+   ================================================== */
+
+.uis-card-dropdown {
+  position: absolute !important;
+  top: 15px !important;
+  right: 25px !important;
+}
+
+/* Badge
+   ================================================== */
+
+.uis-card-badge {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 1;
+}
+
+.uis-card-badge-left {
+  right: auto;
+  left: 30px;
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+
+.uis-card-badge:first-child + * {
+  margin-top: 0;
+}
+
+/* Hover modifier
+   ================================================== */
+
+.uis-card-hover:not(.uis-card-default):not(.uis-card-primary):not(.uis-card-secondary):hover {
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+}
+
+/* Style modifiers
+   ================================================== */
+
+/*
+ * Default
+ */
+
+.uis-card-default {
+  background-color: #FFFFFF;
+  color: #454545;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #E5E5E5;
+}
+
+.uis-card-default .uis-card-title {
+  color: #454545;
+}
+
+.uis-card-default.uis-card-hover:hover {
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+}
+
+/*
+ * Primary
+ */
+
+.uis-card-primary {
+  background-color: #2591D0;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.uis-card-primary .uis-card-title {
+  color: #FFFFFF;
+}
+
+.uis-card-primary.uis-card-hover:hover {
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+}
+
+/*
+ * Secondary
+ */
+
+.uis-card-secondary {
+  background-color: #0B2E4A;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.uis-card-secondary .uis-card-title {
+  color: #FFFFFF;
+}
+
+.uis-card-secondary.uis-card-hover:hover {
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+}
+
+/* Size modifiers
+   ================================================== */
+
+.uis-card-small.uis-card-body,
+.uis-card-small .uis-card-body {
+  padding: 30px 30px;
+}
+
+.uis-card-small .uis-card-header {
+  padding: 7px 30px;
+}
+
+.uis-card-small .uis-card-footer {
+  padding: 7px 30px;
+}
+
+/*
+ * Large
+ */
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-card-large.uis-card-body,
+  .uis-card-large .uis-card-body {
+    padding: 70px 70px;
+  }
+
+  .uis-card-large .uis-card-header {
+    padding: 35px 70px;
+  }
+
+  .uis-card-large .uis-card-footer {
+    padding: 35px 70px;
+  }
+}
+
+/* ==================================================
+    Component: Off-canvas
+   ================================================== */
+
+/*
+ * Adopts `li-icon`
+ */
+
+.uis-close {
+  color: #5C5C5C;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover + Focus */
+
+.uis-close:hover,
+.uis-close:active {
+  color: #3E4554;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Style modifiers
+   ================================================== */
+
+.uis-close-inverse {
+  color: #e6e6e6;
+}
+
+/* Hover + Focus */
+
+.uis-close-inverse:hover,
+.uis-close-inverse:active {
+  color: #FFFFFF;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ==================================================
+    Component: Container
+   ================================================== */
+
+/*
+ * 1. Box sizing has to be `content-box` so the max-width is always the same
+ *    and unaffected by the padding on different breakpoints. It's important
+ *    for the size modifiers.
+ */
+
+.uis-container {
+  /* 1 */
+  box-sizing: content-box;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Phone landscape and bigger */
+
+@media screen and (min-width: 640px) {
+  .uis-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* Table landscape and bigger */
+
+@media screen and (min-width: 960px) {
+  .uis-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/*
+ * Miscro clearfix
+ */
+
+.uis-container:before,
+.uis-container:after {
+  content: "";
+  display: table;
+}
+
+.uis-container:after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-container > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+ * Remove padding from nested containers
+ */
+
+.uis-container .uis-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Size modifiers
+   ================================================== */
+
+.uis-container-xsmall {
+  max-width: 750px;
+}
+
+.uis-container-small {
+  max-width: 900px;
+}
+
+.uis-container-large {
+  max-width: 1600px;
+}
+
+.uis-container-expand {
+  max-width: none;
+}
+
+/* ==================================================
+    Component: Form
+   ================================================== */
+
+/*
+ * 1. Define consistent box sizing.
+ *    Default is `content-box` with following exceptions set to `border-box`
+ *    `select`, `input[type='checkbox']` and `input[type='radio']`
+ *    `input[type='search']` in Chrome, Safari and Opera
+ *    `input[type='color']` in Firefox
+ * 2. Address margins set differently in Firefox/IE and Chrome/Safari/Opera.
+ * 3. Remove `border-radius` in iOS.
+ * 4. Change font properties to `inherit` in all browsers.
+ */
+
+.uis-input,
+.uis-select,
+.uis-textarea,
+.uis-radio,
+.uis-checkbox {
+  /* 1 */
+  box-sizing: border-box;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  border-radius: 0;
+  /* 4 */
+  font: Poppins;
+}
+
+/*
+ * Show the overflow in Edge
+ */
+
+.uis-input {
+  overflow: visible;
+}
+
+/*
+ * Remove the inheritance of text transform in firefox
+ */
+
+.uis-select {
+  text-transform: none;
+}
+
+/*
+ * 1. Change font properties to `inherit` in all browsers
+ * 2. Don't inherit the `font-weight` and use `bold` instead.
+ * NOTE: Both declarations don't work in Chrome, Safari and Opera.
+ */
+
+.uis-select optgroup {
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  font-weight: 600;
+}
+
+/*
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+.uis-textarea {
+  overflow: auto;
+}
+
+.uis-input[type=search] {
+  padding-right: 20px;
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjMwIiBoZWlnaHQ9IjE2IiBmaWxsPSIjNjY2NjY2IiB2aWV3Qm94PSIwIDAgNTAgNTEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxLjQxNDIxOyI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLC04OC4wNTI5LC0xODQpIj4KICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDAuMDY4OTQ1MiwxNTkuMzI3KSI+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTAuMDY4OTQ1MiwtMTU5LjMyNykiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTEyMC42MTMsMjE5LjM1OUMxMTkuMDk4LDIyMC42NTQgMTE3LjM5LDIyMS43MiAxMTUuNTI4LDIyMi40ODFDMTA0Ljk5MiwyMjYuNzg5IDkxLjIxNSwyMjAuMTg1IDg4LjUxMiwyMDguNDg5Qzg1Ljg4MywxOTcuMTE0IDk0Ljg1MiwxODQuMzY3IDEwNy40NjQsMTg0LjAwN0MxMDcuNjc5LDE4NC4wMDIgMTA3Ljg5NCwxODQgMTA4LjEwOSwxODRDMTE3LjI4OSwxODQuMDg4IDEyNS45MjUsMTkxLjE1MiAxMjcuNjI0LDIwMC4zMjJDMTI4LjY3MywyMDUuOTgzIDEyNi45MzksMjExLjk2NSAxMjMuMzgzLDIxNi40NzJMMTM3LjQ5NywyMzAuNTg2QzEzOC44ODMsMjMyLjA0OSAxMzYuNzIzLDIzNS4zNjEgMTM0LjY2OCwyMzMuNDE0TDEyMC42MTMsMjE5LjM1OVpNMTA3Ljg3NiwxODhDMTAwLjUwOCwxODguMDcxIDkzLjYyNywxOTMuNzE2IDkyLjI2OCwyMDEuMDUxQzkwLjU4MSwyMTAuMTUgOTguMzg5LDIxOS44OTggMTA3Ljg3NiwyMTkuOTU4QzExOC4xNzcsMjIwLjAyNCAxMjcuMDgyLDIwOC4xMDggMTIyLjcwNCwxOTcuNzY1QzEyMC4zMTgsMTkyLjEyNiAxMTQuNTM1LDE4OC4xNDIgMTA4LjI5LDE4OC4wMDNDMTA4LjE1MiwxODguMDAxIDEwOC4wMTQsMTg4IDEwNy44NzYsMTg4WiIgc3R5bGU9ImZpbGwtcnVsZTpub256ZXJvOyIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+}
+
+.uis-modal.uis-search-modal .uis-input[type=search] {
+  padding-left: 20px;
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgaWQ9InNlYXJjaC1zdmciIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiIHZpZXdCb3g9IjAgMCAxNCAxNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczpzZXJpZj0iaHR0cDovL3d3dy5zZXJpZi5jb20vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEuNDE0MjE7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTg4LjA1MjksLTE4NCkiPgogICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMC4wNjg5NDUyLDE1OS4zMjcpIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC4yODA2NTksMCwwLDAuMjc5OTM5LDYzLjI3MTEsLTI2LjgzNTEpIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMjAuNjEzLDIxOS4zNTlDMTE5LjA5OCwyMjAuNjU0IDExNy4zOSwyMjEuNzIgMTE1LjUyOCwyMjIuNDgxQzEwNC45OTIsMjI2Ljc4OSA5MS4yMTUsMjIwLjE4NSA4OC41MTIsMjA4LjQ4OUM4NS44ODMsMTk3LjExNCA5NC44NTIsMTg0LjM2NyAxMDcuNDY0LDE4NC4wMDdDMTA3LjY3OSwxODQuMDAyIDEwNy44OTQsMTg0IDEwOC4xMDksMTg0QzExNy4yODksMTg0LjA4OCAxMjUuOTI1LDE5MS4xNTIgMTI3LjYyNCwyMDAuMzIyQzEyOC42NzMsMjA1Ljk4MyAxMjYuOTM5LDIxMS45NjUgMTIzLjM4MywyMTYuNDcyTDEzNy40OTcsMjMwLjU4NkMxMzguODgzLDIzMi4wNDkgMTM2LjcyMywyMzUuMzYxIDEzNC42NjgsMjMzLjQxNEwxMjAuNjEzLDIxOS4zNTlaTTEwNy44NzYsMTg4QzEwMC41MDgsMTg4LjA3MSA5My42MjcsMTkzLjcxNiA5Mi4yNjgsMjAxLjA1MUM5MC41ODEsMjEwLjE1IDk4LjM4OSwyMTkuODk4IDEwNy44NzYsMjE5Ljk1OEMxMTguMTc3LDIyMC4wMjQgMTI3LjA4MiwyMDguMTA4IDEyMi43MDQsMTk3Ljc2NUMxMjAuMzE4LDE5Mi4xMjYgMTE0LjUzNSwxODguMTQyIDEwOC4yOSwxODguMDAzQzEwOC4xNTIsMTg4LjAwMSAxMDguMDE0LDE4OCAxMDcuODc2LDE4OFoiIHN0eWxlPSJmaWxsLXJ1bGU6bm9uemVybzsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==");
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  text-indent: 20px;
+}
+
+/*
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+.uis-input[type=number]::-webkit-inner-spin-button,
+.uis-input[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+ * Removes placeholder transparency in Firefox
+ */
+
+.uis-input::-moz-placeholder,
+.uis-textarea::-moz-placeholder {
+  opacity: 1;
+}
+
+/*
+ * Improves consistency of cursor style for clikable elements
+ */
+
+.uis-radio:not(:disabled),
+.uis-checkbox:not(:disabled) {
+  cursor: pointer;
+}
+
+/*
+ * Define consistent border, margin, and padding
+ */
+
+.uis-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Input, select and textarea
+ * Allowed: `text`, `password`, `datetime`, `datetime-local`, `date`,  `month`,
+ *          `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
+ *
+ * Disallowed: `range`, `radio`, `checkbox`, `file`, `submit`, `reset`
+ *              and `image`
+ ========================================================================== */
+
+/*
+  * 1. Prevent content overflow if a fixed width is used
+  * 2. Take the full width
+  * 3. Reset default
+  * 4. Style
+  */
+
+.uis-input,
+.uis-select,
+.uis-textarea {
+  /* 1 */
+  max-width: 100%;
+  /* 2 */
+  width: 100%;
+  /* 3 */
+  border-top: none;
+  border-bottom: 1px solid #E5E5E5;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  /* 4 */
+  padding: 0;
+  background: #FFFFFF;
+  color: #454545;
+}
+
+.uis-textarea {
+  font-family: Poppins;
+}
+
+.uis-modal.uis-search-modal .uis-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  color: #454545;
+  border-radius: 0px;
+}
+
+/*
+ * Single-line
+ * 1. Allow any element to look like an `input` or `select` element
+ * 2. Make sure line-height is not larger than height
+ *    Also needed to center the text vertically
+ */
+
+.uis-input,
+.uis-select:not([multiple]):not([size]) {
+  height: 40px;
+  vertical-align: middle;
+  /* 1 */
+  display: inline-block;
+}
+
+/* 2 */
+
+.uis-input:not(input),
+.uis-select:not(select) {
+  line-height: 40px;
+}
+
+/*
+ * Multi-line
+ */
+
+.uis-select[multiple],
+.uis-select[size],
+.uis-textarea {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  vertical-align: top;
+}
+
+/* Focus */
+
+.uis-input:focus,
+.uis-select:focus,
+.uis-textarea:focus {
+  border-bottom: 1px solid #2591D0;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #454545;
+}
+
+/* Disabled */
+
+.uis-input:disabled,
+.uis-select:disabled,
+.uis-textarea:disabled {
+  background-color: #F9F9F9;
+  color: #5C5C5C;
+}
+
+/*
+ * Placeholder
+ */
+
+.uis-input:-ms-input-placeholder {
+  color: darkgray !important;
+  font-style: italic;
+}
+
+.uis-input::-webkit-input-placeholder {
+  color: darkgray;
+  font-style: italic;
+}
+
+.uis-input::-moz-placeholder {
+  color: darkgray;
+  font-style: italic;
+}
+
+.uis-input::-ms-input-placeholder {
+  color: darkgray;
+  font-style: italic;
+}
+
+.uis-input::placeholder {
+  color: darkgray;
+  font-style: italic;
+}
+
+.uis-textarea:-ms-input-placeholder {
+  color: darkgray !important;
+  font-style: italic;
+}
+
+.uis-textarea::-webkit-input-placeholder {
+  color: darkgray;
+  font-style: italic;
+}
+
+.uis-textarea::-moz-placeholder {
+  color: darkgray;
+  font-style: italic;
+}
+
+.uis-textarea::-ms-input-placeholder {
+  color: darkgray;
+  font-style: italic;
+}
+
+.uis-textarea::placeholder {
+  color: darkgray;
+  font-style: italic;
+}
+
+/* Style modifier (`uk-input`, `uk-select` and `uk-textarea`)
+ ========================================================================== */
+
+/*
+ * Small
+ */
+
+.uis-form-small {
+  font-size: 0.875rem;
+}
+
+.uis-form-small:not(textarea):not([multiple]):not([size]) {
+  height: 30px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.uis-form-small:not(select):not(input):not(textarea) {
+  line-height: 30px;
+}
+
+/*
+ * Large
+ */
+
+.uis-form-large {
+  font-size: 1.25rem;
+}
+
+.uis-form-large:not(textarea):not([multiple]):not([size]) {
+  height: 55px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.uis-form-large:not(select):not(input):not(textarea) {
+  line-height: 55px;
+}
+
+/* Style modifier (`uk-input`, `uk-select` and `uk-textarea`)
+ ========================================================================== */
+
+/*
+ * Error
+ */
+
+.uis-form-danger,
+.uis-form-danger:focus {
+  color: #454545;
+  border-color: #E32626;
+}
+
+/*
+ * Success
+ */
+
+.uis-form-success,
+.uis-form-success:focus {
+  color: #454545;
+  border-color: #26CC6E;
+}
+
+/*
+ * Blank
+ */
+
+.uis-form-blank {
+  background: none;
+  border: none;
+}
+
+.uis-form-blank:focus {
+  outline: none;
+  border-top: none;
+  border-bottom: 1px dashed #E5E5E5;
+  border-left: none;
+  border-right: none;
+}
+
+.uis-form-blank::-webkit-input-placeholder {
+  font-style: italic;
+  color: #757575;
+}
+
+.uis-form-blank::-moz-placeholder {
+  font-style: italic;
+  color: #757575;
+}
+
+.uis-form-blank:-ms-input-placeholder {
+  font-style: italic;
+  color: #757575;
+}
+
+.uis-form-blank::-ms-input-placeholder {
+  font-style: italic;
+  color: #757575;
+}
+
+.uis-form-blank::placeholder {
+  font-style: italic;
+  color: #757575;
+}
+
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
+
+/* Width modifiers (`uk-input`, `uk-select` and `uk-textarea`)
+ ========================================================================== */
+
+/*
+ * Fixed widths
+ * Different widths for mini sized `input` and `select` elements
+ */
+
+input.uis-form-width-xsmall {
+  width: 50px;
+}
+
+select.uis-form-width-xsmall {
+  width: 75px;
+}
+
+.uis-form-width-small {
+  width: 130px;
+}
+
+.uis-form-width-medium {
+  width: 200px;
+}
+
+.uis-form-width-large {
+  width: 500px;
+}
+
+/* Select
+ ========================================================================== */
+
+/*
+ * 1. Style
+ * 2. Remove default style in IE 10/11
+ * 3. Set `color` for options in the select dropdown, because the
+ *    inherited `color` might be too light.
+ */
+
+.uis-select:not([multiple]):not([size]) {
+  /* 1 */
+  padding-right: 20px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCA2IiBoZWlnaHQ9IjE2cHgiIHdpZHRoPSIxNnB4Ij48dGl0bGU+QXNzZXQgMTwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBkPSJNNC41LDVhLjQ3LjQ3LDAsMCwxLS4zNS0uMTVsLTQtNGEuNDguNDgsMCwwLDEsMC0uNy40OC40OCwwLDAsMSwuNywwTDQuNSwzLjc5LDguMTUuMTVhLjQ4LjQ4LDAsMCwxLC43LDAsLjQ4LjQ4LDAsMCwxLDAsLjdsLTQsNEEuNDcuNDcsMCwwLDEsNC41LDVaIi8+PC9nPjwvZz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+}
+
+/* 3 */
+
+.uis-select:not([multiple]):not([size])::-ms-expand {
+  display: none;
+}
+
+/* 4 */
+
+.uis-select:not([multiple]):not([size]) option {
+  color: #444444;
+}
+
+/*
+ * Disabled
+ */
+
+.uis-select:not([multiple]):not([size]):disabled {
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCA2IiBoZWlnaHQ9IjE2cHgiIHdpZHRoPSIxNnB4Ij48dGl0bGU+QXNzZXQgMTwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBkPSJNNC41LDVhLjQ3LjQ3LDAsMCwxLS4zNS0uMTVsLTQtNGEuNDguNDgsMCwwLDEsMC0uNy40OC40OCwwLDAsMSwuNywwTDQuNSwzLjc5LDguMTUuMTVhLjQ4LjQ4LDAsMCwxLC43LDAsLjQ4LjQ4LDAsMCwxLDAsLjdsLTQsNEEuNDcuNDcsMCwwLDEsNC41LDVaIi8+PC9nPjwvZz48L3N2Zz4=") #5C5C5C #F9F9F9;
+}
+
+/* Radio and checkbox
+ * Note: Does not work in IE11
+ ========================================================================== */
+
+/*
+ * 1. Style
+ * 2. Make box more robust so it clips the child element
+ * 3. Vertical alignment
+ * 4. Fix black background on iOS
+ * 5. Center icons
+ * 6. Style
+ */
+
+.uis-radio,
+.uis-checkbox {
+  /* 1 */
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  /* 2 */
+  overflow: hidden;
+  /* 3 */
+  margin-top: -4px;
+  vertical-align: middle;
+  /* 4 */
+  background-color: #f2f2f2;
+  /* 5 */
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* 6 */
+  border: solid 0.5px #E5E5E5;
+}
+
+.uis-radio {
+  border-radius: 50%;
+}
+
+/* Focus */
+
+.uis-radio:focus,
+.uis-checkbox:focus {
+  outline: none;
+}
+
+/*
+ * Checked
+ */
+
+.uis-radio:checked,
+.uis-checkbox:checked,
+.uis-checkbox:indeterminate {
+  background-color: #2591D0;
+}
+
+/* Focus */
+
+.uis-radio:checked:focus,
+.uis-checkbox:checked:focus,
+.uis-checkbox:indeterminate:focus {
+  background-color: #1d73a5;
+}
+
+/*
+ * Icons
+ */
+
+.uis-radio:checked {
+  background: #2591D0;
+}
+
+.uis-checkbox:checked {
+  background-color: #2591D0;
+}
+
+.uis-checkbox:indeterminate {
+  background: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22#000%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+/*
+ * Disabled
+ */
+
+.uis-radio:disabled,
+.uis-checkbox:disabled {
+  background-color: #5C5C5C;
+}
+
+.uis-radio:disabled:checked {
+  background: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22#000%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E") #5C5C5C #F9F9F9;
+}
+
+.uis-checkbox:disabled:checked {
+  background: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22#000%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A") #5C5C5C #F9F9F9;
+}
+
+.uis-checkbox:disabled:indeterminate {
+  background: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22#000%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E") #5C5C5C #F9F9F9;
+}
+
+/* Legend
+ ========================================================================== */
+
+/*
+ * Legend
+ * 1. Behave like block element
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 4. Style
+ */
+
+.uis-legend {
+  /* 1 */
+  width: 100%;
+  /* 2 */
+  color: inherit;
+  /* 3 */
+  padding: 0;
+  /* 4 */
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Custom controls
+ ========================================================================== */
+
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Behave like most inline-block elements
+ */
+
+.uis-form-custom {
+  /* 1 */
+  display: inline-block;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  max-width: 100%;
+  /* 4 */
+  vertical-align: middle;
+}
+
+/*
+ * 1. Position and resize the form control to always cover its container
+ * 2. Required for Firefox for positioning to the left
+ * 3. Hide controle and show cursor
+ * 4. Needed for the cursor
+ * 5. Clip height caused by 5. Needed for Webkit only
+ */
+
+.uis-form-custom select,
+.uis-form-custom input[type=file] {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  /* 2 */
+  left: 0;
+  /* 3 */
+  opacity: 0;
+  cursor: pointer;
+}
+
+.uis-form-custom input[type=file] {
+  /* 5 */
+  font-size: 500px;
+  /* 6 */
+  overflow: hidden;
+}
+
+/* Layout
+ ========================================================================== */
+
+/*
+ * Stacked
+ */
+
+.uis-form-stacked .uis-form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.875rem;
+}
+
+/*
+ * Horizontal
+ */
+
+/* Tablet portrait and smaller */
+
+@media (max-width: 640px) {
+  /* Behave like `uis-form-stacked` */
+
+  .uis-form-horizontal .uis-form-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+/* Tablet landscape and bigger */
+
+@media screen and (min-width: 960px) {
+  .uis-form-horizontal .uis-form-label {
+    width: 200px;
+    margin-top: 7px;
+    float: left;
+  }
+
+  .uis-form-horizontal .uis-form-controls {
+    margin-left: 215px;
+  }
+
+  /* Better vertical alignment if controls are checkboxes
+     and radio buttons with text */
+
+  .uis-form-horizontal .uis-form-controls-text {
+    padding-top: 7px;
+  }
+}
+
+/* Icons
+ ========================================================================== */
+
+/*
+ * 1. Set position
+ * 2. Set width
+ * 3. Center icon vertically and horizontally
+ * 4. Style
+ */
+
+.uis-form-icon {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* 2 */
+  width: 40px;
+  /* 3 */
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  /* 4 */
+  color: #5C5C5C;
+}
+
+/*
+ * Required for `a`.
+ */
+
+.uis-form-icon:hover {
+  color: #454545;
+}
+
+/*
+ * Make `input` element clickable through icon, e.g. if it's a `span`
+ */
+
+.uis-form-icon:not(a):not(button):not(input) {
+  pointer-events: none;
+}
+
+/*
+ * Input padding
+ */
+
+.uis-form-icon:not(.uis-form-icon-flip) ~ .uis-input {
+  padding-left: 40px !important;
+}
+
+/*
+ * Position modifier
+ */
+
+.uis-form-icon-flip {
+  right: 0;
+  left: auto;
+}
+
+.uis-form-icon-flip ~ .uis-input {
+  padding-right: 40px !important;
+}
+
+/* Switch
+ ========================================================================== */
+
+.uis-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.uis-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.uis-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #CCCCCC;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.uis-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #FFFFFF;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .uis-slider {
+  background-color: #26CC6E;
+}
+
+input:focus + .uis-slider {
+  box-shadow: 0 0 1px #26CC6E;
+}
+
+input:checked + .uis-slider:before {
+  -webkit-transform: translateX(24px);
+          transform: translateX(24px);
+}
+
+/* Rounded sliders */
+
+.uis-slider.uis-slider-round {
+  border-radius: 34px;
+}
+
+.uis-slider.uis-slider-round:before {
+  border-radius: 50%;
+}
+
+/* ==================================================
+    Component: Link
+   ================================================== */
+
+.uis-link {
+  position: relative;
+}
+
+.uis-link-line {
+  position: relative;
+  margin-left: 50px;
+}
+
+.uis-link-line:hover {
+  text-decoration: none;
+}
+
+.uis-link.uis-link-line:after {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 49%;
+  height: 1px;
+  width: 40px;
+  background-color: #349ddb;
+}
+
+/* Inverse
+   ================================================== */
+
+a.uis-link-inverse,
+.uis-link-inverse a {
+  color: rgba(255, 255, 255, 0.6);
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+a.uis-link-inverse:hover,
+.uis-link-inverse a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Muted
+   ================================================== */
+
+a.uis-link-muted,
+.uis-link-muted a {
+  color: #5C5C5C;
+}
+
+a.uis-link-muted:hover,
+.uis-link-muted a:hover {
+  color: #454545;
+}
+
+/* Default
+   ================================================== */
+
+a.uis-link-default,
+.uis-link-default a {
+  color: #525252;
+}
+
+a.uis-link-default:hover,
+.uis-link-default a:hover {
+  color: #2c2c2c;
+}
+
+/* Emphasis
+   ================================================== */
+
+a.uis-link-emphasis,
+.uis-link-emphasis a {
+  color: #495163;
+}
+
+a.uis-link-emphasis:hover,
+.uis-link-emphasis a:hover {
+  color: #282d37;
+}
+
+/* Primary
+   ================================================== */
+
+a.uis-link-primary,
+.uis-link-primary a {
+  color: #349ddb;
+}
+
+a.uis-link-primary:hover,
+.uis-link-primary a:hover {
+  color: #349ddb;
+}
+
+/* Success
+   ================================================== */
+
+a.uis-link-success,
+.uis-link-success a {
+  color: #33d97b;
+}
+
+a.uis-link-success:hover,
+.uis-link-success a:hover {
+  color: #1ea157;
+}
+
+/* Warning
+   ================================================== */
+
+a.uis-link-warning,
+.uis-link-warning a {
+  color: #ffa829;
+}
+
+a.uis-link-warning:hover,
+.uis-link-warning a:hover {
+  color: #db8200;
+}
+
+/* Danger
+   ================================================== */
+
+a.uis-link-danger,
+.uis-link-danger a {
+  color: #e63d3d;
+  text-decoration: none;
+}
+
+a.uis-link-danger:hover,
+.uis-link-danger a:hover {
+  color: #be1818;
+  text-decoration: none;
+}
+
+/* Inverse
+   ================================================== */
+
+a.uis-link-inverse,
+.uis-link-inverse a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+a.uis-link-inverse:hover,
+.uis-link-inverse a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Text
+   ================================================== */
+
+a.uis-link-text:not(:hover),
+.uis-link-text a:not(:hover) {
+  color: inherit;
+}
+
+a.uis-link-text:hover,
+.uis-link-text a:hover {
+  color: #5C5C5C;
+}
+
+/* Heading
+   ================================================== */
+
+a.uis-link-heading:not(:hover),
+.uis-link-heading a:not(:hover) {
+  color: inherit;
+}
+
+a.uis-link-heading:hover,
+.uis-link-heading a:hover {
+  color: #2591D0;
+  text-decoration: none;
+}
+
+/* Reset
+   ================================================== */
+
+/*
+ * `!important` needed to override inverse component
+ */
+
+a.uis-link-reset,
+a.uis-link-reset:hover,
+.uis-link-reset a,
+.uis-link-reset a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==================================================
+    Component: List
+   ================================================== */
+
+.uis-list {
+  padding: 0;
+  list-style: none;
+}
+
+/*
+ * Micro clearfix
+ */
+
+.uis-list:before,
+.uis-list:after {
+  content: "";
+  display: table;
+}
+
+.uis-list:after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-list > li > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+ * Nested lists
+ */
+
+.uis-list ul {
+  margin: 0;
+  padding-left: 30px;
+  list-style: none;
+}
+
+/*
+ * Style
+ */
+
+.uis-list > li:nth-child(n+2),
+.uis-list > li > ul {
+  margin-top: 10px;
+}
+
+/* Style Modifiers
+   ================================================== */
+
+/*
+ * Divider
+ */
+
+.uis-list-divider > li:nth-child(n+2) {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #E5E5E5;
+}
+
+/*
+ * Striped
+ */
+
+.uis-list-striped > li {
+  padding: 10px 10px;
+}
+
+.uis-list-striped > li:nth-of-type(odd) {
+  background: #F9F9F9;
+}
+
+.uis-list-striped > li:nth-child(n+2) {
+  margin-top: 0;
+}
+
+/*
+ * Bullet
+ * 1. Reset display `table` which cause issues in combination
+ *    with multi column layouts.
+ */
+
+.uis-list-bullet > li {
+  position: relative;
+  padding-left: calc(1.5em + 5px);
+}
+
+.uis-list-bullet > li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5em;
+  height: 1.5em;
+  background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDgiIGhlaWdodD0iNnB4IiB3aWR0aD0iNnB4IiBmaWxsPSIjMzMzMzMzIj48dGl0bGU+ZG90PC90aXRsZT48Y2lyY2xlIGN4PSI0IiBjeT0iNCIgcj0iNCIvPjwvc3ZnPg==") #2591D0 rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* 1 */
+  display: block;
+}
+
+/* Size Modifier
+   ================================================== */
+
+.uis-list-large > li:nth-child(n+2),
+.uis-list-large > li > ul {
+  margin-top: 20px;
+}
+
+/*
+ * Divider
+ */
+
+.uis-list-large.uis-list-divider > li:nth-child(n+2) {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+/*
+ * Striped
+ */
+
+.uis-list-large.uis-list-striped {
+  padding: 20px 10px;
+}
+
+.uis-list-large.uis-list-striped > li:nth-child(n+2) {
+  margin-top: 0;
+}
+
+/* ==================================================
+    Component: Table
+   ================================================== */
+
+/*
+ * 1. Remove most spacing between table cells.
+ * 2. Behave like a block element
+ * 3. Style
+ */
+
+.uis-table {
+  /* 1 */
+  border-collapse: collapse;
+  border-spacing: 0;
+  /* 2 */
+  width: 100%;
+  /* 3 */
+  margin-bottom: 20px;
+}
+
+/* Add margin if adjacent element */
+
+* + .uis-table {
+  margin-top: 20px;
+}
+
+/* Header cell
+   ================================================== */
+
+/*
+ * 1. Style
+ */
+
+.uis-table th {
+  padding: 16px 12px;
+  text-align: left;
+  vertical-align: bottom;
+  /* 1 */
+  font-size: 16px;
+  font-weight: bold;
+  color: #454545;
+}
+
+/* Cell
+   ================================================== */
+
+.uis-table td {
+  padding: 16px 12px;
+  vertical-align: top;
+  color: #454545;
+  font-weight: 300;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-table td > :last-child {
+  margin-bottom: 0;
+}
+
+/* Footer
+   ================================================== */
+
+.uis-table tfoot {
+  font-size: 0.875rem;
+}
+
+/* Caption
+   ================================================== */
+
+.uis-table caption {
+  font-size: 0.875rem;
+  text-align: left;
+  color: #5C5C5C;
+}
+
+/* Alignment modifier
+   ================================================== */
+
+.uis-table-middle,
+.uis-table-middle td {
+  vertical-align: middle !important;
+}
+
+/* Style modifier
+   ================================================== */
+
+/*
+ * Divider
+ */
+
+.uis-table-divider > tr:not(:first-child),
+.uis-table-divider > :not(:first-child) > tr,
+.uis-table-divider > :first-child > tr:not(:first-child) {
+  border-top: 0.235px solid #E5E5E5;
+}
+
+/*
+ * Striped
+ */
+
+.uis-table-striped > tr:nth-of-type(odd),
+.uis-table-striped tbody tr:nth-of-type(odd) {
+  background: #F9F9F9;
+}
+
+/*
+ * Hover
+ */
+
+.uis-table-hover > tr:hover,
+.uis-table-hover tbody tr:hover {
+  background: #FFFFDD;
+}
+
+/* Activate state
+   ================================================== */
+
+.uis-table > tr.uis-active,
+.uis-table tbody tr.uis-active {
+  background: #FFFFDD;
+}
+
+/* Size modifier
+   ================================================== */
+
+.uis-table-small th,
+.uis-table-small td {
+  padding: 10px 12px;
+}
+
+.uis-table-large th,
+.uis-table-large td {
+  padding: 22px 12px;
+}
+
+/* Justify modifier
+   ================================================== */
+
+.uis-table-justify th:first-child,
+.uis-table-justify td:first-child {
+  padding-left: 0;
+}
+
+.uis-table-justify th:last-child,
+.uis-table-justify td:last-child {
+  padding-right: 0;
+}
+
+/* Cell size modifier
+   ================================================== */
+
+.uis-table-shrink {
+  width: 1px;
+}
+
+.uis-table-expand {
+  min-width: 150px;
+}
+
+/* Cell link modifier
+   ================================================== */
+
+/*
+ * Does not work with `uk-table-justify` at the moment
+ */
+
+.uis-table-link {
+  padding: 0 !important;
+}
+
+.uis-table-link > a {
+  display: block;
+  padding: 16px 12px;
+}
+
+.uis-table-small .uis-table-link > a {
+  padding: 10px 12px;
+}
+
+@media screen and (max-width: 959px) {
+  .uis-table-responsive,
+  .uis-table-responsive tbody,
+  .uis-table-responsive th,
+  .uis-table-responsive td,
+  .uis-table-responsive tr {
+    display: block;
+  }
+
+  .uis-table-responsive thead {
+    display: none;
+  }
+
+  .uis-table-responsive th,
+  .uis-table-responsive td {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    white-space: normal !important;
+  }
+
+  .uis-table-responsive th:not(:first-child):not(.uis-table-link),
+  .uis-table-responsive td:not(:first-child):not(.uis-table-link),
+  .uis-table-responsive .uis-table-link:not(:first-child) > a {
+    padding-top: 5px !important;
+  }
+
+  .uis-table-responsive th:not(:last-child):not(.uis-table-link),
+  .uis-table-responsive td:not(:last-child):not(.uis-table-link),
+  .uis-table-responsive .uis-table-link:not(:last-child) > a {
+    padding-bottom: 5px !important;
+  }
+
+  .uis-table-justify.uis-table-responsive th,
+  .uis-table-justify.uis-table-responsive td {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ==================================================
+    Component: Text
+   ================================================== */
+
+.uis-text-header {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #3E4554;
+  font-weight: Bold;
+}
+
+.uis-text-subheader {
+  font-size: 2rem;
+  line-height: 1.2;
+  color: #3E4554;
+  font-weight: Bold;
+}
+
+.uis-loading:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background-color: #E5E5E5;
+  -webkit-animation-name: slideIn;
+          animation-name: slideIn;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    width: 0;
+  }
+
+  25% {
+    width: 100%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  75% {
+    width: 100%;
+    right: 0;
+  }
+
+  100% {
+    width: 0%;
+    right: 0;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
+  }
+
+  25% {
+    width: 100%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  75% {
+    width: 100%;
+    right: 0;
+  }
+
+  100% {
+    width: 0%;
+    right: 0;
+  }
+}
+
+.uis-text-header.uis-text-header-underline:after,
+.uis-text-subheader.uis-text-subheader-underline:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: auto;
+  right: 0;
+  width: calc(100% - 50px);
+  height: 3px;
+  background-color: #FECC00;
+  border-radius: 100px;
+  -webkit-animation-name: slideRight;
+          animation-name: slideRight;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+}
+
+@media screen and (min-width: 960px) {
+  .uis-text-header.uis-text-header-underline:after,
+  .uis-text-subheader.uis-text-subheader-underline:after {
+    width: 100%;
+    left: 40px;
+    right: auto;
+  }
+}
+
+@-webkit-keyframes slideRight {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.uis-text-lead {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #3E4554;
+  font-weight: Normal;
+}
+
+.uis-text-sublead {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #454545;
+  font-weight: Normal;
+}
+
+.uis-text-meta {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #5C5C5C;
+  font-weight: Normal;
+}
+
+/* Style modifiers
+   ================================================== */
+
+.uis-text-medium {
+  font-weight: 600;
+}
+
+.uis-text-bold {
+  font-weight: 600;
+}
+
+.uis-text-italic {
+  font-style: italic;
+}
+
+.uis-text-oblique {
+  font-style: oblique;
+}
+
+.uis-text-underline {
+  text-decoration: underline;
+}
+
+/* Transform modifiers
+   ================================================== */
+
+.uis-text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.uis-text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.uis-text-lowercase {
+  text-transform: lowercase !important;
+}
+
+/* Color modifiers
+   ================================================== */
+
+.uis-text-default {
+  color: #454545 !important;
+}
+
+.uis-text-muted {
+  color: #5C5C5C !important;
+}
+
+.uis-text-emphasis {
+  color: #3E4554 !important;
+}
+
+.uis-text-primary {
+  color: #2591D0 !important;
+}
+
+.uis-text-secondary {
+  color: #0B2E4A !important;
+}
+
+.uis-text-success {
+  color: #26CC6E !important;
+}
+
+.uis-text-warning {
+  color: #FF9E0F !important;
+}
+
+.uis-text-danger {
+  color: #E32626 !important;
+}
+
+.uis-text-inverse {
+  color: #FFFFFF !important;
+}
+
+/* Background modifiers
+   ================================================== */
+
+/*
+ * 1. Container fills the text
+ * 2. Fallback color for IE11
+ */
+
+.uis-text-background {
+  /* 1 */
+  display: inline-block;
+  /* 2 */
+  color: #2591D0;
+}
+
+@supports (-webkit-background-clip: text) {
+  .uis-text-background {
+    background-color: #2591D0;
+  }
+}
+
+/* Alignment modifiers
+   ================================================== */
+
+.uis-text-left {
+  text-align: left !important;
+}
+
+.uis-text-right {
+  text-align: right !important;
+}
+
+.uis-text-center {
+  text-align: center !important;
+}
+
+.uis-text-justify {
+  text-align: justify !important;
+}
+
+/* Phone landscape and bigger */
+
+@media screen and (min-width: 640px) {
+  .uis-text-left\@s {
+    text-align: left !important;
+  }
+
+  .uis-text-right\@s {
+    text-align: right !important;
+  }
+
+  .uis-text-center\@s {
+    text-align: center !important;
+  }
+}
+
+/* Tablet landscape and bigger */
+
+@media screen and (min-width: 960px) {
+  .uis-text-left\@m {
+    text-align: left !important;
+  }
+
+  .uis-text-right\@m {
+    text-align: right !important;
+  }
+
+  .uis-text-center\@m {
+    text-align: center !important;
+  }
+}
+
+/* Desktop  and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-text-left\@l {
+    text-align: left !important;
+  }
+
+  .uis-text-right\@l {
+    text-align: right !important;
+  }
+
+  .uis-text-center\@l {
+    text-align: center !important;
+  }
+}
+
+/* Desktop  and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-text-left\@xl {
+    text-align: left !important;
+  }
+
+  .uis-text-right\@xl {
+    text-align: right !important;
+  }
+
+  .uis-text-center\@xl {
+    text-align: center !important;
+  }
+}
+
+/* Vertical modifiers
+   ================================================== */
+
+.uis-text-top {
+  vertical-align: top !important;
+}
+
+.uis-text-middle {
+  vertical-align: middle !important;
+}
+
+.uis-text-bottom {
+  vertical-align: bottom !important;
+}
+
+.uis-text-baseline {
+  vertical-align: baseline !important;
+}
+
+/* Wrap modifiers
+   ================================================== */
+
+/*
+ * Prevent text from wrapping into multiple lines
+ */
+
+.uis-text-nowrap {
+  white-space: nowrap;
+}
+
+/*
+ * 1. Make sure a max-width is set after which truncation can occur
+ * 2. Prevent text from wrapping onto multiple lines, and truncate
+ *    with an ellipsis
+ * 3. Fix for table cells
+ */
+
+.uis-text-truncate {
+  /* 1 */
+  max-width: 100%;
+  /* 2 */
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 959px) {
+  .uis-text-truncate\@m {
+    /* 1 */
+    max-width: 100%;
+    /* 2 */
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* 3 */
+
+th.uis-text-truncate,
+td.uis-text-truncate {
+  max-width: 0;
+}
+
+/*
+ * 1. Wrap long words onto the next line and break them if they are too
+ *    long to fit
+ * 2. Legacy `word-wrap` as fallback for `overflow-wrap`
+ * 3. Fix `overflow-wrap` which doesn't work with table cells in Chrome,
+ *    Opera, IE11, and Edge
+ *    Must use `break-all` to support IE11 and Edge
+ *
+ * Note: Not using `hypens: auto;` because it hypenates text even if not
+ *       needed.
+ */
+
+.uis-text-break {
+  /* 1 */
+  overflow-wrap: break-word;
+  /* 2 */
+  word-wrap: break-word;
+}
+
+/* 3 */
+
+th.uis-text-break,
+td.uis-text-break {
+  word-break: break-all;
+}
+
+.uis-text-indent-left {
+  margin-left: 0;
+}
+
+@media screen and (min-width: 960px) {
+  .uis-text-indent-left {
+    margin-left: 40px;
+  }
+}
+
+/* Grid
+   ================================================== */
+
+/* ==================================================
+    Component: Column
+   ================================================== */
+
+[class*=uis-column-] {
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+
+/* Desktop and Bigger */
+
+@media screen and (min-width: 1200px) {
+  [class*=uis-column-] {
+    -webkit-column-gap: 40px;
+       -moz-column-gap: 40px;
+            column-gap: 40px;
+  }
+}
+
+/*
+ * Fix image 1px line wrapping into the next column in Chrome
+ */
+
+[class*=uis-column-] img {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+/* Divider
+   ================================================== */
+
+/*
+ * 1. Double the column gap
+ */
+
+.uis-column-divider {
+  -webkit-column-rule: 1px solid #E5E5E5;
+     -moz-column-rule: 1px solid #E5E5E5;
+          column-rule: 1px solid #E5E5E5;
+  /* 1 */
+  -webkit-column-gap: 60px;
+     -moz-column-gap: 60px;
+          column-gap: 60px;
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-column-divider {
+    -webkit-column-gap: 80px;
+       -moz-column-gap: 80px;
+            column-gap: 80px;
+  }
+}
+
+/* Make element span across all columns
+ * Does not work in Firefox yet
+   ================================================== */
+
+.uis-column-span {
+  -webkit-column-span: all;
+     -moz-column-span: all;
+          column-span: all;
+}
+
+/* Width modifiers
+   ================================================== */
+
+.uis-column-1-2 {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+}
+
+.uis-column-1-3 {
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+}
+
+.uis-column-1-4 {
+  -webkit-column-count: 4;
+     -moz-column-count: 4;
+          column-count: 4;
+}
+
+.uis-column-1-5 {
+  -webkit-column-count: 5;
+     -moz-column-count: 5;
+          column-count: 5;
+}
+
+.uis-column-1-6 {
+  -webkit-column-count: 6;
+     -moz-column-count: 6;
+          column-count: 6;
+}
+
+@media screen and (min-width: 640px) {
+  .uis-column-1-2\@s {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+  }
+
+  .uis-column-1-3\@s {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+  }
+
+  .uis-column-1-4\@s {
+    -webkit-column-count: 4;
+       -moz-column-count: 4;
+            column-count: 4;
+  }
+
+  .uis-column-1-5\@s {
+    -webkit-column-count: 5;
+       -moz-column-count: 5;
+            column-count: 5;
+  }
+
+  .uis-column-1-6\@s {
+    -webkit-column-count: 6;
+       -moz-column-count: 6;
+            column-count: 6;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .uis-column-1-2\@m {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+  }
+
+  .uis-column-1-3\@m {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+  }
+
+  .uis-column-1-4\@m {
+    -webkit-column-count: 4;
+       -moz-column-count: 4;
+            column-count: 4;
+  }
+
+  .uis-column-1-5\@m {
+    -webkit-column-count: 5;
+       -moz-column-count: 5;
+            column-count: 5;
+  }
+
+  .uis-column-1-6\@m {
+    -webkit-column-count: 6;
+       -moz-column-count: 6;
+            column-count: 6;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .uis-column-1-2\@l {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+  }
+
+  .uis-column-1-3\@l {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+  }
+
+  .uis-column-1-4\@l {
+    -webkit-column-count: 4;
+       -moz-column-count: 4;
+            column-count: 4;
+  }
+
+  .uis-column-1-5\@l {
+    -webkit-column-count: 5;
+       -moz-column-count: 5;
+            column-count: 5;
+  }
+
+  .uis-column-1-6\@l {
+    -webkit-column-count: 6;
+       -moz-column-count: 6;
+            column-count: 6;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .uis-column-1-2\@xl {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+  }
+
+  .uis-column-1-3\@xl {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+  }
+
+  .uis-column-1-4\@xl {
+    -webkit-column-count: 4;
+       -moz-column-count: 4;
+            column-count: 4;
+  }
+
+  .uis-column-1-5\@xl {
+    -webkit-column-count: 5;
+       -moz-column-count: 5;
+            column-count: 5;
+  }
+
+  .uis-column-1-6\@xl {
+    -webkit-column-count: 6;
+       -moz-column-count: 6;
+            column-count: 6;
+  }
+}
+
+/* ==================================================
+    Component: Grid
+   ================================================== */
+
+/*
+ * 1. Allow cells to wrap in to the next line
+ * 2. Reset list
+ */
+
+.uis-grid {
+  display: -webkit-box;
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+ * Grid cell
+ * Note: Space is allocated solely based on content dimensions,
+ *       but shrinks: 0 1 auto, reset margin for e.g. paragraphs
+ */
+
+.uis-grid > * {
+  margin: 0;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-margin > * > :last-child {
+  margin-bottom: 0;
+}
+
+/* Gutter
+   ================================================== */
+
+/*
+ * Default
+ */
+
+/* Horizontal */
+
+.uis-grid {
+  margin-left: -30px;
+}
+
+.uis-grid > * {
+  padding-left: 30px;
+}
+
+/* Vertical */
+
+.uis-grid + .uis-grid,
+.uis-grid > .uis-grid-margin,
+* + .uis-grid-margin {
+  margin-top: 30px;
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-grid {
+    margin-left: -40px;
+  }
+
+  .uis-grid > * {
+    padding-left: 40px;
+  }
+
+  .uis-grid + .uis-grid,
+  .uis-grid > .uis-grid-margin,
+  * + .uis-grid-margin {
+    margin-top: 40px;
+  }
+}
+
+/*
+ * Small
+ */
+
+/* Horizontal */
+
+.uis-grid-small {
+  margin-left: -15px;
+}
+
+.uis-grid-small > * {
+  padding-left: 15px;
+}
+
+/* Vertical */
+
+.uis-grid + .uis-grid-small,
+.uis-grid-small > .uis-grid-margin,
+* + .uis-grid-margin-small {
+  margin-top: 15px;
+}
+
+/*
+ * Medium
+ */
+
+/* Horizontal */
+
+.uis-grid-medium {
+  margin-left: -40px;
+}
+
+.uis-grid-medium > * {
+  padding-left: 40px;
+}
+
+/* Vertical */
+
+.uis-grid + .uis-grid-medium,
+.uis-grid-medium > .uis-grid-margin,
+* + .uis-grid-margin-medium {
+  margin-top: 40px;
+}
+
+/*
+ * Large
+ */
+
+/* Horizontal */
+
+.uis-grid-large {
+  margin-left: -40px;
+}
+
+.uis-grid-large > * {
+  padding-left: 40px;
+}
+
+/* Vertical */
+
+.uis-grid + .uis-grid-large,
+.uis-grid-large > .uis-grid-margin,
+* + .uis-grid-margin-large {
+  margin-top: 40px;
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  .uis-grid-large {
+    margin-left: -70px;
+  }
+
+  .uis-grid-large > * {
+    padding-left: 70px;
+  }
+
+  .uis-grid + .uis-grid-large,
+  .uis-grid-large > .uis-grid-margin,
+  * + .uis-grid-margin-large {
+    margin-top: 70px;
+  }
+}
+
+/*
+ * Collapse
+ */
+
+/* Horizontal */
+
+.uis-grid-collapse {
+  margin-left: 0;
+}
+
+.uis-grid-collapse > * {
+  padding-left: 0;
+}
+
+/* Vertical */
+
+.uis-grid + .uis-grid-collapse,
+.uis-grid-collapse > .uis-grid-margin {
+  margin-top: 0;
+}
+
+/* Divider
+   ================================================== */
+
+.uis-grid-divider {
+  position: relative;
+}
+
+.uis-grid-divider > :not(.uis-first-column):before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid #E5E5E5;
+}
+
+.uis-grid-divider .uis-grid-stock > .uis-grid-margin:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #E5E5E5;
+}
+
+/*
+ * Default
+ */
+
+/* Horizontal */
+
+.uis-grid-divider {
+  margin-left: -60px;
+}
+
+.uis-grid-divider > * {
+  padding-left: 60px;
+}
+
+.uis-grid-divider > :not(.uis-first-column):before {
+  left: 30px;
+}
+
+/* Vertical */
+
+.uis-grid-divider .uis-grid-stack > .uis-grid-margin {
+  margin-top: 60px;
+}
+
+.uis-grid-divider .uis-grid-stack > .uis-grid-margin:before {
+  top: -30px;
+  left: 60px;
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  /* Horizontal */
+
+  .uis-grid-divider {
+    margin-left: -80px;
+  }
+
+  .uis-grid-divider > * {
+    padding-left: 80px;
+  }
+
+  .uis-grid-divider > :not(.uis-first-column):before {
+    left: 40px;
+  }
+
+  /* Vertical */
+
+  .uis-grid-divider .uis-grid-stack > .uis-grid-margin {
+    margin-top: 80px;
+  }
+
+  .uis-grid-divider .uis-grid-stack > .uis-grid-margin:before {
+    top: -40px;
+    left: 80px;
+  }
+}
+
+/*
+ * Small
+ */
+
+/* Horizontal */
+
+.uis-grid-divider .uis-grid-small {
+  margin-left: -30px;
+}
+
+.uis-grid-divider .uis-grid-small > * {
+  padding-left: 30px;
+}
+
+.uis-grid-divider .uis-grid-small > :not(.uis-first-column):before {
+  left: 15px;
+}
+
+/* Vertical */
+
+.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin {
+  margin-top: 30px;
+}
+
+.uis-grid-divider .uis-grid-small .uis-grid-stack > .uis-grid-margin:before {
+  top: -15px;
+  left: 30px;
+}
+
+/*
+ * Medium
+ */
+
+/* Horizontal */
+
+.uis-grid-divider .uis-grid-medium {
+  margin-left: -80px;
+}
+
+.uis-grid-divider .uis-grid-medium > * {
+  padding-left: 80px;
+}
+
+.uis-grid-divider .uis-grid-medium > :not(.uis-first-column):before {
+  left: 40px;
+}
+
+/* Vertical */
+
+.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin {
+  margin-top: 80px;
+}
+
+.uis-grid-divider .uis-grid-medium .uis-grid-stack > .uis-grid-margin:before {
+  top: -40px;
+  left: 80px;
+}
+
+/*
+ * Large
+ */
+
+/* Horizontal */
+
+.uis-grid-divider .uis-grid-large {
+  margin-left: -80px;
+}
+
+.uis-grid-divider .uis-grid-large > * {
+  padding-left: 80px;
+}
+
+.uis-grid-divider .uis-grid-large > :not(.uis-first-column):before {
+  left: 40px;
+}
+
+/* Vertical */
+
+.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin {
+  margin-top: 80px;
+}
+
+.uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin:before {
+  top: -40px;
+  left: 80px;
+}
+
+/* Desktop and bigger */
+
+@media screen and (min-width: 1200px) {
+  /* Horizontal */
+
+  .uis-grid-divider .uis-grid-large {
+    margin-left: -140px;
+  }
+
+  .uis-grid-divider .uis-grid-large > * {
+    padding-left: 140px;
+  }
+
+  .uis-grid-divider .uis-grid-large > :not(.uis-first-column):before {
+    left: 70px;
+  }
+
+  /* Vertical */
+
+  .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin {
+    margin-top: 140px;
+  }
+
+  .uis-grid-divider .uis-grid-large .uis-grid-stack > .uis-grid-margin:before {
+    top: -40px;
+    left: 80px;
+  }
+}
+
+/* Match child of a grid cell
+   ================================================== */
+
+/*
+ * Behave like a block element
+ * 1. Wrap into the next line
+ * 2. Take the full width of at leaset 100%, Only if
+ *    no class from width component is set.
+ * 3. Expand width even if larger than 100%. e.g. because
+ *    of negative margin (Needed for nested grids)
+ */
+
+.uis-grid-match > *,
+.uis-grid-item-match {
+  display: -webkit-box;
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+}
+
+.uis-grid-match > * > :not([class*=uis-width]),
+.uis-grid-item-match > :not([class*=uis-width]) {
+  /* 2 */
+  box-sizing: border-box;
+  width: 100%;
+  /* 3 */
+  -webkit-box-flex: 1;
+          flex: auto;
+}
+
+/* ==================================================
+    Component: Width
+   ================================================== */
+
+/* Equal child widths
+   ================================================== */
+
+[class*=uis-child-width] > * {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.uis-child-width-1-2 > * {
+  width: 50%;
+}
+
+.uis-child-width-1-3 > * {
+  width: calc(100% * 1 / 3.001);
+}
+
+.uis-child-width-1-4 > * {
+  width: 25%;
+}
+
+.uis-child-width-1-5 > * {
+  width: 20%;
+}
+
+.uis-child-width-1-6 > * {
+  width: calc(100% * 1 / 6.001);
+}
+
+.uis-child-width-auto > * {
+  width: auto;
+}
+
+.uis-child-width-expand > :not([class*=uis-width]) {
+  -webkit-box-flex: 1;
+          flex: 1;
+  min-width: 1px;
+}
+
+@media screen and (min-width: 640px) {
+  .uis-child-width-1-1\@s > * {
+    width: 100%;
+  }
+
+  .uis-child-width-1-2\@s > * {
+    width: 50%;
+  }
+
+  .uis-child-width-1-3\@s > * {
+    width: calc(100% * 1 / 3.001);
+  }
+
+  .uis-child-width-1-4\@s > * {
+    width: 25%;
+  }
+
+  .uis-child-width-1-5\@s > * {
+    width: 20%;
+  }
+
+  .uis-child-width-1-6\@s > * {
+    width: calc(100% * 1 / 6.001);
+  }
+
+  .uis-child-width-auto\@s > * {
+    width: auto;
+  }
+
+  .uis-child-width-expand\@s > :not([class*=uis-width]) {
+    -webkit-box-flex: 1;
+            flex: 1;
+    min-width: 1px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .uis-child-width-1-1\@m > * {
+    width: 100%;
+  }
+
+  .uis-child-width-1-2\@m > * {
+    width: 50%;
+  }
+
+  .uis-child-width-1-3\@m > * {
+    width: calc(100% * 1 / 3.001);
+  }
+
+  .uis-child-width-1-4\@m > * {
+    width: 25%;
+  }
+
+  .uis-child-width-1-5\@m > * {
+    width: 20%;
+  }
+
+  .uis-child-width-1-6\@m > * {
+    width: calc(100% * 1 / 6.001);
+  }
+
+  .uis-child-width-auto\@m > * {
+    width: auto;
+  }
+
+  .uis-child-width-expand\@m > :not([class*=uis-width]) {
+    -webkit-box-flex: 1;
+            flex: 1;
+    min-width: 1px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .uis-child-width-1-1\@l > * {
+    width: 100%;
+  }
+
+  .uis-child-width-1-2\@l > * {
+    width: 50%;
+  }
+
+  .uis-child-width-1-3\@l > * {
+    width: calc(100% * 1 / 3.001);
+  }
+
+  .uis-child-width-1-4\@l > * {
+    width: 25%;
+  }
+
+  .uis-child-width-1-5\@l > * {
+    width: 20%;
+  }
+
+  .uis-child-width-1-6\@l > * {
+    width: calc(100% * 1 / 6.001);
+  }
+
+  .uis-child-width-auto\@l > * {
+    width: auto;
+  }
+
+  .uis-child-width-expand\@l > :not([class*=uis-width]) {
+    -webkit-box-flex: 1;
+            flex: 1;
+    min-width: 1px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .uis-child-width-1-1\@xl > * {
+    width: 100%;
+  }
+
+  .uis-child-width-1-2\@xl > * {
+    width: 50%;
+  }
+
+  .uis-child-width-1-3\@xl > * {
+    width: calc(100% * 1 / 3.001);
+  }
+
+  .uis-child-width-1-4\@xl > * {
+    width: 25%;
+  }
+
+  .uis-child-width-1-5\@xl > * {
+    width: 20%;
+  }
+
+  .uis-child-width-1-6\@xl > * {
+    width: calc(100% * 1 / 6.001);
+  }
+
+  .uis-child-width-auto\@xl > * {
+    width: auto;
+  }
+
+  .uis-child-width-expand\@xl > :not([class*=uis-width]) {
+    -webkit-box-flex: 1;
+            flex: 1;
+    min-width: 1px;
+  }
+}
+
+/* Single widths
+   ================================================== */
+
+[class*=uis-width] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+.uis-width-1-1 {
+  width: 100%;
+}
+
+.uis-width-1-2 {
+  width: 50%;
+}
+
+.uis-width-1-3 {
+  width: calc(100% * 1 / 3.001);
+}
+
+.uis-width-2-3 {
+  width: calc(100% * 2 / 3.001);
+}
+
+.uis-width-1-4 {
+  width: 25%;
+}
+
+.uis-width-3-4 {
+  width: 75%;
+}
+
+.uis-width-1-5 {
+  width: 20%;
+}
+
+.uis-width-2-5 {
+  width: 40%;
+}
+
+.uis-width-3-5 {
+  width: 60%;
+}
+
+.uis-width-4-5 {
+  width: 80%;
+}
+
+.uis-width-1-6 {
+  width: calc(100% * 1 / 6.001);
+}
+
+.uis-width-5-6 {
+  width: calc(100% * 5 / 6.001);
+}
+
+.uis-width-auto {
+  width: auto;
+}
+
+.uis-width-expand {
+  -webkit-box-flex: 1;
+          flex: 1;
+  min-width: 1px;
+}
+
+@media screen and (min-width: 640px) {
+  .uis-width-1-1\@s {
+    width: 100%;
+  }
+
+  .uis-width-1-2\@s {
+    width: 50%;
+  }
+
+  .uis-width-1-3\@s {
+    width: calc(100% * 1 / 3.001);
+  }
+
+  .uis-width-2-3\@s {
+    width: calc(100% * 2 / 3.001);
+  }
+
+  .uis-width-1-4\@s {
+    width: 25%;
+  }
+
+  .uis-width-3-4\@s {
+    width: 75%;
+  }
+
+  .uis-width-1-5\@s {
+    width: 20%;
+  }
+
+  .uis-width-2-5\@s {
+    width: 40%;
+  }
+
+  .uis-width-3-5\@s {
+    width: 60%;
+  }
+
+  .uis-width-4-5\@s {
+    width: 80%;
+  }
+
+  .uis-width-1-6\@s {
+    width: calc(100% * 1 / 6.001);
+  }
+
+  .uis-width-5-6\@s {
+    width: calc(100% * 5 / 6.001);
+  }
+
+  .uis-width-auto\@s {
+    width: auto;
+  }
+
+  .uis-width-expand\@s {
+    -webkit-box-flex: 1;
+            flex: 1;
+    min-width: 1px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .uis-width-1-1\@m {
+    width: 100%;
+  }
+
+  .uis-width-1-2\@m {
+    width: 50%;
+  }
+
+  .uis-width-1-3\@m {
+    width: calc(100% * 1 / 3.001);
+  }
+
+  .uis-width-2-3\@m {
+    width: calc(100% * 2 / 3.001);
+  }
+
+  .uis-width-1-4\@m {
+    width: 25%;
+  }
+
+  .uis-width-3-4\@m {
+    width: 75%;
+  }
+
+  .uis-width-1-5\@m {
+    width: 20%;
+  }
+
+  .uis-width-2-5\@m {
+    width: 40%;
+  }
+
+  .uis-width-3-5\@m {
+    width: 60%;
+  }
+
+  .uis-width-4-5\@m {
+    width: 80%;
+  }
+
+  .uis-width-1-6\@m {
+    width: calc(100% * 1 / 6.001);
+  }
+
+  .uis-width-5-6\@m {
+    width: calc(100% * 5 / 6.001);
+  }
+
+  .uis-width-auto\@m {
+    width: auto;
+  }
+
+  .uis-width-expand\@m {
+    -webkit-box-flex: 1;
+            flex: 1;
+    min-width: 1px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .uis-width-1-1\@l {
+    width: 100%;
+  }
+
+  .uis-width-1-2\@l {
+    width: 50%;
+  }
+
+  .uis-width-1-3\@l {
+    width: calc(100% * 1 / 3.001);
+  }
+
+  .uis-width-2-3\@l {
+    width: calc(100% * 2 / 3.001);
+  }
+
+  .uis-width-1-4\@l {
+    width: 25%;
+  }
+
+  .uis-width-3-4\@l {
+    width: 75%;
+  }
+
+  .uis-width-1-5\@l {
+    width: 20%;
+  }
+
+  .uis-width-2-5\@l {
+    width: 40%;
+  }
+
+  .uis-width-3-5\@l {
+    width: 60%;
+  }
+
+  .uis-width-4-5\@l {
+    width: 80%;
+  }
+
+  .uis-width-1-6\@l {
+    width: calc(100% * 1 / 6.001);
+  }
+
+  .uis-width-5-6\@l {
+    width: calc(100% * 5 / 6.001);
+  }
+
+  .uis-width-auto\@l {
+    width: auto;
+  }
+
+  .uis-width-expand\@l {
+    -webkit-box-flex: 1;
+            flex: 1;
+    min-width: 1px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .uis-width-1-1\@xl {
+    width: 100%;
+  }
+
+  .uis-width-1-2\@xl {
+    width: 50%;
+  }
+
+  .uis-width-1-3\@xl {
+    width: calc(100% * 1 / 3.001);
+  }
+
+  .uis-width-2-3\@xl {
+    width: calc(100% * 2 / 3.001);
+  }
+
+  .uis-width-1-4\@xl {
+    width: 25%;
+  }
+
+  .uis-width-3-4\@xl {
+    width: 75%;
+  }
+
+  .uis-width-1-5\@xl {
+    width: 20%;
+  }
+
+  .uis-width-2-5\@xl {
+    width: 40%;
+  }
+
+  .uis-width-3-5\@xl {
+    width: 60%;
+  }
+
+  .uis-width-4-5\@xl {
+    width: 80%;
+  }
+
+  .uis-width-1-6\@xl {
+    width: calc(100% * 1 / 6.001);
+  }
+
+  .uis-width-5-6\@xl {
+    width: calc(100% * 5 / 6.001);
+  }
+
+  .uis-width-auto\@xl {
+    width: auto;
+  }
+
+  .uis-width-expand\@xl {
+    -webkit-box-flex: 1;
+            flex: 1;
+    min-width: 1px;
+  }
+}
+
+/* Pixel based widths
+   ================================================== */
+
+.uis-width-small {
+  width: 150px;
+}
+
+.uis-width-medium {
+  width: 300px;
+}
+
+.uis-width-large {
+  width: 450px;
+}
+
+.uis-width-xlarge {
+  width: 600px;
+}
+
+.uis-width-xxlarge {
+  width: 750px;
+}
+
+/* Fit Content
+   ================================================== */
+
+.uis-width-fit-content {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+[class*=uis-width] {
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+/* Layouts
+   ================================================== */
+
+/* ==================================================
+    Component: Header
+   ================================================== */
+
+/*
+ * 1. Set Dimension
+ * 2. Background color as placeholder when the content is loading or broken link
+ * 3. Hide overflow
+ * 4. When the screen size is below small, the video will display; none
+ */
+
+.uis-header {
+  position: relative;
+  /* 1 */
+  min-height: 20vh;
+  width: 100%;
+  box-sizing: border-box;
+  /* 2 */
+  background-color: #0B2E4A;
+  background-image: url(/images/background-pattern.svg?c12e63b5bfaaca94929747e03fde6fba);
+  /* 3 */
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+/* Title
+   ================================================== */
+
+.uis-header-title {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 960px) {
+  .uis-header-title {
+    font-size: 2.625rem;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .uis-header-title {
+    margin: 0 20px;
+  }
+}
+
+/* Container
+   ================================================== */
+
+@media screen and (max-width: 959px) {
+  .uis-header-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.uis-wrapper {
+  position: relative;
+}
+
+.uis-wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 80vh;
+  width: 60vw;
+  background-color: #F2F6F9;
+  z-index: 1;
+}
+
+.uis-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 100vh;
+  right: 0;
+  height: 30vh;
+  width: 10vw;
+  background-color: #ECF9F9;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 3;
+}
+
+/* Pages
+   ================================================== */
+
+/* ==================================================
+    Page: Auth
+   ================================================== */
+
+/*
+ * 1. Set dimension
+ * 2. Hide all excess content
+ * 3. Style
+ */
+
+.uis-auth {
+  position: relative;
+  /* 1 */
+  height: 100vh;
+  width: 100%;
+  /* 2 */
+  overflow: hidden;
+  /* 3 */
+  background-color: #0B2E4A;
+  background-image: url(/images/background-pattern.svg?c12e63b5bfaaca94929747e03fde6fba);
+}
+
+/* Container
+   ================================================== */
+
+/*
+ * 1. Vertical center the content
+ * 2. Calculate and fill the horizontal with margin
+ * 3. Get the parent height
+ * 4. Set max width
+ * 5. Add spacing on side when mobile
+ */
+
+.uis-auth-container {
+  /* 1 */
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  /* 2 */
+  margin: 0 auto;
+  /* 3 */
+  height: 100%;
+  /* 4 */
+  max-width: 500px;
+  /* 5 */
+  padding: 0 15px;
+}
+
+/* Table landscape and bigger */
+
+@media screen and (min-width: 960px) {
+  .uis-auth-container {
+    padding: 0;
+  }
+}
+
+/* ==================================================
+    Page: Event
+   ================================================== */
+
+/*
+ * 1. Set position
+ * 2. Set dimension
+ * 3. Make the content align on horizontal center
+ * 4. Add Gutter on top
+ * 5. Style
+ */
+
+.uis-event-header {
+  /* 1 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* 2 */
+  height: 25vh;
+  width: 100%;
+  box-sizing: border-box;
+  /* 3 */
+  text-align: center;
+  /* 4 */
+  padding-top: 24px;
+  /* 5 */
+  overflow: hidden;
+  background-color: #0B2E4A;
+  background-image: url(/images/background-pattern.svg?c12e63b5bfaaca94929747e03fde6fba);
+}
+
+/* Container
+   ================================================== */
+
+/*
+ * 1. Vertical center the content
+ * 2. Calculate and fill the horizontal with margin
+ * 3. Get the parent height
+ * 4. Set max width
+ * 5. Add spacing on side when mobile
+ */
+
+.uis-event-container {
+  /* 1 */
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  /* 2 */
+  margin: 0 auto;
+  /* 3 */
+  height: 100%;
+  /* 4 */
+  max-width: 800px;
+  /* 5 */
+  padding: 0 15px;
+}
+
+/* Table landscape and bigger */
+
+@media screen and (min-width: 960px) {
+  .uis-event-container {
+    padding: 0;
+  }
+}
+
+/* QR
+   ================================================== */
+
+.uis-event-qr-container {
+  position: relative;
+  text-align: center;
+}
+
+/*
+ * 1. Set position
+ * 2. Set dimension
+ * 3. Style
+ */
+
+.uis-event-qr-tooltip {
+  /* 1 */
+  position: relative;
+  margin: 0 auto;
+  top: 20px;
+  /* 2 */
+  height: auto;
+  min-width: 80px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  box-sizing: border-box;
+  /* 3 */
+  padding: 8px 12px;
+  background-color: #0B2E4A;
+  color: #FFFFFF;
+  border-radius: 0.25rem;
+}
+
+/*
+ * Create triangle bottom as arrow head.
+ * 1. Set position (vertical center - width)
+ * 2. Make the dimension to 0
+ * 3. Make triangle
+ */
+
+.uis-event-qr-tooltip:before {
+  content: "";
+  /* 1 */
+  position: absolute;
+  bottom: -10px;
+  left: calc(50% - 20px);
+  margin: 0 auto;
+  /* 2 */
+  height: 0;
+  width: 0;
+  /* 3 */
+  border-top: 20px solid #0B2E4A;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
+
+/* Button
+   Adopt: `uis-button`
+   ================================================== */
+
+.uis-event-button {
+  background-color: #F2F8FB;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: normal;
+}
+
+.uis-event-button:hover {
+  background-color: #D7EBF6;
+}
+
+/*
+ * Center the content
+ */
+
+.uis-event-button > * {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.uis-event-button > .uis-event-button-icon {
+  font-size: 1.2rem;
+}
+
+/* ==================================================
+    Component: Spinner
+   ================================================== */
+
+/*
+ * 1. Set Dimension
+ * 2. Set spacing between siblings
+ * 3. Add layer greater than wrapper to avoid overlapping of :before
+ *    :after of wrapper.
+ * 4. Style
+ */
+
+.uis-spinner {
+  position: relative;
+  /* 1 */
+  height: 400px;
+  width: 80%;
+  box-sizing: border-box;
+  /* 2 */
+  margin: 40px auto;
+  /* 3 */
+  z-index: 100;
+  /* 4 */
+  padding: 20px;
+  background-color: #1d73a5;
+  border: solid 20px #2591D0;
+  border-radius: 30px;
+}
+
+/* Wrapper
+ * 1. Set dimension
+ * 2. Center child
+ * 3. Style
+   ================================================== */
+
+.uis-spinner-wrapper {
+  position: relative;
+  /* 1 */
+  height: 100vh;
+  width: 100%;
+  /* 2 */
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  /* 3 */
+  background-color: #0B2E4A;
+  background-image: url(/images/background-pattern.svg?c12e63b5bfaaca94929747e03fde6fba);
+}
+
+/*
+ * 1. Make the child expand
+ * 2. Make the layer greater than background
+ */
+
+.uis-spinner-wrapper > * {
+  /* 1 */
+  -webkit-box-flex: 1;
+          flex: 1;
+  /* 2 */
+  z-index: 20;
+}
+
+.uis-spinner-wrapper:before,
+.uis-spinner-wrapper:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  z-index: 10;
+}
+
+/*
+ * Blue radial gradient
+ */
+
+.uis-spinner-wrapper:before {
+  top: 0;
+  left: 0;
+  background-image: radial-gradient(farthest-side at 0% 60%, rgba(196, 47, 249, 0.7), transparent);
+}
+
+/*
+ * Violet radial gradient
+ */
+
+.uis-spinner-wrapper:after {
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(farthest-side at 100% 30%, rgba(37, 145, 208, 0.7), transparent);
+}
+
+/* Body
+ * 1. Set dimension
+ * 2. Set gutter
+ * 3. Style
+   ================================================== */
+
+.uis-spinner-body {
+  position: relative;
+  /* 1 */
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  /* 2 */
+  padding: 15px;
+  /* 3 */
+  background-color: #252525;
+  border-radius: 10px;
+}
+
+.uis-spinner-body:before,
+.uis-spinner-body:after {
+  content: "";
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 0;
+  width: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+}
+
+/*
+ * Left arrow
+ */
+
+.uis-spinner-body:before {
+  left: 0;
+  border-left: 100px solid #454545;
+}
+
+/*
+ * Right arrow
+ */
+
+.uis-spinner-body:after {
+  right: 0;
+  border-right: 100px solid #454545;
+}
+
+/* Reel
+ * 1. Set dimenstion
+ * 2. Hide excess elements
+ * 3. Style
+   ================================================== */
+
+.uis-spinner-reel {
+  position: relative;
+  /* 1 */
+  height: 100%;
+  width: 100%;
+  /* 2 */
+  overflow: hidden;
+  /* 3 */
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+/*
+ * Adding shadow to make look 3D
+ */
+
+.uis-spinner-reel:before,
+.uis-spinner-reel:after {
+  content: "";
+  position: absolute;
+  z-index: 150;
+  height: 45%;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+/*
+ * Top shadow
+ */
+
+.uis-spinner-reel:before {
+  top: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#252525), to(transparent));
+  background-image: linear-gradient(to bottom, #252525, transparent);
+}
+
+/*
+ * Bottom shadow
+ */
+
+.uis-spinner-reel:after {
+  bottom: 0;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#252525), to(transparent));
+  background-image: linear-gradient(to top, #252525, transparent);
+}
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Allow scrolling for the modal dialog
+ * 4. Horizontal padding
+ * 5. Mask the background-page
+ * 6. Fade-in transition
+ */
+
+/* List
+   Adopts `uis-list` default style
+   ================================================== */
+
+.uis-spinner-list > li {
+  color: #2591D0;
+  font-weight: 600;
+  font-size: 50px;
+  padding: 12px 0px;
+  opacity: 0.5;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.uis-spinner-list > li.uis-active {
+  opacity: 1;
+}
+
+/*
+ * 1. Remove the gutter on the top
+ * 2. Make it lean and looks 3d
+ */
+
+.uis-spinner-list > li:first-child {
+  /* 1 */
+  padding-top: 0px;
+  /* 2 */
+  -webkit-transform: rotateX(-40deg);
+          transform: rotateX(-40deg);
+}
+
+/*
+ * 1. Make it lean and looks 3d
+ */
+
+.uis-spinner-list > li:nth-child(3) {
+  /* 1 */
+  -webkit-transform: rotateX(40deg);
+          transform: rotateX(40deg);
+}
+
+/* Remove the gutter on last child */
+
+.uis-spinner-list > li:last-child {
+  padding-bottom: 0px;
+}
+
+.uis-spinner-list {
+  position: relative;
+  top: 0;
+}
+
+/*
+ * Adds blur on the list
+ */
+
+.uis-spinner-list.uis-active {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  -webkit-animation: spinnerBlur 4s ease-in-out;
+          animation: spinnerBlur 4s ease-in-out;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@-webkit-keyframes spinnerBlur {
+  0% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+
+  10% {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+
+  25% {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+  }
+
+  50% {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+  }
+
+  75% {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
+
+@keyframes spinnerBlur {
+  0% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+
+  10% {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+
+  25% {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+  }
+
+  50% {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+  }
+
+  75% {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
+
+/* Theme
+   ================================================== */
+
+/* ==================================================
+    Theme: Gloomy
+   ================================================== */
+
+.uis-theme-gloomy {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #F1F2F6 !important;
+}
+
+.uis-theme-gloomy .uis-header {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #758AFD !important;
+}
+
+/* ==================================================
+    Theme: Soft
+   ================================================== */
+
+.uis-theme-soft {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #E8E9ED !important;
+}
+
+.uis-theme-soft .uis-header {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #5F7195 !important;
+}
+
+/* ==================================================
+    Theme: Nght
+   ================================================== */
+
+.uis-theme-night {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #1B2A32 !important;
+}
+
+.uis-theme-night .uis-header {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #22343C !important;
+}
+
+.uis-theme-night p,
+.uis-theme-night h1,
+.uis-theme-night h2,
+.uis-theme-night h3,
+.uis-theme-night h4,
+.uis-theme-night h5,
+.uis-theme-night .uis-text-lead,
+.uis-theme-night .uis-form-label,
+.uis-theme-night label {
+  color: #FFFFFF !important;
+}
+
+.uis-theme-night .uis-text-meta {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+

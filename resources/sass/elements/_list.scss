@@ -1,0 +1,177 @@
+// Name:            List
+// Description:     Styles for list
+//
+// Component:       `uis-list`
+//
+// Modifiers:       `uis-list-divider`
+//                  `uis-list-striped`
+//                  `uis-list-bullet`
+//                  `uis-list-large`
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+
+$list-margin-top:                           margin(small) !default;
+
+$list-nested-padding-left:                  gutter(small) !default;
+
+$list-divider-margin-top:                   margin(small) !default;
+$list-divider-border-width:                 border(border-width) !default;
+$list-divider-border:                       #E5E5E5 !default;
+
+$list-striped-padding-vertical:             margin(small) !default;
+$list-striped-padding-horizontal:           margin(small) !default;
+$list-striped-background:                   $global-muted-background !default;
+
+$list-bullet-width:                         (font(line-height) * 1em) !default;
+$list-bullet-height:                        $list-bullet-width !default;
+$list-bullet-margin-right:                  margin(xsmall) !default;
+$list-bullet-icon-color:                    color(primary) !default;
+
+$list-large-margin-top:                     margin(global) !default;
+$list-large-divider-margin-top:             margin(global) !default;
+$list-large-striped-padding-vertical:       margin(global) !default;
+$list-large-striped-padding-horizontal:     margin(small) !default;
+
+$internal-list-bullet-image: 'data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDgiIGhlaWdodD0iNnB4IiB3aWR0aD0iNnB4IiBmaWxsPSIjMzMzMzMzIj48dGl0bGU+ZG90PC90aXRsZT48Y2lyY2xlIGN4PSI0IiBjeT0iNCIgcj0iNCIvPjwvc3ZnPg==' !default;
+
+
+/* ==================================================
+    Component: List
+   ================================================== */
+
+.uis-list {
+    padding: 0;
+    list-style: none;
+}
+
+
+/*
+ * Micro clearfix
+ */
+
+.uis-list {
+    @include clearfix;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-list > li > :last-child {
+    margin-bottom: 0;
+}
+
+/*
+ * Nested lists
+ */
+
+.uis-list ul {
+    margin: 0;
+    padding-left: $list-nested-padding-left;
+    list-style: none;
+}
+
+/*
+ * Style
+ */
+
+.uis-list > li:nth-child(n+2),
+.uis-list > li > ul {
+    margin-top: $list-margin-top;
+}
+
+
+
+/* Style Modifiers
+   ================================================== */
+
+/*
+ * Divider
+ */
+
+.uis-list-divider > li:nth-child(n+2) {
+    margin-top: $list-divider-margin-top;
+    padding-top: $list-divider-margin-top;
+    border-top: $list-divider-border-width solid $list-divider-border;
+}
+
+
+
+/*
+ * Striped
+ */
+
+.uis-list-striped > li {
+    padding: $list-striped-padding-vertical $list-large-striped-padding-horizontal;
+}
+
+.uis-list-striped > li:nth-of-type(odd) {
+    background: $list-striped-background;
+}
+
+.uis-list-striped > li:nth-child(n+2) {
+    margin-top: 0;
+}
+
+
+
+/*
+ * Bullet
+ * 1. Reset display `table` which cause issues in combination
+ *    with multi column layouts.
+ */
+
+.uis-list-bullet > li {
+    position: relative;
+    padding-left: unquote('calc(#{$list-bullet-width} + #{$list-bullet-margin-right})');
+}
+
+.uis-list-bullet > li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $list-bullet-width;
+    height: $list-bullet-height;
+    background: url($internal-list-bullet-image) $list-bullet-icon-color rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    /* 1 */
+    display: block;
+}
+
+
+
+
+/* Size Modifier
+   ================================================== */
+
+.uis-list-large > li:nth-child(n+2),
+.uis-list-large > li > ul {
+    margin-top: $list-large-margin-top;
+}
+
+/*
+ * Divider
+ */
+
+.uis-list-large.uis-list-divider > li:nth-child(n+2) {
+    margin-top: $list-large-divider-margin-top;
+    padding-top: $list-large-divider-margin-top;
+}
+
+/*
+ * Striped
+ */
+
+.uis-list-large.uis-list-striped {
+    padding: $list-large-striped-padding-vertical $list-large-striped-padding-horizontal;
+}
+
+.uis-list-large.uis-list-striped > li:nth-child(n+2) {
+    margin-top: 0;
+}

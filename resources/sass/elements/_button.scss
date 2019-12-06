@@ -1,0 +1,467 @@
+//  ==================================================
+//  Name:               Button
+//  Description:        Styles for buttons
+//
+//  Component:          `uis-button-*`
+//
+//  Sub-components:     `uis-button-group`
+//                      `uis-floating-button`
+//
+//  Modifiers:          `uis-button-default`
+//                      `uis-button-primary`
+//                      `uis-button-secondary`
+//                      `uis-button-warning`
+//                      `uis-button-danger`
+//                      `uis-button-outline-primary`
+//                      `uis-button-outline-secondary`
+//                      `uis-button-outline-warning`
+//                      `uis-button-outline-danger`
+//
+//
+//  States:             `active`
+//  ==================================================
+
+//  ==================================================
+//  Variables
+//  ==================================================
+
+$button-line-height:                        control-height(medium) !default;
+$button-small-line-height:                  control-height(small) !default;
+$button-large-line-height:                  control-height(large) !default;
+
+$button-font-size:                          font(font-size) !default;
+$button-small-font-size:                    font-size(small) !default;
+$button-large-font-size:                    font-size(large) !default;
+
+$button-padding-horizontal:                 gutter(small) !default;
+$button-small-padding-horizontal:           gutter(xsmall) !default;
+$button-large-padding-horizontal:           gutter(large) !default;
+
+$button-border-radius:                      border(border-radius) !default;
+$button-border-width:                       border(border-width) !default;
+$button-border-color:                       border(border-color) !default;
+
+$button-disabled-background:                $global-muted-background !default;
+$button-disabled-color:                     color(muted) !default;
+$button-disabled-border-color:              $global-muted-background !default;
+
+$button-text-line-height:                   font(line-height) !default;
+$button-text-color:                         color(muted) !default;
+$button-text-hover-color:                   color(default) !default;
+$button-text-disabled-color:                color(muted) !default;
+
+$button-link-color:                         link(base) !default;
+$button-link-hover-color:                   link(dark) !default;
+$button-link-line-height:                   font(line-height) !default;
+$button-link-hover-text-decoration:         underline !default;
+$button-link-disabled-color:                color(muted) !default;
+
+$button-icon-width:                         $button-line-height !default;
+$button-icon-background:                    darken(color(inverse), 10%) !default;
+$button-icon-color:                         color(default);
+
+$button-icon-primary-background:            lighten(color(primary), 10%) !default;
+$button-icon-primary-color:                 color(inverse);
+
+$button-icon-secondary-background:          lighten(color(secondary), 10%) !default;
+$button-icon-secondary-color:               color(inverse);
+
+$button-icon-success-background:            lighten(color(success), 10%) !default;
+$button-icon-success-color:                 color(inverse);
+
+$button-icon-warning-background:            lighten(color(warning), 10%) !default;
+$button-icon-warning-color:                 color(inverse);
+
+$button-icon-danger-background:             lighten(color(danger), 10%) !default;
+$button-icon-danger-color:                  color(inverse);
+
+/*
+ * 1. Remove margins in Chrome, Safari, and Opera.
+ * 2. Remove borders for `button`.
+ * 3. Remove border-radius in Chrome.
+ * 4. Address `overflow` set to `hidden` in IE.
+ * 5. Correct `font` properties and `color` not being inherited for `button`.
+ * 6. Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 7. Style
+ * 8. `line-height` is used to create a height because it also centers the text
+ *    vertically for `a` elements.
+ *    Better would be to use height and flexbox to center the text vertically
+ *    but flexb ox doesn't work in Firefox on `button` elements.
+ * 9. Align text if button has a width.
+ * 10. Require for `a`.
+ */
+
+.uis-button {
+    /* 1 */
+    margin: 0;
+
+    /* 2 */
+    border: none;
+
+    /* 3 */
+    border-radius: $button-border-radius;
+
+    /* 4 */
+    overflow: visible;
+
+    /* 5 */
+    font: inherit;
+    color: inherit;
+
+    /* 6 */
+    text-transform: none;
+
+    /* 7 */
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 $button-padding-horizontal;
+    vertical-align: middle;
+    font-size: $button-font-size;
+
+    /* 8 */
+    line-height: $button-line-height;
+
+    /* 9 */
+    text-align: center;
+
+    /* 10 */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/*
+ * We added :before to create invisible
+ * box behind and we add box-shadow on
+ * modifiers
+ */
+.uis-button-3d:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
+.uis-button:not(:disabled) {
+    cursor: pointer;
+}
+
+.uis-button:disabled {
+    cursor: not-allowed;
+}
+
+/*
+ * Remove the inner border and padding in Firefox
+ */
+.uis-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Hover */
+.uis-button:hover {
+    /* 8 */
+    text-decoration: none;
+}
+
+/* Focus */
+.uis-button:focus {
+    outline: none;
+}
+
+/*
+ * Disabled
+ * The same for all style modifiers
+ */
+
+.uis-button-default:disabled,
+.uis-button-primary:disabled,
+.uis-button-secondary:disabled,
+.uis-button-success:disabled,
+.uis-button-warning:disabled,
+.uis-button-danger:disabled {
+    background-color: $button-disabled-background;
+    color: $button-disabled-color;
+    border: 1px solid $button-disabled-border-color;
+
+    &:hover, &:focus {
+        background-color: $button-disabled-background;
+        color: $button-disabled-color;
+        border: 1px solid $button-disabled-border-color;
+    }
+}
+
+
+/* Style modifiers
+   ================================================== */
+
+@include create-modifiers-with-selectors(background, button);
+
+@include button-d-modifiers-with-selectors();
+
+
+
+/* Outline Style modifiers
+   ================================================== */
+
+@include create-outline-modifiers-with-selectors(button);
+
+
+
+/* Size Style modifiers
+   ================================================== */
+
+.uis-button-small {
+    padding: 0 $button-small-padding-horizontal;
+    line-height: $button-small-line-height;
+    font-size: $button-small-font-size;
+}
+
+.uis-button-large {
+    padding: 0 $button-large-padding-horizontal;
+    line-height: $button-large-line-height;
+    font-size: $button-large-font-size;
+}
+
+.uis-button-wide {
+    padding: 0 $button-large-padding-horizontal;
+}
+
+
+
+/* Text Button
+   ================================================== */
+
+.uis-button-text {
+    /* 1 */
+    padding: 0;
+    line-height: $button-text-line-height;
+    background: none;
+
+    /* 2 */
+    color: $button-text-color;
+}
+
+/* Hover + Focus */
+.uis-button-text:hover,
+.uis-button-text:focus {
+    color: $button-text-hover-color;
+}
+
+/* Disabled */
+.uis-button-text:disabled {
+    color: $button-text-disabled-color;
+    cursor: not-allowed;
+}
+
+.uis-button-text-danger:enabled {
+    color: color(danger);
+}
+
+.uis-button-text-danger:hover:not(:disabled) {
+    color: darken(color(danger), 15%);
+}
+
+
+/* Text Button Modifier
+   ================================================== */
+
+@include create-modifiers-with-selectors(text, button);
+
+
+
+/* Link Button
+   ================================================== */
+
+/*
+ * Link
+ * 1, Reset
+ * 2. Style
+ */
+
+.uis-button-link {
+    /* 1 */
+    padding: 0;
+    line-height: $button-link-line-height;
+    background: none;
+
+    /* 2 */
+    color: $button-link-color;
+}
+
+/* Hover + Focus */
+.uis-button-link:hover,
+.uis-button-link:focus {
+    color: $button-link-hover-color;
+    text-decoration: $button-link-hover-text-decoration;
+}
+
+/* Disabled */
+.uis-button-link:disabled {
+    color: $button-link-disabled-color;
+    text-decoration: none;
+}
+
+
+
+/* Group
+   ================================================== */
+
+/*
+ * 1. Using `flex` instead of `inline-block` to prevent
+ *    whitespace between child elements
+ * 2. Behave like button
+ * 3. Create position context
+ */
+
+.uis-button-group {
+    /* 1 */
+    display: inline-flex;
+
+    /* 2 */
+    vertical-align: middle;
+
+    /* 3 */
+    position: relative;
+}
+
+
+/* Floating
+   ================================================== */
+
+/*
+ * Floating Button
+ * 1. set position
+ * 2. set size
+ * 3. Style
+ */
+
+.uis-floating-button {
+    /* 1 */
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+
+    /* 2 */
+    height: 60px;
+    width: 60px;
+
+    /* 3 */
+    background-color: theme-color(primary);
+    border: none;
+    border-radius: 50%;
+    color: color(inverse);
+    z-index: layer(floating-button);
+    text-align: center;
+    line-height: 60px;
+    box-shadow: box-shadow(medium);
+}
+
+
+/* Load More Ghost Button
+   ================================================== */
+
+.uis-ghost-button {
+    background-color: transparent;
+    border: solid 1px color(primary);
+    color: color(primary);
+    padding: 10px 40px;
+}
+
+.uis-ghost-button:hover,
+.uis-ghost-button:focus {
+    background-color: color(primary);
+    color: color(inverse);
+}
+
+
+/* Icon Modifiers
+   ================================================== */
+
+/*
+ * 1. Set position
+ * 2. Set width
+ * 3. Center icon vertically and horizontally
+ * 4. Style
+ */
+
+.uis-button-icon {
+    /* 1 */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    /* 2 */
+    width: $button-icon-width;
+
+    /* 3 */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 4 */
+    background-color: $button-icon-background;
+    color: $button-icon-color;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+/* Primary */
+.uis-button-icon.uis-button-icon-primary {
+    background-color: $button-icon-primary-background;
+    color: $button-icon-primary-color;
+}
+
+.uis-button-icon.uis-button-icon-primary:hover + .uis-button-primary,
+.uis-button-icon.uis-button-icon-primary:focus + .uis-button-primary {
+    background-color: darken($color: color(primary), $amount: 5%);
+}
+
+/* Secondary */
+.uis-button-icon.uis-button-icon-secondary {
+    background-color: $button-icon-secondary-background;
+    color: $button-icon-secondary-color;
+}
+
+.uis-button-icon.uis-button-icon-secondary:hover + .uis-button-secondary,
+.uis-button-icon.uis-button-icon-secondary:focus + .uis-button-secondary {
+    background-color: darken($color: color(secondary), $amount: 5%);
+}
+
+/* Success */
+.uis-button-icon.uis-button-icon-success {
+    background-color: $button-icon-success-background;
+    color: $button-icon-success-color;
+}
+
+.uis-button-icon.uis-button-icon-success:hover + .uis-button-success,
+.uis-button-icon.uis-button-icon-success:focus + .uis-button-success {
+    background-color: darken($color: color(success), $amount: 5%);
+}
+
+/* Warning */
+.uis-button-icon.uis-button-icon-warning {
+    background-color: $button-icon-warning-background;
+    color: $button-icon-warning-color;
+}
+
+.uis-button-icon.uis-button-icon-warning:hover + .uis-button-warning,
+.uis-button-icon.uis-button-icon-warning:focus + .uis-button-warning {
+    background-color: darken($color: color(warning), $amount: 5%);
+}
+
+/* Danger */
+.uis-button-icon.uis-button-icon-danger {
+    background-color: $button-icon-danger-background;
+    color: $button-icon-danger-color;
+}
+
+.uis-button-icon.uis-button-icon-danger:hover + .uis-button-danger,
+.uis-button-icon.uis-button-icon-danger:focus + .uis-button-danger {
+    background-color: darken($color: color(danger), $amount: 5%);
+}

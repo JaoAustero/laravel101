@@ -1,0 +1,101 @@
+//  Name:            message
+//  Description:     Component to create message messages
+//
+//  Component:       `uis-message`
+//
+//  Sub-objects:    `uis-message-with-icon`
+//                  `uis-message-icon`
+//                  `uis-message-message`
+//                  `uis-message-title`
+//
+//  Adopted:        `uis-message-close`
+//
+//  Modifiers:      `uis-message-primary`
+//                  `uis-message-success`
+//                  `uis-message-warning`
+//                  `uis-message-danger`
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+
+$message-margin-vertical:             gutter(small) !default;
+$message-padding:                     gutter(xsmall) + 5px !default;
+$message-padding-right:               $message-padding !default;
+$message-padding-left:                gutter(medium) + 10px !default;
+$message-background:                  $global-muted-background !default;
+$message-color:                       color-yiq($message-background) !default;
+
+$message-close-top:                   $message-padding !default;
+$message-close-right:                 $message-padding !default;
+
+$message-title-font-size:             font-size(medium) !default;
+$message-title-font-weight:           medium !default;
+
+
+/* ========================================================================
+   Component: message
+ ========================================================================== */
+
+.uis-message {
+    position: relative;
+    margin-bottom: $message-margin-vertical;
+    padding: $message-padding $message-padding-right $message-padding $message-padding;
+    background-color: $message-background;
+}
+
+.uis-message-with-icon {
+    padding-left: $message-padding-left;
+}
+
+/* Add margin if adjacent element */
+* + .uis-message {
+    margin-top: $message-margin-vertical;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uis-message > :last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* Item
+ ========================================================================== */
+
+.uis-message > * {
+    color: $message-color;
+    font-size: 14px;
+}
+
+
+
+/* Close
+ * Adopts `uis-close`
+ ========================================================================== */
+
+.uis-message-close {
+    position: absolute;
+    top: 50%;
+    right: $message-close-right;
+    margin-top: -5px;
+    font-size: 10px;
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+
+.uis-message-close:first-child + * {
+    margin-top: 0;
+}
+
+
+/* Style modifiers
+ ========================================================================== */
+
+@include create-modifiers(message);
