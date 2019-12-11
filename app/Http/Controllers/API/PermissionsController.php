@@ -5,9 +5,9 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\Category;
+use App\Models\Permission;
 
-class CategoriesController extends Controller
+class PermissionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,21 +16,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $class = Category::orderBy('created_at', 'desc')
+        $class = Permission::orderBy('created_at', 'desc')
                             ->get();
-
-        return $class;
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $class = Category::findOrDie($id);
 
         return $class;
     }
@@ -43,9 +30,22 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $class = new Category;
+        $class = new Permission;
 
         $class->_store($request);
+
+        return $class->find($class->id);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $class = Permission::findOrDie($id);
 
         return $class->find($class->id);
     }
@@ -59,7 +59,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $class = Category::findOrDie($id);
+        $class = Permission::findOrDie($id);
 
         $class->_update($request);
 
@@ -74,7 +74,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $class = Category::findOrDie($id);
+        $class = Permission::findOrDie($id);
 
         $class->delete();
 

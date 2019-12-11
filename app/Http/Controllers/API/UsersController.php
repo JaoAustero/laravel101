@@ -17,7 +17,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $class = User::orderBy('created_at', 'desc')->get();
+        $class = User::orderBy('created_at', 'desc')
+                        ->get();
 
         return $class;
     }
@@ -49,7 +50,8 @@ class UsersController extends Controller
         
         $class->_store($request);
 
-        $class->userProfile()->save(UserProfile::_store($request));
+        $class->userProfile()
+                ->save(UserProfile::_store($request));
 
         return $class->find($class->id);
     }
@@ -84,7 +86,8 @@ class UsersController extends Controller
 
         if(!$class) return abort(404, 'User not found');
 
-        $class->userProfile()->delete();
+        $class->userProfile()
+                ->delete();
 
         $class->delete();
 

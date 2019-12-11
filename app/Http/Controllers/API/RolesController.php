@@ -16,7 +16,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        $class = Role::orderBy('created_at', 'desc')->get();
+        $class = Role::orderBy('created_at', 'desc')
+                        ->get();
 
         return $class;
     }

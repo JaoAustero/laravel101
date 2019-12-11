@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Model;
 
 class UserProfile extends Model
@@ -14,7 +15,7 @@ class UserProfile extends Model
         $userprofile->last_name = $request->input('last_name');
         $userprofile->contact_number = $request->input('contact_number');
         $userprofile->avatar_photo = $request->input('avatar_photo');
-        $userprofile->created_by = 1;
+        $userprofile->created_by = Auth::id();
         
         return $userprofile;
     }

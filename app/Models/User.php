@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -47,7 +50,7 @@ class User extends Authenticatable
         $this->is_activated     = 0;
         $this->timezone         = 'UTC';
         $this->api_token        = Str::random(60);
-        $this->created_by       = 1;
+        $this->created_by       = Auth::id();
         $this->save();
     }
 
@@ -64,7 +67,7 @@ class User extends Authenticatable
         $profile->first_name        = $request->input('first_name');
         $profile->last_name         = $request->input('last_name');
         $profile->contact_number    = $request->input('contact_number');
-        $profile->updated_by        = 1;
+        $profile->updated_by        = Auth::id();
         $profile->update();
     }
 

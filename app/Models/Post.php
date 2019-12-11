@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Model;
 
 class Post extends Model
@@ -12,7 +13,7 @@ class Post extends Model
         $this->category_id  = $request->input('category_id');
         $this->title        = $request->input('title');
         $this->body         = $request->input('body');
-        $this->created_by   = 1;
+        $this->created_by   = Auth::id();
         $this->save();
     }
 
@@ -21,7 +22,7 @@ class Post extends Model
         $this->category_id  = $request->input('category_id');
         $this->title        = $request->input('title');
         $this->body         = $request->input('body');
-        $this->updated_by   = 1;
+        $this->updated_by   = Auth::id();
         $this->update();
     }
 

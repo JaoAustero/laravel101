@@ -49,6 +49,9 @@ class SetupInstall extends Command
         $this->info(PHP_EOL . 'Seeding default data in databse...' . PHP_EOL);
         $this->call('db:seed');
 
+        $this->info(PHP_EOL . 'Installing passport and setting up env PASSPORT_CLIENT_KEY.....'  . PHP_EOL);
+		$this->call('setup:passport');
+
         $this->info(PHP_EOL . '🚀 Done! Let\'s Go! 🚀' . PHP_EOL);
     }
 }

@@ -16,7 +16,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $class = Post::orderBy('created_at', 'desc')->get();
+        $class = Post::orderBy('created_at', 'desc')
+                        ->get();
 
         return $class;
     }

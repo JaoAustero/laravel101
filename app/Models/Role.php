@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Model;
 
 class Role extends Model
@@ -9,14 +10,14 @@ class Role extends Model
     public function _store($request)
     {
         $this->name         = $request->input('name');
-        $this->created_by   = 1;
+        $this->created_by   = Auth::id();
         $this->save();
     }
 
     public function _update($request)
     {
         $this->name         = $request->input('name');
-        $this->updated_by   = 1;
+        $this->updated_by   = Auth::id();
         $this->update();
     }
 
